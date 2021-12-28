@@ -1,11 +1,97 @@
 ###
  # @Author: Cloudflying
- # @Date: 2021-12-04 23:54:35
- # @LastEditTime: 2021-12-06 15:01:24
+ # @Date: 2021-12-28 20:01:25
+ # @LastEditTime: 2021-12-28 20:02:29
  # @LastEditors: Cloudflying
  # @Description: 
- # @FilePath: /.boxs/conf/aliases/utils.aliases
+ # @FilePath: /.boxs/conf/aliases
 ### 
+
+# Brew
+alias bs='brew search'
+alias bi='brew install'
+alias bu='brew update'
+alias bU='brew upgrade'
+alias br='brew uninstall'
+
+# Git
+alias ga='git add'
+alias gaa='git add --all'
+
+# Vagrant
+# alias va='vagrant'
+alias va='vagrant box add --insecure --provider=virtualbox'
+alias vu='vagrant up'
+alias vs='vagrant global-status'
+alias vus='vagrant up;vagrant ssh'
+alias vh='vagrant halt'
+alias vr='vagrant reload'
+
+# Docker alias and function
+
+alias dri='docker rmi'
+alias drc='docker rm'
+alias drr='docker run -it --rm'
+
+# Get latest container ID
+alias dpsl="docker ps -l -q"
+
+# Get container process
+alias dps="docker ps"
+
+# docker logs
+alias dlog='docker logs'
+
+# Get process included stop container
+alias dpsa="docker ps -a"
+
+# Get images
+alias di="docker images"
+
+# remove docker images
+alias dri='docker rmi'
+
+# docker build
+alias db='docker build'
+
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="docker run -i -t -P"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="docker exec -i -t"
+
+# docker volume
+alias dvls='docker volume ls $*'
+alias dvrm_all='docker volume rm $(docker volume ls -q)'
+
+alias dip='docker inspect --format "{{ .NetworkSettings.IPAddress }}" $*'
+
+# Stop all containers
+docker-stop-all() { docker stop $(docker ps -a -q); }
+
+# Remove all containers
+drm() { docker rm $(docker ps -a -q); }
+
+# Stop and Remove all containers
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Remove all images
+docker-rm-all-images() { docker rmi $(docker images -q); }
+
+# Dockerfile build, e.g., $dbu tcnksm/test 
+dbu() { docker build -t=$1 .; }
+
+# Show all alias related docker
+docker-alias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# Bash into running container
+dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # quick jump
 alias ~='cd ~'
@@ -121,12 +207,12 @@ if [[ -d '/Applications/MAMP/bin/php' ]]; then
 fi
 
 # Atom short command cli
-if [[ -f '/Applications/Atom.app/Contents/Resources/app/atom.sh' ]]; then
-  alias atom="/Applications/Atom.app/Contents/Resources/app/atom.sh"
-  alias apm="/Applications/Atom.app/Contents/Resources/app/apm/bin/apm"
-  alias anode="/Applications/Atom.app/Contents/Resources/app/apm/bin/node"
-  alias anpm="/Applications/Atom.app/Contents/Resources/app/apm/bin/npm"
-fi
+# if [[ -f '/Applications/Atom.app/Contents/Resources/app/atom.sh' ]]; then
+  # alias atom="/Applications/Atom.app/Contents/Resources/app/atom.sh"
+  # alias apm="/Applications/Atom.app/Contents/Resources/app/apm/bin/apm"
+  # alias anode="/Applications/Atom.app/Contents/Resources/app/apm/bin/node"
+  # alias anpm="/Applications/Atom.app/Contents/Resources/app/apm/bin/npm"
+# fi
 
 # HBuildX short command cli
 if [[ -f '/Applications/HBuilderX.app/Contents/MacOS/cli' ]]; then
