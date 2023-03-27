@@ -1,0 +1,8 @@
+# Brew
+alias ba='brew install'
+alias bcc='brew cleanup'
+# alias bs='brew search'
+alias bi='brew info'
+alias bu='brew update'
+alias bU='brew upgrade'
+alias br='brew uninstall'

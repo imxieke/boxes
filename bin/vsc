@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Visual Studio editor
+# 对于变量有空格的会打开错误 使用 "" 修复
+# 如 vsc ~/Downloads/App\ Code 
+
+if [[ -f '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ]]; then
+	/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code "$1" "$2" "$3" "$4" "$5"
+elif [[ -n "$(command -v code)" ]]; then
+	code "$1" "$2" "$3" "$4" "$5"
+elif [[ -f /bin/code ]]; then
+	/bin/code "$1" "$2" "$3" "$4" "$5"
+elif [[ -f /usr/bin/code ]]; then
+	/bin/code "$1" "$2" "$3" "$4" "$5"
+elif [[ -f /usr/local/bin/code ]]; then
+	/bin/code "$1" "$2" "$3" "$4" "$5"
+else
+	echo 'not found code in path'
+	exit 1
+fi

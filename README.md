@@ -1,24 +1,29 @@
 ## Boxs system toolset boxs
+
 ### Support OS
-- linux
-- macos
+- Archlinux
+- Debian-Like
+- macOS
 
 ### Tools
 - vim
 - oh-my-zsh
 - besttrace
 - autossh
-- 字体打包上传 Coding 制品库
+
+## Features
+- dotenv
+  - 自动加载根目录 .env 文件
+  - 支持 # 注释
 
 ## TOOD
-- 自动加载当前目录下的 .env 文件 将程序的配置文件加载到系统内
 - 终端发送通知
 - 字体在 linux 和 macos 一键安装
   - linux ~/.fonts
   - macos ~/Library/Fonts
 - upload
   - https://transfer.sh/
-  - 制品库
+  - Coding 制品库
 
 ## Path Struct
 - etc 配置文件目录
@@ -26,14 +31,14 @@
      - all   通用 二进制文件 如 Shell 脚本
      - macos macOS 二进制文件目录
      - linux linux amd64 系统二进制文件
-
+-  bin 目录改为一个目录 二进制等文件改到 ~/.bin
 - scripts 平时会用到的脚本库(非可直接执行)
 - sites Web 应用
 - etc
     - file-tpl 创建文件使用的模板
     - autossh autossh 配置文件
 - opt like unix opt directory
-    
+s
 ## Application
 - doggo DNS Client for Humans
 - pst TUI process monitor written in Go
@@ -60,7 +65,6 @@
 - gifwrap GIFs in your terminal
 - trivy Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues
 
-
 ## fonts
 - https://github.com/ryanoasis/nerd-fonts
 - https://design.ubuntu.com/font/
@@ -82,8 +86,6 @@ deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
 
 deb http://repository.spotify.com stable non-free
 ```
-
-
 
 alias f="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias x="exa -Flam --git --color-scale --icons"

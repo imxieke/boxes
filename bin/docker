@@ -1,0 +1,17 @@
+###
+ # @Author: Cloudflying
+ # @Date: 2022-06-06 13:30:09
+ # @LastEditTime: 2022-06-17 23:51:38
+ # @LastEditors: Cloudflying
+ # @Description: 
+ # @FilePath: /.boxs/bin/all/docker
+### 
+#!/usr/bin/env bash
+
+if [[ -n "$(command -v podman)" ]]; then
+	podman $@
+elif [[ -n "$(command -v lima)" ]]; then
+	lima nerdctl $@
+elif [[ -f "/Applications/Docker.app/Contents/Resources/bin/docker" ]]; then
+	/Applications/Docker.app/Contents/Resources/bin/docker $@
+fi

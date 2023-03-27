@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Boxs Manager Script
+
+case $1 in
+	install )
+		echo "Install"
+		;;
+	backup )
+		echo "backup"
+		;;
+	 )
+		echo "Install"
+		;;
+	*)
+		echo "Unknown Options $@"
+		;;
+esac

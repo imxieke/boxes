@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# need root permission
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+	sudo mtr $@ | nali
+else
+	mtr $@ | nali
+fi
