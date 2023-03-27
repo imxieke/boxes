@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:23:30
- # @LastEditTime: 2023-03-27 20:51:27
+ # @LastEditTime: 2023-03-28 00:27:09
  # @LastEditors: Cloudflying
  # @Description: 
 ###
@@ -46,7 +46,9 @@ _install()
 	go install github.com/itchyny/mkrg/cmd/mkrg@latest
 
 	# 给IP加上地理信息的命令行小工具
-	go install github.com/imxieke/nali-go@latest
+	# go install github.com/imxieke/nali-go@latest
+	go install github.com/Mikubill/nali-go@latest
+	go install github.com/zu1k/nali@latest
 
 	# A Docker manager for the terminal
 	go install github.com/moncho/dry@latest
