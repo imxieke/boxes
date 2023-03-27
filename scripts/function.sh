@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 22:58:44
- # @LastEditTime: 2023-03-27 22:20:21
+ # @LastEditTime: 2023-03-28 00:42:42
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/function.sh
@@ -12,7 +12,7 @@ GITHUB_MIRROR='https://ghproxy.com/'
 
 # 从远程获取文件
 # _fetch url save
-function _fetch()
+_fetch()
 {
 	if [[ -n "${2}" ]]; then
 		_WGET_OUTPUT="-O $2"
@@ -29,7 +29,15 @@ function _fetch()
 # 获取 Github 最新发布的文件
 fetch_github_latest_release()
 {
-	GITHUB_MIRROR='https://ghproxy.com/'
+	# https://gh-proxy.com/
+	# https://hub.fastgit.org
+	# https://hub.fastgit.xyz
+	# https://github.com
+	# https://ghproxy.com
+	# https://gitclone.com/
+	# GIT_HOST="https://hub.fastgit.xyz"
+	# GITHUB_MIRROR='https://ghproxy.com/'
+	GITHUB_MIRROR='https://gh-proxy.com/'
 	# USERNAME/Project 格式
 	NAMESPACE=$1
 	# 需要下载的文件
@@ -40,7 +48,8 @@ fetch_github_latest_release()
 	_fetch "${GITHUB_MIRROR}https://github.com/${NAMESPACE}/releases/latest/download/${FILE}" $3
 }
 
-clash_log(){
+clash_log()
+{
     if [[ -f ~/.app/clash.log ]]; then
           tail -f ~/.app/clash.log
     fi
@@ -228,11 +237,11 @@ closegate()
   fi
 }
 
-sql()
-{
-  if [ -z "$(command -v mysql)" ] && echo 'mysql command not found' && exit 1
-  echo "$@" | mysql -uroot -p${MYSQL_PASSWD} | grep -v 'insecure'
-}
+# sql()
+# {
+#   if [ -z "$(command -v mysql)" ] && echo 'mysql command not found' && exit 1
+#   echo "$@" | mysql -uroot -p${MYSQL_PASSWD} | grep -v 'insecure'
+# }
 
 # 显示目录所有文件但不显示属性 大小权限创建日期等
 ls-list()

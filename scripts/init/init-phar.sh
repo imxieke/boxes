@@ -2,22 +2,21 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-08-22 23:46:22
- # @LastEditTime: 2023-03-27 22:10:05
+ # @LastEditTime: 2023-03-28 00:54:34
  # @LastEditors: Cloudflying
  # @Description: Phar Manager {install update remove}
  # @FilePath: /.boxs/scripts/phar.sh
-### 
+###
+
+. ${HOME}/.boxs/scripts/function.sh
+
+BIN_PATH=${HOME}/.local/boxs/bin
 
 # TODO
 # - build phar
 # - phactor
 
-# https://hub.fastgit.org
-# https://hub.fastgit.xyz
-# https://github.com
-# https://ghproxy.com
-# https://gitclone.com/
-GIT_HOST="https://hub.fastgit.xyz"
+GIT_HOST="https://ghproxy.com"
 
 # username/repo
 get_github_latest_version()
@@ -80,33 +79,31 @@ fetch_latest_version_phar()
 	fi
 }
 
-add_bin https://phpmd.org/static/latest/phpmd.phar phpmd
-add_bin https://phar.phpunit.de/phpcpd.phar phpcpd
-add_bin https://phar.io/releases/phive.phar phive
-add_bin https://phar.phpunit.de/phpunit.phar phpunit
-add_bin https://phar.phpbu.de/phpbu.phar phpbu
-add_bin https://www.phing.info/get/phing-latest.phar phing
-add_bin https://phpdoc.org/phpDocumentor.phar phpDocumentor
-add_bin https://doctum.long-term.support/releases/dev/doctum.phar doctum
-add_bin https://phar.phpunit.de/phploc.phar phploc
-add_bin https://www.laravel-enlightn.com/security-checker.phar security-checker
+add_bin https://phpmd.org/static/latest/phpmd.phar 					${BIN_PATH}/phpmd
+add_bin https://phar.phpunit.de/phpcpd.phar 						${BIN_PATH}/phpcpd
+add_bin https://phar.io/releases/phive.phar 						${BIN_PATH}/phive
+add_bin https://phar.phpunit.de/phpunit.phar 						${BIN_PATH}/phpunit
+add_bin https://phar.phpbu.de/phpbu.phar 							${BIN_PATH}/phpbu
+add_bin https://www.phing.info/get/phing-latest.phar 				${BIN_PATH}/phing
+add_bin https://phpdoc.org/phpDocumentor.phar 						${BIN_PATH}/phpDocumentor
+add_bin https://doctum.long-term.support/releases/dev/doctum.phar 	${BIN_PATH}/doctum
+add_bin https://phar.phpunit.de/phploc.phar 						${BIN_PATH}/phploc
+add_bin https://www.laravel-enlightn.com/security-checker.phar 		${BIN_PATH}/security-checker
 
-fetch_latest_version_phar FriendsOfPHP/PHP-CS-Fixer php-cs-fixer.phar php-cs-fixer
-fetch_latest_version_phar phpstan/phpstan phpstan.phar phpstan
-
-# mdzz 没有文件却发布了 版本还变低了
-# fetch_latest_version_phar deployphp/deployer deployer.phar deployer
-add_bin https://github.com/deployphp/deployer/releases/download/v7.0.0/deployer.phar deployer
-
-fetch_latest_version_phar "phpro/grumphp" grumphp.phar grumphp
-fetch_latest_version_phar vimeo/psalm psalm.phar psalm
-fetch_latest_version_phar phan/phan phan.phar phan
-fetch_latest_version_phar squizlabs/PHP_CodeSniffer phpcbf.phar phpcbf
-fetch_latest_version_phar squizlabs/PHP_CodeSniffer phpcs.phar phpcs
-fetch_latest_version_phar infection/infection infection.phar infection
-fetch_latest_version_phar qossmic/deptrac deptrac.phar deptrac
+fetch_github_latest_release FriendsOfPHP/PHP-CS-Fixer php-cs-fixer.phar ${BIN_PATH}/php-cs-fixer
+fetch_github_latest_release phpstan/phpstan 			phpstan.phar 		${BIN_PATH}/phpstan
+fetch_github_latest_release deployphp/deployer 			deployer.phar  		${BIN_PATH}/deployer
+fetch_github_latest_release phpro/grumphp 				grumphp.phar 		${BIN_PATH}/grumphp
+fetch_github_latest_release vimeo/psalm 				psalm.phar 			${BIN_PATH}/psalm
+fetch_github_latest_release phan/phan 					phan.phar 			${BIN_PATH}/phan
+fetch_github_latest_release squizlabs/PHP_CodeSniffer 	phpcbf.phar 		${BIN_PATH}/phpcbf
+fetch_github_latest_release squizlabs/PHP_CodeSniffer 	phpcs.phar 			${BIN_PATH}/phpcs
+fetch_github_latest_release infection/infection 		infection.phar 		${BIN_PATH}/infection
+fetch_github_latest_release qossmic/deptrac 			deptrac.phar 		${BIN_PATH}/deptrac
 
 # Deprecated
 # fetch_latest_version_phar mihaeu/dephpend 0.8.0/dephpend-0.8.0.phar dephpend
 # fetch_latest_version_phar theseer/phpdox 0.12.0/phpdox-0.12.0.phar phpdox
 # add_bin https://cs.symfony.com/download/php-cs-fixer-v3.phar php-cs-fixer
+
+chmod +x ${BIN_PATH}/*

@@ -17,15 +17,7 @@
 /backup
 /logs
 /examples
-/bin/macos/nali-go
-/bin/linux/nali-go
-
-/bin/macos/doggo
-/bin/macos/doggo-api
-
-/bin/linux/doggo
-/bin/linux/doggo-api
-
+/bin
 
 /conf/zplug
 /conf/nvim/plugged/*
