@@ -106,7 +106,7 @@
     public_ip             # public IP address
     time                    # current time
     # =========================[ Line #2 ]=========================
-    newline
+    # newline
     # ip                    # ip address and bandwidth usage for a specified network interface
     # proxy                 # system-wide http/https/ftp proxy
     # wifi                  # wifi speed

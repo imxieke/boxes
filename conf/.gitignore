@@ -1,0 +1,83 @@
+# -*- mode: gitignore; -*- vim: set ft=gitignore:
+#
+# Consider adding language/project specific ignores directly to repo.
+# A good set of templatest at https://github.com/github/gitignore
+
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.DS_Store
+
+# vim
+*.sw[op]
+
+# emacs
+*~
+\#*\#
+*.elc
+
+# c
+*.[ao]
+*.so
+*.dylib
+
+# python
+*.py[cdo]
+
+# Microsoft Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.ink
+*.lnk
+*.exe
+*.zip
+
+
+# PGP keys, encrypted files and password vaults
+secring.*
+*.pgp
+*.gpg
+*.asc
+*.pub
+*.kdbx
+*.kdb
+*.key
+*.pass
+id_rsa
+
+# Compile
+*.out
+
+# Binary
+*.dll
+*.o
+*.so
+*.
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar.*
+*.zip
+
+# Git
+*.git

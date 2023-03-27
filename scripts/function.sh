@@ -2,51 +2,42 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 22:58:44
- # @LastEditTime: 2021-12-22 23:26:08
+ # @LastEditTime: 2023-03-27 22:20:21
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/function.sh
-### 
+###
 
-_red() {
-    printf '\033[1;31;31m%b\033[0m' "$1"
+GITHUB_MIRROR='https://ghproxy.com/'
+
+# 从远程获取文件
+# _fetch url save
+function _fetch()
+{
+	if [[ -n "${2}" ]]; then
+		_WGET_OUTPUT="-O $2"
+		_AXEL_OUTPUT="-o $2"
+	fi
+
+	if [[ -n "$(command -v axel)" ]]; then
+		axel -k -v -a -n 4 $1 $_AXEL_OUTPUT
+	elif [[ -n "$(command -v wget)" ]]; then
+		wget -c --no-check-certificate $1 $_WGET_OUTPUT
+	fi
 }
 
-_green() {
-    printf '\033[1;31;32m%b\033[0m' "$1"
-}
+# 获取 Github 最新发布的文件
+fetch_github_latest_release()
+{
+	GITHUB_MIRROR='https://ghproxy.com/'
+	# USERNAME/Project 格式
+	NAMESPACE=$1
+	# 需要下载的文件
+	FILE=$2
+	# 保存文件名
+	SAVE=$3
 
-_yellow() {
-    printf '\033[1;31;33m%b\033[0m' "$1"
-}
-
-_info() {
-    _green "[Info] "
-    printf -- "%s" "$1"
-    printf "\n"
-}
-
-_warn() {
-    _yellow "[Warning] "
-    printf -- "%s" "$1"
-    printf "\n"
-}
-
-_error() {
-    _red "[Error] "
-    printf -- "%s" "$1"
-    printf "\n"
-    exit 1
-}
-
-
-# Set Git Config
-set_config_git(){
-	USERNAME="Cloudflying" #Example Username
-	MAIL="oss@live.hk"	   #Example Mail
-	git config --global user.name $USERNAME
-	git config --global user.email $MAIL
-	echo "Set Success"
+	_fetch "${GITHUB_MIRROR}https://github.com/${NAMESPACE}/releases/latest/download/${FILE}" $3
 }
 
 clash_log(){
@@ -278,7 +269,6 @@ enbase64()
 }
 
 function xtree {
-    find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
     find ${1:-.} -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 }
 

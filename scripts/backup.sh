@@ -33,62 +33,61 @@ logger()
 rsync_config()
 {
 	cd ${USER_HOME}
-
 	# Composer 
-	if [[ -f ${USER_HOME}/.composer/config.json ]]; then
-		echo "Composer Syncing"
-		logger
-		${RSYNC_CMD} --exclude="cache**" --exclude="*/.htaccess" .composer ${GENDATA} >> ${LOGFILE}
-	fi
+	# if [[ -f ${USER_HOME}/.composer/config.json ]]; then
+		# echo "Composer Syncing"
+		# logger
+		# ${RSYNC_CMD} --exclude="cache**" --exclude="*/.htaccess" .composer ${GENDATA} >> ${LOGFILE}
+	# fi
 
 	# ohmyzsh config file
-	if [[ -f ${USER_HOME}/.zshrc ]]; then
-		echo "zshrc Syncing"
+	# if [[ -f ${USER_HOME}/.zshrc ]]; then
+		# echo "zshrc Syncing"
 		logger
 		# ${RSYNC_CMD} .zshrc ${GENDATA} >> ${LOGFILE}
-	fi
+	# fi
 
 	# ohmyzsh plugins
-	if [[ -d ${USER_HOME}/.oh-my-zsh/plugins ]]; then
-		echo "zsh plugins Syncing"
+	# if [[ -d ${USER_HOME}/.oh-my-zsh/plugins ]]; then
+		# echo "zsh plugins Syncing"
 		logger
 		# ${RSYNC_CMD} .oh-my-zsh/plugins ${GENDATA}/oh-my-zsh >> ${LOGFILE}
-	fi
+	# fi
 
 	# ohmyzsh themes
-	if [[ -d ${USER_HOME}/.oh-my-zsh/themes ]]; then
-		echo "zsh themes Syncing"
-		logger
+	# if [[ -d ${USER_HOME}/.oh-my-zsh/themes ]]; then
+		# echo "zsh themes Syncing"
+		# logger
 		# ${RSYNC_CMD} .oh-my-zsh/themes ${GENDATA}/oh-my-zsh >> ${LOGFILE}
-	fi
+	# fi
 
 	# npm
-	if [[ -f ${USER_HOME}/.npmrc ]]; then
-		echo "npmrc Syncing"
-		logger
-		${RSYNC_CMD} .npmrc ${GENDATA} >> ${LOGFILE}
-	fi
+	# if [[ -f ${USER_HOME}/.npmrc ]]; then
+		# echo "npmrc Syncing"
+		# logger
+		# ${RSYNC_CMD} .npmrc ${GENDATA} >> ${LOGFILE}
+	# fi
 
 	# ruby gem
-	if [[ -f ${USER_HOME}/.gemrc ]]; then
-		echo "gemrc Syncing"
-		logger
-		${RSYNC_CMD} .gemrc ${GENDATA} >> ${LOGFILE}
-	fi
+	# if [[ -f ${USER_HOME}/.gemrc ]]; then
+		# echo "gemrc Syncing"
+		# logger
+		# ${RSYNC_CMD} .gemrc ${GENDATA} >> ${LOGFILE}
+	# fi
 
 	# Git
-	if [[ -f ${USER_HOME}/.gitconfig ]]; then
-		echo "Git Config Syncing, Backup it"
-		logger
-		${RSYNC_CMD} .gitconfig ${GENDATA} >> ${LOGFILE}
-	fi
+	# if [[ -f ${USER_HOME}/.gitconfig ]]; then
+		# echo "Git Config Syncing, Backup it"
+		# logger
+		# ${RSYNC_CMD} .gitconfig ${GENDATA} >> ${LOGFILE}
+	# fi
 
 	# Python pip
-	if [[ -f ${USER_HOME}/.pip/pip.conf ]]; then
-		echo "Pip Syncing"
-		logger
-		${RSYNC_CMD} .pip ${GENDATA} >> ${LOGFILE}
-	fi
+	# if [[ -f ${USER_HOME}/.pip/pip.conf ]]; then
+		# echo "Pip Syncing"
+		# logger
+		# ${RSYNC_CMD} .pip ${GENDATA} >> ${LOGFILE}
+	# fi
 
 	# Docker
 	# if [[ -f ${USER_HOME}/.docker/daemon.json ]]; then
@@ -98,11 +97,11 @@ rsync_config()
 		# ${RSYNC_CMD} .docker/daemon.json ${GENDATA}/.docker >> ${LOGFILE}
 	# fi
 
-	if [[ -d ${USER_HOME}/.config/clash ]]; then
-		echo "Clash Syncing"
-		logger
-		${RSYNC_CMD} ${USER_HOME}/.config/clash ${BAKTO} >> ${LOGFILE}
-	fi
+	# if [[ -d ${USER_HOME}/.config/clash ]]; then
+		# echo "Clash Syncing"
+		# logger
+		# ${RSYNC_CMD} ${USER_HOME}/.config/clash ${BAKTO} >> ${LOGFILE}
+	# fi
 
 	# vscode extensions file is very large
 	# if [[ -d ${USER_HOME}/.vscode/extensions ]]; then
@@ -192,7 +191,7 @@ _vscode()
 	code --install-extension ~/.boxs/conf/backup/vscode-extensions.txt
 }
 
-_sublime
+# _sublime
 
 # rsync_config
 # sync_other
