@@ -2,16 +2,19 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:01:41
- # @LastEditTime: 2023-03-28 00:07:55
+ # @LastEditTime: 2023-03-28 18:09:25
  # @LastEditors: Cloudflying
  # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ### 
 
 mkdir -p ~/.local/boxs/bin
 mkdir -p ~/.local/boxs/java
+mkdir -p ~/.local/boxs/shell
 
 JAVA_PATH=~/.local/boxs/java
 BIN_PATH=~/.local/boxs/bin
+SHELL_PATH=~/.local/boxs/shell
+GITHUB_MIRROR='https://ghproxy.com/'
 
 _install()
 {
@@ -49,8 +52,6 @@ _install()
     	curl -sL https://github.com/philippe44/AirConnect/raw/master/bin/airupnp-x86-64 --output ~/.bin/airupnp
 	fi
 
-	GITHUB_MIRROR='https://ghproxy.com/'
-
     echo "==> Fetch nexttrace"
 	curl -fsSL "${GITHUB_MIRROR}https://github.com/sjlleo/nexttrace/releases/latest/download/nexttrace_darwin_amd64" 			--output ~/.bin/nexttrace
 
@@ -68,5 +69,13 @@ _install()
 
     echo "==> Fetch procyon Decompiler"
 	curl -fsSL "${GITHUB_MIRROR}https://github.com/mstrobel/procyon/releases/download/v0.6.0/procyon-decompiler-0.6.0.jar" 			--output ${JAVA_PATH}/procyon-decompiler.jar
-
 }
+
+# 无法直接执行的脚本
+_install_scripts()
+{
+	echo "==> Fetch nvm.sh"
+	curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
+}
+
+_install_scripts

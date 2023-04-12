@@ -33,7 +33,8 @@ if [[ -d "${SAVETO}" ]];then
             ;;
             perl) echo "#!/usr/bin/env perl" > $_BIN_NAME
             ;;
-            php) echo "#!/usr/bin/env php" > $_BIN_NAME
+            php) echo -E "#!/usr/bin/env php
+<?php" > $_BIN_NAME
             ;;
             py) echo "#!/usr/bin/env python
 # -*- coding: utf-8 -*-" > $_BIN_NAME

@@ -1,16 +1,22 @@
-## Path Struct
+## 配置文件与脚本等存放规则
+- 自编写文件放在本项目对应目录中
+- 外部获取的脚本放在 `${HOME}/.local/boxs/bin`
+- 外部获取的 java jar 放在 `${HOME}/.local/boxs/java`
+- 外部获取的不可直接执行脚本放在 `${HOME}/.local/boxs/scripts`
+
+## 目录结构
 - etc 配置文件目录
 - bin 二进制文件目录
      - all   通用 二进制文件 如 Shell 脚本
      - macos macOS 二进制文件目录
      - linux linux amd64 系统二进制文件
--  bin 目录改为一个目录 二进制等文件改到 ~/.bin
-- scripts 平时会用到的脚本库(非可直接执行)
-- sites Web 应用
+-  bin 目录改为一个目录 二进制等文件改到 ~/.local/boxs/bin
+- `scripts` 平时会用到的脚本库
+- `sites` Web 应用
 - etc
-    - file-tpl 创建文件使用的模板
-    - autossh autossh 配置文件
-- opt like unix opt directory
+    - `file-tpl` 创建文件使用的模板
+    - `autossh` autossh 配置文件
+- `opt` like unix opt directory
 s
 ## Application
 - doggo DNS Client for Humans

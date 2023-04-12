@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-12 22:14:17
- # @LastEditTime: 2023-03-27 20:20:21
+ # @LastEditTime: 2023-04-10 00:48:02
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/init/init-pacman.sh
@@ -29,8 +29,11 @@ _install()
 
 	# Deepin
 	# deepin-system-monitor replace by kde system monitor
-	pacman -S --noconfirm deepin-screen-recorder deepin-album deepin-calculator deepin-calendar deepin-diskmanager \
+	pacman -S --noconfirm deepin-terminal deepin-screen-recorder deepin-album deepin-calculator deepin-calendar deepin-diskmanager \
 		deepin-draw deepin-font-manager deepin-image-viewer deepin-mail deepin-movie deepin-picker deepin-reader
+
+	# MDZZ 这个缺少 但不会被作为依赖安装
+	pacman -S --noconfirm deepin-qt-dbus-factory
 
 	# File
 	# easytag Simple application for viewing and editing tags in audio files

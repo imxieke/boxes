@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-03-27 20:19:40
+ # @LastEditTime: 2023-04-11 20:04:38
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -31,6 +31,9 @@ _install()
 
 	# Package management
 	pacman -S --noconfirm yay dpkg snapd
+
+	# Virtual Machine && Container
+	pacman -S --noconfirm docker docker-buildx docker-compose docker-scan
 
 	# Git Tools
 	# onefetch: like neofetch but for git

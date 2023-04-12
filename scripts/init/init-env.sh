@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:30:35
- # @LastEditTime: 2022-09-17 20:40:41
+ # @LastEditTime: 2023-04-03 11:59:47
  # @LastEditors: Cloudflying
  # @Description: 初始化系统环境
  # @FilePath: /.boxs/scripts/init/init-env.sh
@@ -93,9 +93,18 @@ init_env()
 		npm config set registry http://mirrors.cloud.tencent.com/npm/
 	fi
 
+	# https://mirrors.aliyun.com/rubygems/
+	# https://mirrors.tuna.tsinghua.edu.cn/rubygems/
+	# https://pods.xie.ke/rubygems/
+	# https://gems.ruby-china.com
+	# https://mirrors.cloud.tencent.com/rubygems/
+	# https://repo.huaweicloud.com/repository/rubygems/
+	# https://mirrors.huaweicloud.com/repository/rubygems/
+	# https://mirrors.ustc.edu.cn/rubygems/
 	if [[ -n "$(command -v gem)" ]]; then
 		gem sources --remove https://rubygems.org/
-		gem sources -a https://mirrors.aliyun.com/rubygems/
+		gem sources --add https://mirrors.aliyun.com/rubygems/
+		# bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 	fi
 }
 

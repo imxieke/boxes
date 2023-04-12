@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-08-22 23:46:22
- # @LastEditTime: 2023-03-28 00:54:34
+ # @LastEditTime: 2023-03-28 19:14:00
  # @LastEditors: Cloudflying
  # @Description: Phar Manager {install update remove}
  # @FilePath: /.boxs/scripts/phar.sh
@@ -44,7 +44,6 @@ function _fetch()
 		wget -c --no-check-certificate $1 $_WGET_OUTPUT
 	fi
 }
-
 
 add_bin()
 {

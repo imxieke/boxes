@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2022-09-18 22:06:36
+ # @LastEditTime: 2023-04-01 00:58:15
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/.zshrc
@@ -57,12 +57,10 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	zinit load zsh-users/zsh-completions
 	# 快速跳转至文件夹
 	zinit load agkozak/zsh-z
-	# like ls command
-	zinit load supercrabtree/k
 	# Enhanced colors for zsh
 	zinit load zpm-zsh/colors
 	# Colorize command output using grc and lscolors
-	zinit load unixorn/warhol.plugin.zsh
+	# zinit load unixorn/warhol.plugin.zsh
 	zinit load MichaelAquilina/zsh-you-should-use
 	zinit load mafredri/zsh-async
 	zinit load wfxr/formarks

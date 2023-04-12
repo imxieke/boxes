@@ -2,10 +2,9 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 23:41:53
- # @LastEditTime: 2023-03-27 21:12:07
+ # @LastEditTime: 2023-03-28 18:23:48
  # @LastEditors: Cloudflying
- # @Description: 垃圾的 nacOS 配置
- # @FilePath: /.boxs/conf/.boxsrc
+ # @Description: boxs 初始化文件 仅包含配置文件
 ### 
 
 # 使用 local 定义局部变量
@@ -72,15 +71,6 @@ if [[ -f '/usr/local/bin/brew' ]]; then
     # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
     # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
     # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
-fi
-
-[ ! -f ~/.local/share/nvm/nvm.sh ] && git clone --depth 1 https://github.com/nvm-sh/nvm.git ~/.local/share/nvm
-
-# load nvm
-if [ -f ~/.local/share/nvm/nvm.sh ];then
-	export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
-	echo "[+] source ${HOME}/.local/share/nvm/nvm.sh"
-	source ~/.local/share/nvm/nvm.sh
 fi
 
 # set java env
