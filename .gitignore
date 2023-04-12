@@ -17,8 +17,6 @@
 /backup
 /logs
 /examples
-/bin
 
 /conf/zplug
 /conf/nvim/plugged/*
-bin/all/nali-host
