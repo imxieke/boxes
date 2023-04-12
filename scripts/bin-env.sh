@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-02 12:18:39
- # @LastEditTime: 2023-03-27 20:49:43
+ # @LastEditTime: 2023-04-03 11:54:08
  # @LastEditors: Cloudflying
  # @Description:  
  # @FilePath: /.boxs/scripts/bin-env.sh
@@ -86,3 +86,19 @@ fi
 	# echo "[+] export PATH ctags"
 	# export PATH="/usr/local/opt/ctags/bin:$PATH"
 # fi
+
+# load nvm
+if [ -f ~/.local/boxs/shell/nvm.sh ];then
+	export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
+	echo "[+] source ${HOME}/.local/boxs/shell/nvm.sh"
+	source ~/.local/boxs/shell/nvm.sh
+fi
+
+# macOS 预置了老版本 需要覆盖
+if [[ -f "/usr/local/opt/ruby/bin/gem" ]]; then
+	export PATH="/usr/local/opt/ruby/bin:${PATH}"
+  	export LDFLAGS="-L/usr/local/opt/ruby/lib ${LDFLAGS}"
+  	export CPPFLAGS="-I/usr/local/opt/ruby/include ${CPPFLAGS}"
+  	# export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:${PKG_CONFIG_PATH}"
+  	export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+fi

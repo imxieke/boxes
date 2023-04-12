@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2022-09-20 13:08:42
+ # @LastEditTime: 2023-04-01 00:53:31
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/alias.d/default.alias
@@ -13,6 +13,10 @@ alias ssh-uos='ssh imxieke@192.168.2.198'
 alias clash-log='tail -f "`ls ~/Library/Logs/ClashX/com.west2online.ClashX* | grep $(date "+%Y-%m-%d")`"'
 alias pip-upgrade-all='pip install --upgrade $(pip list --outdated --format=freeze | cut -d = -f 1)'
 alias npm-upgrade-all='npm update -g'
+
+## Edit Config
+alias visle="sle ~/Library/Application\ Support/Sublime\ Text/"
+alias vivsc="sle ~/Library/Application\ Support/Code/"
 
 if [[ -z "$(command -v bat)" ]] && [[ -n "$(command -v batcat)" ]] ; then
 	alias bat='batcat'
@@ -69,7 +73,6 @@ alias now="date \"+%Y-%m-%d %H:%I:%S\""
 alias dl="wget -c --no-check-certificate"
 alias pdl="proxychains4 wget"
 alias genpass="openssl rand -hex "
-alias ping='ping -c 5'
 alias pyweb='python -m SimpleHTTPServer 8000'
 alias phpweb='php -S 0.0.0.0:1024 -t .'
 alias myip="curl -sL http://myip.ipip.net"
@@ -88,7 +91,6 @@ alias swget='wget -c --content-disposition --no-check-certificate --user-agent="
 alias get='aria2c -c -x 4'
 alias cdduck='cd /Users/imxieke/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/'
 
-alias gdu='grc du -h'
 alias jobl='jobs -l'
 alias cgrep='grep --color=auto'
 alias cfgrep='fgrep --color=auto'
