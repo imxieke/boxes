@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 19:20:44
- # @LastEditTime: 2023-03-27 20:10:36
+ # @LastEditTime: 2023-05-02 17:23:17
  # @LastEditors: Cloudflying
  # @Description: Init Ubuntu Cli
 ### 
@@ -40,7 +40,11 @@ _install()
 	apt install -y --no-install-recommends mariadb-client
 
 	# network
-	apt install -y --no-install-recommends net-tools mtr traceroute dnsutils iputils-ping lsof
+	apt install -y --no-install-recommends net-tools iproute2 mtr traceroute dnsutils iputils-ping lsof corkscrew netcat-openbsd
+
+	# File Share
+	apt install -y cifs-utils samba rsync syncthing
+	
 
 	# Tools
 	apt install -y --no-install-recommends exa bat
@@ -49,6 +53,6 @@ _install()
 	apt install -y --no-install-recommends ufw
 
 	# Dev Environment Build Tookit
-	apt install -y --no-install-recommends build-essential gcc g++ make autoconf automake pkg-config m4 bison patch cpp \
-		libtool gettext re2c gnupg fakeroot libc-devtools debian-keyring cmake
+	# build-essential 编译工具一把梭
+	apt install -y --no-install-recommends build-essential pkg-config m4 gettext re2c gnupg libc-devtools debian-keyring cmake
 }

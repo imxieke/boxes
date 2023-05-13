@@ -2,5 +2,9 @@
 	"Lua.diagnostics.globals": [
 		"vim",
 		"use"
-	]
+	],
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+	"aiXcoder.showTrayIcon": false,
+	"editor.inlineSuggest.enabled": true,
+	"diffEditor.codeLens": true
 }

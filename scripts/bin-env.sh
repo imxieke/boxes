@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-02 12:18:39
- # @LastEditTime: 2023-04-03 11:54:08
+ # @LastEditTime: 2023-04-18 00:45:59
  # @LastEditors: Cloudflying
  # @Description:  
  # @FilePath: /.boxs/scripts/bin-env.sh
@@ -42,6 +42,12 @@ if [ -d ~/.composer/vendor/bin ];then
 	export PATH="${HOME}/.composer/vendor/bin:$PATH"
 fi
 
+# 第三方不能通过包管理的软件包
+if [ -d ~/.local/boxs/bin ];then
+	echo "[+] export PATH boxs"
+	export PATH="${HOME}/.local/boxs/bin:$PATH"
+fi
+
 # if [[ -d "~/.cargo/bin" ]]; then
 # 	echo "[+] export PATH cargo"
 # 	export PATH="${HOME}/.cargo/bin:$PATH"
@@ -50,6 +56,12 @@ fi
 if [[ -d "/usr/games" ]]; then
 	echo "[+] export PATH games"
 	export PATH="$PATH:/usr/games"
+fi
+
+# 最新版本并覆盖所有其他版本 包括系统自带的
+if [[ -d "/usr/local/opt/python3/bin/" ]]; then
+	echo "[+] export PATH Python"
+	export PATH="/usr/local/opt/python3/libexec/bin:$PATH"
 fi
 
 if [[ -d "/usr/local/games" ]]; then

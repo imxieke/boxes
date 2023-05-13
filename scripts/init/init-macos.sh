@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2022-09-18 22:04:17
+ # @LastEditTime: 2023-05-07 00:45:34
  # @LastEditors: Cloudflying
  # @Description: init package for macOS brew package manager
  # @FilePath: /.boxs/scripts/init/init-macos.sh
@@ -34,15 +34,21 @@ init_brew()
 		fi
 
 		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-services ]]; then
-			git -C "$(brew --repo homebrew/services)" remote set-url origin https://e.coding.net/pkgs/homebrew/homebrew-services.git
+			git -C "$(brew --repo homebrew/services)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-services.git
 		else
-			brew tap homebrew/services https://e.coding.net/pkgs/homebrew/homebrew-services.git
+			brew tap homebrew/services https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-services.git
 		fi
 
 		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-versions ]]; then
 			git -C "$(brew --repo homebrew/cask-versions)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-versions.git
 		else
 			brew tap homebrew/cask-versions https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-versions.git
+		fi
+
+		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-versions ]]; then
+			git -C "$(brew --repo homebrew/cask-versions)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git
+		else
+			brew tap homebrew/cask-versions https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git
 		fi
 
 		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-drivers ]]; then
@@ -116,7 +122,7 @@ init_pkgs()
 
 	# Network Tools
 	# cli dns query
-	brew install clash whois dog rsync
+	brew install clash whois dog rsync iperf iperf3
 
 	# Chat
 	brew install telegram wechat qq discord

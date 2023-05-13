@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2023-04-01 00:58:15
+ # @LastEditTime: 2023-05-03 21:22:44
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/.zshrc
@@ -27,7 +27,7 @@ zmodload zsh/zprof
 # init PATH
 # 前面优先级高 覆盖系统自带的命令
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
-export MANPATH=''
+# export MANPATH=''
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

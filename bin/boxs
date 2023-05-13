@@ -8,8 +8,11 @@ case $1 in
 	backup )
 		echo "backup"
 		;;
-	 )
-		echo "Install"
+	 remove)
+		echo "Remove"
+		;;
+	 init)
+		echo "Init"
 		;;
 	*)
 		echo "Unknown Options $@"
