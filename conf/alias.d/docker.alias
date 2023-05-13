@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-01 01:00:37
- # @LastEditTime: 2022-09-21 16:10:45
+ # @LastEditTime: 2023-04-24 21:08:42
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/aliases.d/docker.alias
@@ -9,7 +9,12 @@
 # Docker alias and function
 alias dri='docker rmi'
 alias drc='docker rm'
-alias drr='docker run -it --rm --privileged --dns=8.8.8.8'
+
+# Docker remove Container after run
+alias drr='docker run -it --rm --dns=8.8.8.8'
+
+# Docker sudo run
+alias dsrr='docker run -it --rm --privileged --dns=8.8.8.8'
 alias dim='docker images'
 
 # Get latest container ID

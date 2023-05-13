@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-12 22:14:17
- # @LastEditTime: 2023-04-10 00:48:02
+ # @LastEditTime: 2023-04-30 09:19:07
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/init/init-pacman.sh
@@ -13,6 +13,12 @@ _install()
 	# pkgfile pacman .files metadata explorer
 	pacman -S --noconfirm pkgfile
 
+	# App Store
+	pacman -S --noconfirm gnome-software deepin-store \
+		pamac-cli pamac-gtk pamac-tray-icon-plasma webapp-manager-manjaro \
+		octopi \
+		apper
+
 	# Tools
 	# flameshot screenshot
 	# shutter screenshot
@@ -20,17 +26,50 @@ _install()
 	# d-feet D-Bus debugger for GNOME
 	# asciinema Record and share terminal sessions
 	# vokoscreen 录屏
+	# gnome-multi-writer Write an ISO file to multiple USB devices at once
+	# kmouth 语音合成
+	# kmousetool 似乎是鼠标自动化
+	# kmag 屏幕放大器
 	pacman -S --noconfirm psmisc lolcat flameshot shutter jp2a d-feet kweather \
-		gnome-usage gnome-system-monitor gnome-maps \
 		marble-maps \
-		activity-log-manager asciinema vokoscreen
+		activity-log-manager asciinema vokoscreen \
+		gnome-multi-writer \
+		kmouth kmousetool kmag \
+		bitwarden
+
+	# Productive
+	# geary Mail CLient
+	# endeavour TODO
+	pacman -S --noconfirm geary endeavour
+
+	# System Tools
+	# tmon Monitoring and Testing Tool for Linux kernel thermal subsystem
+	# perf Linux kernel performance auditing tool
+	# sysprof Kernel based performance profiler
+	pacman -S --noconfirm tmon perf sysprof simple-scan
 
 	# Aur: etcher
-
-	# Deepin
+	# Deepin Family
 	# deepin-system-monitor replace by kde system monitor
-	pacman -S --noconfirm deepin-terminal deepin-screen-recorder deepin-album deepin-calculator deepin-calendar deepin-diskmanager \
-		deepin-draw deepin-font-manager deepin-image-viewer deepin-mail deepin-movie deepin-picker deepin-reader
+	# deepin-voice-note 若有一天改用物理机 则是它重见天日之日
+	pacman -S --noconfirm \
+		deepin-album \
+		deepin-calendar \
+		deepin-calculator \
+		deepin-clone \
+		deepin-compressor \
+		deepin-draw \
+		deepin-diskmanager \
+		deepin-editor \
+		deepin-font-manager \
+		deepin-image-viewer \
+		deepin-mail \
+		deepin-movie \
+		deepin-music \
+		deepin-picker \
+		deepin-printer \
+		deepin-reader \
+		deepin-screen-recorder
 
 	# MDZZ 这个缺少 但不会被作为依赖安装
 	pacman -S --noconfirm deepin-qt-dbus-factory
@@ -51,18 +90,28 @@ _install()
 	# polari An IRC Client for GNOME
 	pacman -S --noconfirm discord fractal hexchat polari
 
+	# Third Party Terminal
+	pacman -S --noconfirm \
+		mate-terminal \
+		deepin-terminal \
+		gnome-terminal
+
 	# Documents
 	# yelp views Mallard, DocBook, man, info, and HTML documents
-	pacman -S --noconfirm calibre evince \
+	pacman -S --noconfirm calibre \
+		evince \
+		pdfmod \
 		yelp yelp-tools yelp-xsl \
 		gnome-books \
-		xreader xfce4-dict
+		xreader \
+		xfce4-dict
 
 	# BitTorrent && Downloader
 	pacman -S --noconfirm deluge qbittorrent ktorrent transmission-gtk aria2 uget
 
 	# Productive Video && Audio Editor
 	# pitivi Editor for audio/video projects using the GStreamer framework, beautiful and intuitive 
+	# pro-audio 音频剪辑等软件包群组 一键安装常用剪辑软件
 	pacman -S --noconfirm pitivi
 
 	# Security
@@ -70,7 +119,8 @@ _install()
 
 	# Editor
 	# gtk markdown editor
-	pacman -S --noconfirm code gedit deepin-editor marker ghex gnome-builder
+	# ghostwriter MarkDown
+	pacman -S --noconfirm code gedit marker ghex gnome-builder xed ghostwriter gnome-text-editor
 
 	# Wine
 	pacman -S --noconfirm wine vkd3d wine-gecko winetricks
@@ -83,12 +133,12 @@ _install()
 	# MultiMedia Player
 	# smplayer Media player with built-in codecs that can play virtually all video and audio formats
 	pacman -S --noconfirm vlc kmplayer mpv dragon smplayer smplayer celluloid \
-		gnome-subtitles
+		gnome-subtitles totem
 
 	# Music Player
 	# lollypop Music player for GNOME
 	# rhythmbox A GTK client for MPD inspired by Rhythmbox but much lighter and faster
-	pacman -S --noconfirm deepin-music gnome-music lollypop rhythmbox
+	pacman -S --noconfirm gnome-music lollypop rhythmbox
 
 	# Development
 	# 下面两个用暂时不到
@@ -111,9 +161,16 @@ _install()
 	# steam 滚啊
 	# lutris 开源游戏平台
 	# gnome-games gnome 游戏客户端
+	# gnome-nibbles 类似贪吃蛇
 	# pacman -S --noconfirm lutris
-	pacman -S --noconfirm gnome-2048 gnome-robots gnome-nibbles atomix five-or-more gnome-klotski gnome-mines \
-		gnome-sudoku swell-foop gnome-taquin gnome-tetravex gnome-games
+	# iagno 五子棋
+	# hitori 数字扫雷
+	# gnome-taquin 散乱图片组成完整的游戏
+	# gnome-sudoku
+	pacman -S --noconfirm gnome-games \
+		gnome-2048 gnome-robots gnome-nibbles atomix five-or-more gnome-klotski gnome-mines gnome-nibbles gnome-chess \
+		gnome-sudoku gnome-taquin gnome-tetravex gnome-tetravex gnome-taquin gnome-robots \
+		tali lightsoff swell-foop iagno hitori quadrapassel
 
 	# Browser
 	# aur tor-browser edge google-chrome
@@ -126,50 +183,46 @@ _install()
 
 	# Office
 	# libreoffice-fresh beta version
-	pacman -S --noconfirm libreoffice-fresh libreoffice-fresh-zh-cn libreoffice-extension-texmaths libreoffice-extension-writer2latex \
+	pacman -S --noconfirm libreoffice-fresh libreoffice-fresh-zh-cn libreoffice-extension-texmaths libreoffice-extension-writer2latex
 	
-
-	# Desktop
-	# Budgie Desktop
-	# pacman -S --noconfirm budgie-desktop budgie-desktop-view budgie-extras budgie-screensaver budgie-sysmonitor-applet budgie-wallpapers
+	# NetWork
+	pacman -S --noconfirm net-tools nmap whois gnome-nettool
 
 	# KDE Plasma Desktop
-	# pacman -S --noconfirm plasma kde-graphics kde-multimedia kde-network kde-pim kde-system kde-utilities kde-games kde-applications
+	# pacman -S --noconfirm plasma
+
 	# KDE Applications
-	# 等待研究 仅安装所需要的程序
-	# pacman -S --noconfirm kde-graphics kde-multimedia kde-network kde-pim kde-system kde-utilities kde-games kde-applications
-	# pacman -S --noconfirm dolphin-plugins
+	pacman -S --noconfirm kde-graphics kde-multimedia kde-network kde-pim kde-system kde-utilities kde-games kde-applications
+	pacman -S --noconfirm dolphin-plugins
 
 	# SDDM 仅对于非 sddm 桌面环境管理器
 	# pacman -S --noconfirm sddm sddm-kcm
 	# systemctl enable sddm.service
 
 	# Deepin Desktop
-	# pacman -S --noconfirm deepin deepin-extra
+	# pacman -S --noconfirm deepin
 
-	# pacman -S --noconfirm gnome gnome-extra
-
-	# pacman -S --noconfirm mate mate-extra
-
-	# Linux Mint Desktop
-	# pacman -S --noconfirm cinnamon
-
-	# Ubuntu Kylin Desktop
-	# pacman -S --noconfirm ukui
+	# Gnome Apps
+	# sushi A quick previewer for Nautilus
+	pacman -S --noconfirm baobab eog epiphany evince file-roller gnome-font-viewer gnome-maps gnome-weather rygel sushi
 
 	# ElementaryOS Desktop conflict with Deepin Desktop
 	# pacman -S --noconfirm pantheon
 	# pacman -S --noconfirm xfce4 xfce4-goodies
+
 	# Kernel
 	# pacman -S --noconfirm linux-firmware linux-api-headers
 
 	# Productive
 	# pacman -S --noconfirm thunderbird thunderbird-i18n-zh-cn
+
 	# Input Method
 	pacman -S --noconfirm fcitx fcitx-configtool fcitx-sogoupinyin
+
 	# 修复缺失库
 	pacman -S --noconfirm libvoikko nuspell hspell
 	# pacman -S --noconfirm fcitx5 fcitx5-configtool fcitx5-chinese-addons
+
 	# KDE Application
 	# labplot graphing and analysis of scientific data
 	# kdenlive A non-linear video editor for Linux using the MLT video framework
@@ -198,13 +251,26 @@ _install()
 	# inkscape 矢量图形编辑器
 	# gimp
 	# darktable Utility to organize and develop raw images
-	# openshot a simple video editor
+	# openshot 简单的视频编辑器。添加视频、照片和音乐以创建 DVD、YouTube 剪辑和一系列其他格式。
 	# shotcut Video Editor
 	# krita Edit and paint images
-	pacman -S --noconfirm inkscape openshot shotcut blender \
+	# pikopixel(aur) 绘制和编辑像素艺术图像
+	# pinta 免费的开源程序，用于绘图和图像编辑
+	# rnote 一款基于矢量的开源绘图应用程序，用于素描、手写笔记以及注释文档和图片
+	# librecad A 2D CAD drawing tool based on the community edition of QCad
+	# drawing simple image editor (similar to MS Paint)
+	pacman -S --noconfirm inkscape \
+		openshot \
+		shotcut \
+		blender \
 		ffmpeg \
 		gimp gimp-help-zh_cn gimp-plugin-gmic \
-		krita
+		krita \
+		darktable \
+		pinta \
+		rnote \
+		librecad \
+		drawing
 
 	# gmic GREYC's Magic Image Converter: image processing framework
 	# pacman -S --noconfirm gmic
@@ -236,7 +302,7 @@ _install()
 	pacman -S --noconfirm figlet asciiquarium sl dmidecode sshfs supervisor \
 		gnome-logs gnome-calculator gnome-dictionary ocrfeeder peek gnome-podcasts \
 		mdcat
-	
+
 	# 镜像烧录
 	# xfburn brasero gnome-multi-writer
 

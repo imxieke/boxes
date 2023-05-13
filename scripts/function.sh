@@ -2,10 +2,9 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 22:58:44
- # @LastEditTime: 2023-03-28 00:42:42
+ # @LastEditTime: 2023-05-13 17:38:42
  # @LastEditors: Cloudflying
  # @Description: 
- # @FilePath: /.boxs/scripts/function.sh
 ###
 
 GITHUB_MIRROR='https://ghproxy.com/'
@@ -251,7 +250,7 @@ ls-list()
 
 flush_dns()
 {
-    if [[ $OSTYPE =~ ^darwin ]]; then
+    if [[ "${OSTYPE}" =~ ^darwin ]]; then
       sudo killall -HUP mDNSResponder
       sudo killall mDNSResponderHelper
       sudo dscacheutil -flushcache
@@ -382,14 +381,6 @@ show_terminal_colors() {
   for i in {0..255} ; do
     printf "\x1b[38;5;${i}mcolor${i}\n"
   done
-}
-
-pong() {
-  /sbin/ping -c 10 "$@"
-}
-
-function hexpass() {
-  openssl rand -hex 24 $@
 }
 
 server() {

@@ -15,7 +15,6 @@
 - `sites` Web 应用
 - etc
     - `file-tpl` 创建文件使用的模板
-    - `autossh` autossh 配置文件
 - `opt` like unix opt directory
 s
 ## Application

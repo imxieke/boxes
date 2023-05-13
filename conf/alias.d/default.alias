@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2023-04-01 00:53:31
+ # @LastEditTime: 2023-04-26 00:51:55
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/alias.d/default.alias
@@ -109,7 +109,7 @@ if [[ -n "$(command -v clash)" ]]; then
     export https_proxy=${http_proxy}
 	export rsync_proxy=${http_proxy}
 	export ftp_proxy=${http_proxy}
-	export all_proxy=socks5://127.0.0.1:7890
+	# export all_proxy=socks5://127.0.0.1:7890
 	export HTTP_PROXY=${http_proxy}
 	export HTTPS_PROXY=${http_proxy}
 	export RSYNC_PROXY=${http_proxy}
@@ -123,10 +123,6 @@ alias 'crawler'='export https_proxy=http://127.0.0.1:8086 http_proxy=http://127.
 alias flushdns="dscacheutil -flushcache"
 alias disk-usage-top="du -sh $@ | sort -r -n | head -10"
 
-# SSH
-# NAS
-alias homecloud="ssh imxieke@192.168.31.6"
-
 # open application
 alias st='open -a "Sublime Text"'
 alias font="open -a 'Font Book'"
@@ -136,6 +132,8 @@ if [[ -f ~/.acme.sh/acme.sh ]]; then
   export LE_WORKING_DIR="~/.acme.sh"
 fi
 
+# Secure Alias
+alias hexpass='openssl rand -hex 24'
 
 # Set Proxy Alias
 if [[ ! -z $(command -v proxychains4) ]]; then
@@ -151,7 +149,7 @@ fi
 # 区分操作系统
 if [[ "${OSNAME}" == 'Darwin' ]]; then
   # macOS 默认的 openssh 版本很老
-  alias ssh="/usr/local/bin/ssh -o ServerAliveInterval=60"
+  # alias ssh="/usr/local/bin/ssh -o ServerAliveInterval=60"
   alias wifi-info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I'
 
   # Atom short command cli

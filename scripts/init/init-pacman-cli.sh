@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-04-11 20:04:38
+ # @LastEditTime: 2023-05-07 00:45:46
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -15,10 +15,17 @@ _install()
 	pacman -S --noconfirm bzip2 unzip unarchiver gzip tar p7zip unrar lzip lrzip xz zip zstd file-roller
 
 	# Network
-	pacman -S --noconfirm net-tools mtr traceroute dnsutils iputils lsof clash rsync
+	# openbsd-netcat: nc command
+	# corkscrew: tunneling SSH through HTTP proxies
+	pacman -S --noconfirm net-tools mtr traceroute dnsutils iputils lsof clash rsync \
+		openbsd-netcat corkscrew syncthing \
+		iperf iperf3
 
 	# Language
 	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk
+
+	# File && Code Tools
+	pacman -S --noconfirm ripgrep the_silver_searcher
 
 	# Tools
 	# flameshot screenshot
@@ -27,18 +34,33 @@ _install()
 	# d-feet D-Bus debugger for GNOME
 	# asciinema Record and share terminal sessions
 	# vokoscreen 录屏
-	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp
+	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp mtools
 
 	# Package management
+	# App Store
 	pacman -S --noconfirm yay dpkg snapd
 
 	# Virtual Machine && Container
-	pacman -S --noconfirm docker docker-buildx docker-compose docker-scan
+	# podman-docker conflict with docker
+	pacman -S --noconfirm docker docker-buildx docker-compose docker-scan \
+		podman podman-compose
+	# Virtual Machine && Container Depency
+	pacman -S --noconfirm fuse-overlayfs
+
+	# Docker Tools
+	# ctop like linux top
+	# crun replace runc, crun is faster than runc and has a much lower memory footprint.
+	# podman --runtime /usr/bin/crun run --rm --memory 4M fedora echo it works
+	# cosign sign container image
+	# dive A tool for exploring each layer in a docker image
+	# skopeo Work with remote images registries - retrieving information, images, signing content
+	pacman -S --noconfirm ctop container-diff crun cosign dive skopeo
 
 	# Git Tools
 	# onefetch: like neofetch but for git
 	# gitg GUI client to view git repositories.
 	pacman -S --noconfirm git-delta onefetch gitg gitui
+
 
 	# Blockchain
 	# pacman -S --noconfirm go-ethereum openethereum
