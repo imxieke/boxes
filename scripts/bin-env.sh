@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-02 12:18:39
- # @LastEditTime: 2023-04-18 00:45:59
+ # @LastEditTime: 2023-05-14 01:09:16
  # @LastEditors: Cloudflying
  # @Description:  
  # @FilePath: /.boxs/scripts/bin-env.sh
@@ -14,6 +14,11 @@
 if [[ -d "${BOXS_HOME}/bin" ]]; then
 	echo "[+] export PATH ${BOXS_HOME}/bin"
 	export PATH="${BOXS_HOME}/bin:$PATH"
+fi
+
+if [[ -d "${HOME}/.local/boxs/bin" ]]; then
+	echo "[+] export PATH ${HOME}/.local/boxs/bin"
+	export PATH="${HOME}/.bin:$PATH"
 fi
 
 if [[ -d "${HOME}/.bin" ]]; then

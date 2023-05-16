@@ -1,0 +1,32 @@
+action_id: trunk-upgrade-available
+date: 2023-05-13 19:37:19
+run: trunk upgrade --notify --allow-daemon-start=false
+run_from: ""
+trigger: schedule 1h
+result:
+  exit_code: 0
+  out: "notifications:\n  - commands:\n      - run: trunk upgrade\n        title: all\n      - run: trunk upgrade check\n        title: Linters\n    id: trunk-upgrade\n    message: \" 3 linter upgrades\\n\"\n    priority: low\n    rendered: \"\\x1b[90mRun \\x1b[0m\\x1b[96mtrunk upgrade\\x1b[0m\\x1b[90m to upgrade \\x1b[0m\\x1b[90m3 linters\\n\\x1b[0m\"\n    title: Upgrades Available\nnotifications_to_delete:\n  - trunk-check-upgrade\n"
+  err: ""
+timestamp: 1684006639
+full_timestamp:
+  nanos: 13349000
+  seconds: 1684006639
+trunk_version: 1.9.1
+action_output:
+  notifications:
+    - commands:
+        - run: trunk upgrade
+          title: all
+        - run: trunk upgrade check
+          title: Linters
+      full_timestamp:
+        nanos: 13349000
+        seconds: 1684006639
+      id: trunk-upgrade
+      message: " 3 linter upgrades\n"
+      priority: low
+      rendered: "\x1b[90mRun \x1b[0m\x1b[96mtrunk upgrade\x1b[0m\x1b[90m to upgrade \x1b[0m\x1b[90m3 linters\n\x1b[0m"
+      timestamp: 1684006639
+      title: Upgrades Available
+  notifications_to_delete:
+    - trunk-check-upgrade

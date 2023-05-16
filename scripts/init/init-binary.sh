@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:01:41
- # @LastEditTime: 2023-04-16 23:58:03
+ # @LastEditTime: 2023-05-14 03:31:37
  # @LastEditors: Cloudflying
  # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ### 
@@ -107,4 +107,15 @@ _install_lib()
 	curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
 }
 
+if [[ "$(uname -s)" == 'Darwin' ]]; then
+	_install_macos
+elif [[ "$(uname -s)" == 'Linux' ]]; then
+	_install_linux
+else
+	echo "Unknow OS"
+	exit 1
+fi
+
 _install_scripts
+_install_lib
+_install_jar
