@@ -1,10 +1,9 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2023-05-03 21:22:44
+ # @LastEditTime: 2023-05-16 00:52:10
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/conf/.zshrc
+ # @Description: zsh config file
 ### 
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
@@ -48,12 +47,15 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	setopt promptsubst
 	# ZSH_THEME='strug'
 	zinit load zdharma-continuum/fast-syntax-highlighting
-	zinit load zsh-users/zsh-syntax-highlighting
+	# zinit load zsh-users/zsh-syntax-highlighting
 	# 灰色显示历史运行的命令
 	zinit load zsh-users/zsh-autosuggestions
 	zinit load zsh-users/zsh-history-substring-search
 	# 会阻止 zsh 默认的上下选择历史命令记录
-	zinit load marlonrichert/zsh-autocomplete
+	# 🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion.
+	# zinit load marlonrichert/zsh-autocomplete
+	# Additional completion definitions for Zsh.
+	# _cmd file
 	zinit load zsh-users/zsh-completions
 	# 快速跳转至文件夹
 	zinit load agkozak/zsh-z
@@ -63,21 +65,22 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	# zinit load unixorn/warhol.plugin.zsh
 	zinit load MichaelAquilina/zsh-you-should-use
 	zinit load mafredri/zsh-async
+	# 🔖 Quickly navigate your work path!
 	zinit load wfxr/formarks
 	zinit load zdharma-continuum/history-search-multi-word
 	zinit load trystan2k/zsh-tab-title
-	zinit load b4b4r07/emoji-cli
-	zinit load pschmitt/emoji-fzf.zsh
 
 	zinit ice depth=1
 	zinit load romkatv/powerlevel10k
 	zinit ice depth=1
 	# zinit light jeffreytse/zsh-vi-mode
 	if [[ -n "$(command -v fzf)" ]]; then
-		zinit load Aloxaf/fzf-tab
-		zinit load chitoku-k/fzf-zsh-completions
-		zinit load yuki-yano/fzf-preview.zsh
-		zinit load unixorn/fzf-zsh-plugin
+		# Replace zsh's default completion selection menu with fzf!
+		# 似乎和其他插件有功能重复
+		# zinit load chitoku-k/fzf-zsh-completions
+		# zinit load Aloxaf/fzf-tab
+		# zinit load unixorn/fzf-zsh-plugin
+		# zinit load yuki-yano/fzf-preview.zsh
 	fi
 
 	if [[ $(uname -s) == 'Darwin' ]]; then

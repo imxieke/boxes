@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2023-05-07 00:45:34
+ # @LastEditTime: 2023-05-14 03:32:02
  # @LastEditors: Cloudflying
  # @Description: init package for macOS brew package manager
  # @FilePath: /.boxs/scripts/init/init-macos.sh
@@ -28,6 +28,7 @@ init_brew()
 
 		# Core
 		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core ]]; then
+			# trunk-ignore(shellcheck/SC2312)
 			git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 		else
 			brew tap homebrew/core https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
