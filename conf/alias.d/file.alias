@@ -1,0 +1,13 @@
+alias l='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso'
+
+# 按文件大小排序
+alias lls='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --sort size'
+
+# 文件树🌲
+alias llt='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --tree'
+
+# 忽略 .gitignore 文件
+alias llg='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --git-ignore'
+
+alias bat='bat --theme="gruvbox-dark" -n'
+alias bat-diff='bat --diff'

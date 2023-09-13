@@ -2,47 +2,52 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:01:41
- # @LastEditTime: 2023-05-14 03:31:37
+ # @LastEditTime: 2023-05-31 21:38:52
  # @LastEditors: Cloudflying
  # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ### 
 
-mkdir -p ~/.local/boxs/bin
-mkdir -p ~/.local/boxs/java
-mkdir -p ~/.local/boxs/shell
+ROOT_PATH=~/.local/share/boxs
 
-JAVA_PATH=~/.local/boxs/java
-BIN_PATH=~/.local/boxs/bin
-SHELL_PATH=~/.local/boxs/shell
+mkdir -p "${ROOT_PATH}/bin"
+mkdir -p "${ROOT_PATH}/java"
+mkdir -p "${ROOT_PATH}/shell"
+
+JAVA_PATH="${ROOT_PATH}/java"
+BIN_PATH="${ROOT_PATH}/bin"
+SHELL_PATH="${ROOT_PATH}/shell"
 GITHUB_MIRROR='https://ghproxy.com/'
 
 # macOS 可执行脚本
 _install_scripts()
 {
     echo "==> Fetch neofetch"
-    curl -sL https://github.com/dylanaraps/neofetch/raw/master/neofetch             --output ${BIN_PATH}/neofetch
+    curl -sL https://github.com/dylanaraps/neofetch/raw/master/neofetch             --output "${BIN_PATH}/neofetch"
 
     echo "==> Fetch screenfetch"
-    curl -sL https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev    --output ${BIN_PATH}/screenfetch
+    curl -sL https://github.com/KittyKatt/screenFetch/raw/master/screenfetch-dev    --output "${BIN_PATH}/screenfetch"
 
     echo "==> Fetch speedtest-cli"
-    curl -sL https://github.com/sivel/speedtest-cli/raw/master/speedtest.py         --output ${BIN_PATH}/speedtest-cli
+    curl -sL https://github.com/sivel/speedtest-cli/raw/master/speedtest.py         --output "${BIN_PATH}/speedtest-cli"
 
     echo "==> Fetch bashtop"
-    curl -sL https://github.com/aristocratos/bashtop/raw/master/bashtop 			--output ${BIN_PATH}/bashtop
+    curl -sL https://github.com/aristocratos/bashtop/raw/master/bashtop 			--output "${BIN_PATH}/bashtop"
 
     echo "==> Fetch Python Httpstat"
-    curl -sL https://raw.githubusercontent.com/reorx/httpstat/master/httpstat.py 	--output ${BIN_PATH}/httpstat-pu
+    curl -sL https://raw.githubusercontent.com/reorx/httpstat/master/httpstat.py 	--output "${BIN_PATH}/httpstat.py"
 
     echo "==> Fetch Bash Httpstat"
-	curl -fsSL https://github.com/b4b4r07/httpstat/raw/master/httpstat.sh 			--output ${BIN_PATH}/httpstat.sh
+	curl -fsSL https://github.com/b4b4r07/httpstat/raw/master/httpstat.sh 			--output "${BIN_PATH}/httpstat.sh"
+
+    echo "==> Fetch PHP Composer"
+	curl -fsSL "https://mirrors.cloud.tencent.com/composer/composer.phar" 			--output "${BIN_PATH}/composer"
 }
 
 # linux 二进制文件
 _install_linux()
 {
     echo "==> Fetch Next Trace"
-    curl -fsSL "${GITHUB_MIRROR}https://github.com/sjlleo/nexttrace/releases/download/v1.1.3/nexttrace_linux_amd64" 			--output ${BIN_PATH}/nexttrace
+    curl -fsSL "${GITHUB_MIRROR}https://github.com/sjlleo/nexttrace/releases/latest/download/nexttrace_linux_amd64" 			--output ${BIN_PATH}/nexttrace
 
     echo "==> Fetch nexttrace experiment"
 	curl -fsSL "${GITHUB_MIRROR}https://github.com/OwO-Network/nexttrace-experiment/releases/latest/download/nexttrace_linux_amd64" 			--output ${BIN_PATH}/nexttrace-plus
@@ -107,15 +112,32 @@ _install_lib()
 	curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
 }
 
-if [[ "$(uname -s)" == 'Darwin' ]]; then
-	_install_macos
-elif [[ "$(uname -s)" == 'Linux' ]]; then
-	_install_linux
-else
-	echo "Unknow OS"
-	exit 1
-fi
-
-_install_scripts
-_install_lib
-_install_jar
+case "$1" in
+	scripts | -s)
+		_install_scripts
+		;;
+	jar | -j)
+		_install_jar
+		;;
+	os | -j)
+		if [[ "$(uname -s)" == 'Darwin' ]]; then
+			_install_macos
+		elif [[ "$(uname -s)" == 'Linux' ]]; then
+			_install_linux
+		else
+			echo "UnSupport OS"
+			exit 1
+		fi
+		;;
+	lib | -l)
+		_install_lib
+		;;
+	*) 
+		echo "Usage: 
+<cmd> os                os Package
+<cmd> scripts|-s        Shell Scripts Or Python ,PHP And More
+<cmd> jar|-j            Jar File
+<cmd> lib|-l            Library
+"
+	;;
+esac

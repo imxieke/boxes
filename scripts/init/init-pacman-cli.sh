@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-05-07 00:45:46
+ # @LastEditTime: 2023-09-10 12:59:12
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -18,7 +18,8 @@ _install()
 	# openbsd-netcat: nc command
 	# corkscrew: tunneling SSH through HTTP proxies
 	pacman -S --noconfirm net-tools mtr traceroute dnsutils iputils lsof clash rsync \
-		openbsd-netcat corkscrew syncthing \
+		openbsd-netcat corkscrew socat \
+		syncthing \
 		iperf iperf3
 
 	# Language
@@ -34,11 +35,16 @@ _install()
 	# d-feet D-Bus debugger for GNOME
 	# asciinema Record and share terminal sessions
 	# vokoscreen 录屏
-	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp mtools
+	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp mtools xsv exa \
+		skim fd bat bat-extras
 
 	# Package management
 	# App Store
 	pacman -S --noconfirm yay dpkg snapd
+
+	# Security
+	# osv-scanner Vulnerability scanner
+	pacman -S --noconfirm nmap rustscan osv-scanner
 
 	# Virtual Machine && Container
 	# podman-docker conflict with docker

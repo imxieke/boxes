@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:23:30
- # @LastEditTime: 2023-05-07 11:19:42
+ # @LastEditTime: 2023-09-10 14:09:06
  # @LastEditors: Cloudflying
  # @Description: 
 ###
@@ -72,7 +72,8 @@ _install()
 
 	# NetWork
 	# 🐶 Command-line DNS Client for Humans. Written in Golang
-	go install github.com/mr-karan/doggo/cmd/doggo@latest
+	# deprecated has move to offcial repo
+	# go install github.com/mr-karan/doggo/cmd/doggo@latest
 	# A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH.
 	go install github.com/natesales/q@latest
 	go install github.com/itchyny/maze/cmd/maze@latest

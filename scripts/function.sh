@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 22:58:44
- # @LastEditTime: 2023-05-13 17:38:42
+ # @LastEditTime: 2023-05-21 19:24:51
  # @LastEditors: Cloudflying
  # @Description: 
 ###
@@ -315,23 +315,6 @@ urlencode()
 urldecode()
 {
   php -r "echo urldecode("$1").PHP_EOL;"
-}
-
-git-pulls()
-{
-    dir=$(cd $1;pwd)
-    echo $dir
-    for i in $(ls $dir)
-    do
-        i=${dir}/${i}
-        if [[ -f "${i}/.git/config" ]]; then
-            echo $i
-            cd $i
-            echo "Pull from: " $(grep 'url' .git/config  | awk -F '=' '{print $2}')
-            git pull
-            cd ..
-        fi
-    done
 }
 
 function crypt() {

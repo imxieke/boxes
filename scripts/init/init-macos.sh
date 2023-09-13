@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2023-05-14 03:32:02
+ # @LastEditTime: 2023-09-10 14:08:54
  # @LastEditors: Cloudflying
  # @Description: init package for macOS brew package manager
  # @FilePath: /.boxs/scripts/init/init-macos.sh
@@ -52,11 +52,12 @@ init_brew()
 			brew tap homebrew/cask-versions https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git
 		fi
 
-		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-drivers ]]; then
-			git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
-		else
-			brew tap homebrew/cask-drivers https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
-		fi
+		# Deprecated
+		# if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-drivers ]]; then
+		# 	git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
+		# else
+		# 	brew tap homebrew/cask-drivers https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
+		# fi
 
 		if [[ -d /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-fonts ]]; then
 			git -C "$(brew --repo homebrew/cask-fonts)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
@@ -79,7 +80,7 @@ init_pkgs()
 	# Dev
 	# brew install gcc make cmake xmake autoconf automake
 
-	brew install git subversion tldr ccat zsh git fzf htop imagemagick meofetch squashfs syncthing tree curl whois
+	brew install git subversion tldr zsh git fzf htop imagemagick meofetch squashfs syncthing tree curl whois
 	# duf Disk Usage/Free Utility - a better 'df' alternative
 	# gitui Blazing 💥 fast terminal-ui for git written in rust 🦀
 	brew install fd td exa ghq hub gh duf gitui
@@ -93,13 +94,13 @@ init_pkgs()
 
 	# File Content View
 	# sk skim fuzzy file search
-	brew install ccat bat mdcat sk
+	brew install ccat bat bat-extras mdcat sk
 
 	# Remote
 	brew install vnc-viewer telnet
 
 	# gron Make JSON greppable!
-	brew install jq ccat gron exa ctop grex fd sd bat xsv jo
+	brew install jq ccat gron ctop grex sd xsv jo
 	
 	# Database
 	brew install mysql@5.7 redis sqlite
@@ -123,7 +124,7 @@ init_pkgs()
 
 	# Network Tools
 	# cli dns query
-	brew install clash whois dog rsync iperf iperf3
+	brew install clash whois dog rsync iperf iperf3 netcat socat doggo
 
 	# Chat
 	brew install telegram wechat qq discord
@@ -141,10 +142,15 @@ init_pkgs()
 
 	# Programming language
 	# go node python python2 python3 pip pip2 pip3 php composer ruby perl java
-	brew install shivammathur/php/php shivammathur/php/php@5.6 shivammathur/php/php@7.4 shivammathur/php/php@8.0 go python dotnet kotlin node@14 openjdk
-	brew install shivammathur/extensions/amqp@7.4 shivammathur/extensions/imagick@7.4 shivammathur/extensions/imap@7.4 shivammathur/extensions/memcache@7.4 shivammathur/extensions/memcached@7.4 shivammathur/extensions/mongodb@7.4 shivammathur/extensions/msgpack@7.4 shivammathur/extensions/protobuf@7.4 shivammathur/extensions/rdkafka@7.4 shivammathur/extensions/redis@7.4 shivammathur/extensions/ssh2@7.4 shivammathur/extensions/swoole@7.4 shivammathur/extensions/vips@7.4 shivammathur/extensions/xlswriter@7.4 shivammathur/extensions/yaml@7.4 shivammathur/extensions/zmq@7.4
-	brew install shivammathur/extensions/amqp@8.0 shivammathur/extensions/imagick@8.0 shivammathur/extensions/imap@8.0 shivammathur/extensions/memcache@8.0 shivammathur/extensions/memcached@8.0 shivammathur/extensions/mongodb@8.0 shivammathur/extensions/msgpack@8.0 shivammathur/extensions/protobuf@8.0 shivammathur/extensions/rdkafka@8.0 shivammathur/extensions/redis@8.0 shivammathur/extensions/ssh2@8.0 shivammathur/extensions/swoole@8.0 shivammathur/extensions/vips@8.0 shivammathur/extensions/xlswriter@8.0 shivammathur/extensions/yaml@8.0 shivammathur/extensions/zmq@8.0
-	brew install shivammathur/extensions/amqp@8.1 shivammathur/extensions/imagick@8.1 shivammathur/extensions/imap@8.1 shivammathur/extensions/memcache@8.1 shivammathur/extensions/memcached@8.1 shivammathur/extensions/mongodb@8.1 shivammathur/extensions/msgpack@8.1 shivammathur/extensions/protobuf@8.1 shivammathur/extensions/rdkafka@8.1 shivammathur/extensions/redis@8.1 shivammathur/extensions/ssh2@8.1 shivammathur/extensions/swoole@8.1 shivammathur/extensions/vips@8.1 shivammathur/extensions/xlswriter@8.1 shivammathur/extensions/yaml@8.1 shivammathur/extensions/zmq@8.1
+	brew install shivammathur/php/php shivammathur/php/php@5.6  go python dotnet kotlin node@14 openjdk
+
+	brew install shivammathur/php/php@7.4 shivammathur/extensions/amqp@7.4 shivammathur/extensions/event@7.4 shivammathur/extensions/grpc@7.4 shivammathur/extensions/imagick@7.4 shivammathur/extensions/imap@7.4 shivammathur/extensions/mcrypt@7.4 shivammathur/extensions/memcache@7.4 shivammathur/extensions/memcached@7.4 shivammathur/extensions/mongodb@7.4 shivammathur/extensions/msgpack@7.4 shivammathur/extensions/phalcon5@7.4 shivammathur/extensions/protobuf@7.4 shivammathur/extensions/rdkafka@7.4 shivammathur/extensions/redis@7.4 shivammathur/extensions/snmp@7.4 shivammathur/extensions/ssh2@7.4 shivammathur/extensions/swoole@7.4 shivammathur/extensions/vips@7.4 shivammathur/extensions/xlswriter@7.4 shivammathur/extensions/yaml@7.4 shivammathur/extensions/zmq@7.4
+
+	brew install shivammathur/php/php@8.0 shivammathur/extensions/amqp@8.0 shivammathur/extensions/event@8.0 shivammathur/extensions/imagick@8.0 shivammathur/extensions/imap@8.0 shivammathur/extensions/mcrypt@8.0 shivammathur/extensions/memcache@8.0 shivammathur/extensions/memcached@8.0 shivammathur/extensions/mongodb@8.0 shivammathur/extensions/msgpack@8.0 shivammathur/extensions/phalcon5@8.0 shivammathur/extensions/protobuf@8.0 shivammathur/extensions/rdkafka@8.0 shivammathur/extensions/redis@8.0 shivammathur/extensions/snmp@8.0 shivammathur/extensions/ssh2@8.0 shivammathur/extensions/swoole@8.0 shivammathur/extensions/vips@8.0 shivammathur/extensions/xlswriter@8.0 shivammathur/extensions/yaml@8.0 shivammathur/extensions/zmq@8.0
+	
+	brew install shivammathur/php/php@8.1 shivammathur/extensions/amqp@8.1 shivammathur/extensions/event@8.1 shivammathur/extensions/grpc@8.1 shivammathur/extensions/imagick@8.1 shivammathur/extensions/imap@8.1 shivammathur/extensions/mcrypt@8.1 shivammathur/extensions/memcache@8.1 shivammathur/extensions/memcached@8.1 shivammathur/extensions/mongodb@8.1 shivammathur/extensions/msgpack@8.1 shivammathur/extensions/phalcon5@8.1 shivammathur/extensions/protobuf@8.1 shivammathur/extensions/rdkafka@8.1 shivammathur/extensions/redis@8.1 shivammathur/extensions/ssh2@8.1 shivammathur/extensions/swoole@8.1 shivammathur/extensions/vips@8.1 shivammathur/extensions/xlswriter@8.1 shivammathur/extensions/yaml@8.1 shivammathur/extensions/zmq@8.1
+
+	brew install shivammathur/php/php@8.2 shivammathur/extensions/event@8.2 shivammathur/extensions/grpc@8.2 shivammathur/extensions/imagick@8.2 shivammathur/extensions/imap@8.2 shivammathur/extensions/mcrypt@8.2 shivammathur/extensions/memcached@8.2 shivammathur/extensions/mongodb@8.2 shivammathur/extensions/msgpack@8.2 shivammathur/extensions/phalcon5@8.2 shivammathur/extensions/protobuf@8.2 shivammathur/extensions/rdkafka@8.2 shivammathur/extensions/redis@8.2 shivammathur/extensions/swoole@8.2 shivammathur/extensions/xlswriter@8.2 shivammathur/extensions/yaml@8.2 shivammathur/extensions/zmq@8.2
 
 	# Language Server Protocol
 	# brew install lua-language-server kotlin-language-server
@@ -155,7 +161,9 @@ init_pkgs()
 	# Programming language Tools
 	# brew install composer
 	# Editor and IDE
-	brew install neovim visual-studio-code sublime-text android-studio
+	brew install neovim visual-studio-code sublime-text \
+		android-studio \
+		intellij-idea phpstorm webstorm rider fleet pycharm clion appcode datagrip
 
 	# Graphical client for Git version control
 	# sourcetree replace with git cli

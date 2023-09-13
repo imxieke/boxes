@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2023-04-26 00:51:55
+ # @LastEditTime: 2023-05-21 15:32:35
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/alias.d/default.alias
@@ -193,3 +193,5 @@ else
   alias ssh="ssh -o ServerAliveInterval=60"
   alias sdu='du -h -d 1 --exclude="/proc" --exclude="/dev"'
 fi
+
+[ -f /Applications/kate.app/Contents/MacOS/kate ] && alias kate="/Applications/kate.app/Contents/MacOS/kate"

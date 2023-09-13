@@ -24,15 +24,11 @@
 [init]
 	defaultBranch = master
 [user]
-	email = oss@live.hk
 	name = imxieke
-[author]
-	name = Cloudflying
 	email = oss@live.hk
-[color "diff"]
-    meta = magenta bold
-    new = green bold
-    old = red italic
+[author]
+	name = imxieke
+	email = oss@live.hk
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -45,9 +41,51 @@
 	default = upstream
 [core]
 	fileMode = false
+	quotepath = false
+	pager = delta
+	ignorecase = false
+	bare = false
+	excludesfile = /Users/imxieke/.boxs/conf/gitignore
+	editor = nvim
 [color]
-	ui = always
+	ui = auto
+	status = auto
+	branch = auto
+	diff = auto
+[color "diff"]
+    meta = magenta bold
+    new = green bold
+    old = red italic
+[color "status"]
+	added = green
+[color "branch"]
+	remote = yellow
 [rebase]
 	autostash = true
 [help]
 	autocorrect = 1
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	features = decorations
+    side-by-side = true
+    minus-style = red bold ul "#ffeeee"
+    line-numbers = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+[http]
+	proxy = http://127.0.0.1:7890
+[https]
+	proxy = http://127.0.0.1:7890

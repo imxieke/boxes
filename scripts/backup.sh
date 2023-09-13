@@ -20,6 +20,8 @@ else
 	exit 1
 fi
 
+mkdir -p ~/.local/share/boxs/backup
+
 BAKTO=${DATA_DIR}/conf
 
 # 记录日志时间
@@ -172,10 +174,10 @@ _sublime()
 			echo "Can't find Sublime Text in your computer"
 		fi
 
-		if [[ -f ${${_SUBL_DIR}}/Local/License.sublime_license ]]; then
-			cp ${${_SUBL_DIR}}/Local/License.sublime_license ~/.boxs/conf/backup/sublimetext/License.sublime_license-mac-$(sle -v | awk -F ' ' '{print $4}' |  | cut -c 1-2)
-		fi
-		cp -fr ${${_SUBL_DIR}}/Packages/User/ ~/.boxs/conf/backup/sublimetext/conf
+		# if [[ -f ${${_SUBL_DIR}}/Local/License.sublime_license ]]; then
+			# cp ${${_SUBL_DIR}}/Local/License.sublime_license ~/.boxs/conf/backup/sublimetext/License.sublime_license-mac-$(sle -v | awk -F ' ' '{print $4}' |  | cut -c 1-2)
+		# fi
+		# cp -fr ${${_SUBL_DIR}}/Packages/User/ ~/.boxs/conf/backup/sublimetext/conf
 	fi
 }
 
@@ -191,8 +193,33 @@ _vscode()
 	code --install-extension ~/.boxs/conf/backup/vscode-extensions.txt
 }
 
+# File
+create_symbol()
+{
+	FILENAME=$1
+	FILEPATH=$2
+	[ -f ${FILEPATH} ] && mv -f ${FILEPATH} ~/.local/share/boxs/backup/${FILENAME}
+	ln -sf ~/.boxs/conf/${FILENAME} ${FILEPATH}
+}
+
+_symbool()
+{
+	# Git
+	create_symbol .gitconfig ~/.gitconfig
+	create_symbol .hyper.js ~/.hyper.js
+	create_symbol .curlrc ~/.curlrc
+	create_symbol .gemrc ~/.gemrc
+	# [ -f ~/.gitconfig ] && mv -f ~/.gitconfig ~/.local/share/boxs/backup/
+	# ln -sf ~/.boxs/conf/.gitconfig ~/.gitconfig
+
+	# # Node Package Manager
+	# [ -f ~/.npmrc ] && mv -f ~/.npmrc ~/.local/share/boxs/backup/
+	# ln -sf ~/.boxs/conf/.npmrc ~/.npmrc
+}
+
 # _sublime
 
 # rsync_config
 # sync_other
 # rsync_bin
+_symbool
