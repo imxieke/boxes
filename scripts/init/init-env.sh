@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:30:35
- # @LastEditTime: 2023-04-03 11:59:47
+ # @LastEditTime: 2023-05-31 21:21:17
  # @LastEditors: Cloudflying
  # @Description: 初始化系统环境
  # @FilePath: /.boxs/scripts/init/init-env.sh
@@ -51,7 +51,6 @@ init_env()
 	# https://mirrors.aliyun.com/composer/
 	if [[ -n "$(command -v composer)" ]]; then
 		wget -c --no-check-certificate https://mirrors.cloud.tencent.com/composer/composer.phar -O ~/.bin/composer
-
 	fi
 	
 	echo "==> Set Composer Mirrors"

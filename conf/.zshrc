@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2023-05-16 00:52:10
+ # @LastEditTime: 2023-05-21 21:57:42
  # @LastEditors: Cloudflying
  # @Description: zsh config file
 ### 
@@ -44,7 +44,7 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
     source ~/.local/share/zinit/zinit.zsh
 	autoload -Uz _zinit
 	(( ${+_comps} )) && _comps[zinit]=_zinit
-	setopt promptsubst
+	# setopt promptsubst
 	# ZSH_THEME='strug'
 	zinit load zdharma-continuum/fast-syntax-highlighting
 	# zinit load zsh-users/zsh-syntax-highlighting
@@ -53,7 +53,7 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	zinit load zsh-users/zsh-history-substring-search
 	# 会阻止 zsh 默认的上下选择历史命令记录
 	# 🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion.
-	# zinit load marlonrichert/zsh-autocomplete
+	zinit load marlonrichert/zsh-autocomplete
 	# Additional completion definitions for Zsh.
 	# _cmd file
 	zinit load zsh-users/zsh-completions
@@ -70,24 +70,28 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	zinit load zdharma-continuum/history-search-multi-word
 	zinit load trystan2k/zsh-tab-title
 
+	# git clone depth
 	zinit ice depth=1
 	zinit load romkatv/powerlevel10k
 	zinit ice depth=1
 	# zinit light jeffreytse/zsh-vi-mode
-	if [[ -n "$(command -v fzf)" ]]; then
+	# if [[ -n "$(command -v fzf)" ]]; then
 		# Replace zsh's default completion selection menu with fzf!
 		# 似乎和其他插件有功能重复
 		# zinit load chitoku-k/fzf-zsh-completions
 		# zinit load Aloxaf/fzf-tab
 		# zinit load unixorn/fzf-zsh-plugin
 		# zinit load yuki-yano/fzf-preview.zsh
-	fi
+	# fi
 
 	if [[ $(uname -s) == 'Darwin' ]]; then
 		plugins=(macos brew)
+		# zinit ice svn
+		# zinit snippet  OMZ::plugins/macos
+		# zinit snippet  OMZ::plugins/brew
 	fi
 
-	plugins+=(git gh rust history colored-man-pages extract fzf docker docker-compose multipass)
+	plugins+=(ag git gh rust history colored-man-pages extract fzf docker docker-compose yarn z)
 fi
 
 HISTFILE="$HOME/.zsh_history" # The path to the history file.
@@ -114,7 +118,7 @@ ENABLE_BOXS_THEMES=true
 auto-color-ls() {
 	emulate -L zsh
 	echo
-	colorls -A --group-directories-first
+	exa --all --header --icons --git
 }
 
-# chpwd_functions=(auto-color-ls $chpwd_functions)
+chpwd_functions=(auto-color-ls $chpwd_functions)

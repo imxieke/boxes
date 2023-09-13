@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 23:41:53
- # @LastEditTime: 2023-05-14 03:09:24
+ # @LastEditTime: 2023-06-03 23:44:53
  # @LastEditors: Cloudflying
  # @Description: boxs 初始化文件 仅包含配置文件
 ### 
@@ -41,23 +41,23 @@ elif [[ "${OSTYPE}" == 'Linux' ]];then
 fi
 
 # 加载本地自定义变量
-[[ -f "${HOME}/.env" ]] && export $(cat ${HOME}/.env | grep -v '^#' | xargs)
+[[ -f "${HOME}/.env" ]] && source "${HOME}/.env"
 
 # 加载未在 PATH 的目录
-[ -f "${HOME}/.boxs/scripts/bin-env.sh" ] && source ~/.boxs/scripts/bin-env.sh
+[[ -f "${HOME}/.boxs/scripts/bin-env.sh" ]] && source ${HOME}/.boxs/scripts/bin-env.sh
 
-[ -f ${BOXS_HOME}/scripts/function.sh ] && source ${BOXS_HOME}/scripts/function.sh
-[ -f ${BOXS_HOME}/scripts/zplug.sh ] && source ${BOXS_HOME}/scripts/zplug.sh
+[[ -f ${BOXS_HOME}/scripts/function.sh ]] && source ${BOXS_HOME}/scripts/function.sh
+# [ -f ${BOXS_HOME}/scripts/zplug.sh ] && source ${BOXS_HOME}/scripts/zplug.sh
 # [ -f ${BOXS_HOME}/scripts/macos-build-env-conf.sh ] && source ${BOXS_HOME}/scripts/macos-build-env-conf.sh
 
 # 加载自定义 aliases
-for aliasf in ${BOXS_HOME}/conf/alias.d/*.alias ; do
-  echo "[+] source $aliasf "
-  source $aliasf
+  echo "[+] Source alias"
+for aliasf in "${BOXS_HOME}/conf/alias.d"/*.alias ; do
+  source "$aliasf"
 done
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.boxs/conf/.p10k.zsh ]] && echo "[+] source ${HOME}/.boxs/conf/.p10k.zsh" && source ~/.boxs/conf/.p10k.zsh
+[[ -f ~/.boxs/conf/.p10k.zsh ]] && echo "[+] source p10k" && source ~/.boxs/conf/.p10k.zsh
 
 # [ -d ${BOXS_CONF}/completion/zsh ] && fpath=(${BOXS_CONF}/completion/zsh $fpath)
 
@@ -81,9 +81,9 @@ fi
 
 # set java env
 if [[ -d /usr/local/opt/java11 ]]; then
-	JAVA_HOME="/usr/local/opt/java11"
+	export JAVA_HOME="/usr/local/opt/java11"
 elif [[ -d /usr/local/opt/java ]]; then
-	JAVA_HOME="/usr/local/opt/java"
+	export JAVA_HOME="/usr/local/opt/java"
 fi
 
 # export VAGRANT_DEFAULT_PROVIDER=virtualbox
