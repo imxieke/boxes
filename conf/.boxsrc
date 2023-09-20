@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 23:41:53
- # @LastEditTime: 2023-06-03 23:44:53
+ # @LastEditTime: 2023-09-21 00:00:36
  # @LastEditors: Cloudflying
  # @Description: boxs 初始化文件 仅包含配置文件
 ### 
@@ -37,7 +37,7 @@ BOXS_LOGS=${BOXS_HOME}/logs
 if [[ "${OSTYPE}" == 'Darwin' ]]; then
     export HOST_IP=$(ifconfig en1 | grep -Eo 'inet\ [0-9]\S+.[0-9]' | sed 's#inet\ ##g')
 elif [[ "${OSTYPE}" == 'Linux' ]];then
-    export HOST_IP=$(hostname -i)a
+    export HOST_IP=$(hostname -i)
 fi
 
 # 加载本地自定义变量
@@ -105,7 +105,7 @@ export DISABLE_FZF_AUTO_COMPLETION=false
 # alway show quote
 export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE=true
 
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 # Set Default Editor
 if [[ -n $(command -v nvim) ]]; then
