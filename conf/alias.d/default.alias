@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2023-05-21 15:32:35
+ # @LastEditTime: 2023-09-21 00:05:51
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/conf/alias.d/default.alias
@@ -105,20 +105,24 @@ alias enjoke='curl https://icanhazdadjoke.com'
 # 获取代理地址
 if [[ -n "$(command -v clash)" ]]; then
     # export PROXY_ADDR=$(grep 'external-controller' ~/.config/clash/config.yaml | awk -F ': ' '{print $2}')
-	export http_proxy=http://127.0.0.1:7890
+	if [[ -n "${PROXY_ADDR}" ]]; then
+		export http_proxy=${PROXY_ADDR}
+	else
+		export http_proxy=http://127.0.0.1:7890
+	fi
     export https_proxy=${http_proxy}
 	export rsync_proxy=${http_proxy}
 	export ftp_proxy=${http_proxy}
 	# export all_proxy=socks5://127.0.0.1:7890
-	export HTTP_PROXY=${http_proxy}
-	export HTTPS_PROXY=${http_proxy}
-	export RSYNC_PROXY=${http_proxy}
-	export FTP_PROXY=${http_proxy}
+	# export HTTP_PROXY=${http_proxy}
+	# export HTTPS_PROXY=${http_proxy}
+	# export RSYNC_PROXY=${http_proxy}
+	# export FTP_PROXY=${http_proxy}
 	export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 fi
 
 alias unproxy='unset http_proxy;unset https_proxy;unset all_proxy;unset rsync_proxy;unset ftp_proxy;unset all_proxy;unset HTTP_PROXY;unset HTTPS_PROXY;unset RSYNC_PROXY;unset FTP_PROXY;unset no_proxy;'
-alias 'crawler'='export https_proxy=http://127.0.0.1:8086 http_proxy=http://127.0.0.1:8086 all_proxy=http://127.0.0.1:8086'
+# alias 'crawler'='export https_proxy=http://127.0.0.1:8086 http_proxy=http://127.0.0.1:8086 all_proxy=http://127.0.0.1:8086'
 
 alias flushdns="dscacheutil -flushcache"
 alias disk-usage-top="du -sh $@ | sort -r -n | head -10"
