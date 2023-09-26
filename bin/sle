@@ -4,13 +4,13 @@
 # 如 sle ~/Downloads/App\ Code 
 
 if [[ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]]; then
-	/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl "$1" "$2" "$3" "$4" "$5"
+	"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$@"
 elif [[ -f /bin/subl ]]; then
-	/bin/subl "$1" "$2" "$3" "$4" "$5"
+	/bin/subl "$@"
 elif [[ -f /usr/bin/subl ]]; then
-	/bin/subl "$1" "$2" "$3" "$4" "$5"
+	/bin/subl "$1@"
 elif [[ -f /usr/local/bin/subl ]]; then
-	/bin/subl "$1" "$2" "$3" "$4" "$5"
+	/bin/subl "$@"
 else
 	echo 'not found subl in path'
 	exit 1
