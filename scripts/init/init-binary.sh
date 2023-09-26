@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:01:41
- # @LastEditTime: 2023-05-31 21:38:52
+ # @LastEditTime: 2023-09-24 11:14:27
  # @LastEditors: Cloudflying
  # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ### 
@@ -109,7 +109,7 @@ _install_jar()
 _install_lib()
 {
 	echo "==> Fetch nvm.sh"
-	curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
+	# curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
 }
 
 case "$1" in
