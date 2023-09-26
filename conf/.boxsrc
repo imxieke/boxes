@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 23:41:53
- # @LastEditTime: 2023-09-21 00:00:36
+ # @LastEditTime: 2023-09-24 11:35:28
  # @LastEditors: Cloudflying
  # @Description: boxs 初始化文件 仅包含配置文件
 ### 
@@ -29,6 +29,12 @@ export LANGUAGE="${LANGUAGE}"
 export LC_ALL="${LANGUAGE}"
 export LC_CTYPE="${LANGUAGE}"
 
+# export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
+# export NVM_NODEJS_ORG_MIRROR=https://registry.npmmirror.com/-/binary/node
+export NVM_NODEJS_ORG_MIRROR=https://cdn.npmmirror.com/binaries/node
+export NPＭ_CONFIG_REGISTRY=https://registry.npmmirror.com
+export NVM_DIR="${HOME}/.local/share/nvm"
+
 BOXS_HOME=${HOME}/.boxs
 BOXS_CONF=${BOXS_HOME}/conf
 BOXS_LOGS=${BOXS_HOME}/logs
@@ -54,6 +60,12 @@ fi
   echo "[+] Source alias"
 for aliasf in "${BOXS_HOME}/conf/alias.d"/*.alias ; do
   source "$aliasf"
+done
+
+# 加载自定义 shell
+echo "[+] Source shell"
+for aliasf in "${BOXS_HOME}/libraries/shell"/*.sh; do
+  source "${aliasf}"
 done
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

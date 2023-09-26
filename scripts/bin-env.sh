@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-02 12:18:39
- # @LastEditTime: 2023-05-31 20:58:15
+ # @LastEditTime: 2023-09-24 11:13:30
  # @LastEditors: Cloudflying
  # @Description:  
  # @FilePath: /.boxs/scripts/bin-env.sh
@@ -102,11 +102,12 @@ fi
 # fi
 
 # load nvm
-if [[ -f ${HOME}/.local/boxs/shell/nvm.sh ]];then
-	export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
-	echo "[+] Source ${HOME}/.local/boxs/shell/nvm.sh"
-	source "${HOME}/.local/share/boxs/shell/nvm.sh"
-fi
+# NVM_FILE="${HOME}/.local/share/boxs/shell/nvm.sh"
+# if [[ -f "${NVM_FILE}" ]];then
+# 	export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
+# 	echo "[+] Source ${NVM_FILE}"
+# 	source "${NVM_FILE}"
+# fi
 
 # macOS 预置了老版本 需要覆盖
 if [[ -f "/usr/local/opt/ruby/bin/gem" ]]; then
