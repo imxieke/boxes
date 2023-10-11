@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-12 22:14:17
- # @LastEditTime: 2023-04-30 09:19:07
+ # @LastEditTime: 2023-10-11 00:11:10
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/init/init-pacman.sh
@@ -120,7 +120,7 @@ _install()
 	# Editor
 	# gtk markdown editor
 	# ghostwriter MarkDown
-	pacman -S --noconfirm code gedit marker ghex gnome-builder xed ghostwriter gnome-text-editor
+	pacman -S --noconfirm code kate marker ghex gnome-builder xed ghostwriter gnome-text-editor
 
 	# Wine
 	pacman -S --noconfirm wine vkd3d wine-gecko winetricks

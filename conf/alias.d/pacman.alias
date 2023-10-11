@@ -1,4 +1,17 @@
-alias remove-pacman-cache='pacman -Scc'
+alias ala='sudo pacman -S'
+alias ale='pacman -Scc'
+# Remove Package with depends
+alias alr='pacman -Rsc'
+alias als='pacman -Ss'
+# Outdated Packages
+alias alpl='pacman -Qo'
+# Upgrade Package or All package (No Args)
+alias alu='sudo pacman -Su'
+# Upgrade Source then Package
+alias aluu='sudo pacman -Syyu'
+# Archlinux Package Lists
+alias alpl='pacman -Qn'
+# Archlinux Package File Lists
 alias pkg-file-ls='pacman -Ql'
-alias pkg-file-ls='pacman -Qn'
+# fzf Search Package
 alias pkg-fzf-search="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"

@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-09-10 12:59:12
+ # @LastEditTime: 2023-10-07 17:40:44
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -35,8 +35,9 @@ _install()
 	# d-feet D-Bus debugger for GNOME
 	# asciinema Record and share terminal sessions
 	# vokoscreen 录屏
+	# syft generating a Software Bill of Materials from container images and filesystems
 	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp mtools xsv exa \
-		skim fd bat bat-extras
+		skim fd bat bat-extras syft
 
 	# Package management
 	# App Store

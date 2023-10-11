@@ -1,8 +1,9 @@
 # Brew
 alias ba='brew install'
-alias bcc='brew cleanup'
+alias bas='brew install --cask'
+alias bcc='brew cleanup --prune=all'
 alias bs='brew search'
 alias bi='brew info'
 alias bu='brew update'
-alias bU='brew upgrade'
+alias buu='brew upgrade'
 alias br='brew uninstall'
