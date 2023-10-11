@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-29 18:50:11
- # @LastEditTime: 2022-07-30 00:42:18
+ # @LastEditTime: 2023-10-11 00:11:03
  # @LastEditors: Cloudflying
  # @Description: install archlinux script
  # @FilePath: /.boxs/scripts/install-archlinux.sh
@@ -110,7 +110,7 @@ pacstrap /mnt grub efibootmgr os-prober
 pacstrap /mnt axel wget curl aria2
 
 # Editor
-pacstrap /mnt neovim code gedit
+pacstrap /mnt neovim code
 
 # Fonts
 # pacstrap /mnt adobe-source-han-serif-cn-fonts wqy-microhei wqy-zenhei
