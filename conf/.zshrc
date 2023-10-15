@@ -122,3 +122,6 @@ auto-color-ls() {
 }
 
 chpwd_functions=(auto-color-ls $chpwd_functions)
+
+export PNPM_HOME="${HOME}/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
