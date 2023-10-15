@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-12 22:14:17
- # @LastEditTime: 2023-10-11 00:11:10
+ # @LastEditTime: 2023-10-12 13:22:21
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/init/init-pacman.sh
@@ -200,7 +200,7 @@ _install()
 	# systemctl enable sddm.service
 
 	# Deepin Desktop
-	# pacman -S --noconfirm deepin
+	# pacman -S --noconfirm deepin deepin-extra deepin-kwin
 
 	# Gnome Apps
 	# sushi A quick previewer for Nautilus
