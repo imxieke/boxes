@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:24:49
- # @LastEditTime: 2023-04-17 22:12:17
+ # @LastEditTime: 2023-10-25 23:31:38
  # @LastEditors: Cloudflying
  # @Description: 
 ### 
@@ -56,4 +56,6 @@ _install()
 	# Lint
 	npm i -g sql-lint
 	npm i -g jsonlint
+	
+	npm i -g npm-run-all
 }
