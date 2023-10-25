@@ -5,7 +5,6 @@
  # @LastEditTime: 2021-12-07 16:14:23
  # @LastEditors: Cloudflying
  # @Description: 查找目录资源占用 Top
- # @FilePath: /.boxs/bin/all/usage-top
 ### 
 
 if [[ -n "${2}" ]]; then

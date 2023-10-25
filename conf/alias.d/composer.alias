@@ -1,0 +1,8 @@
+# add `d` debug -vvv
+alias cmpa="composer require"
+alias cmpr="composer remove"
+alias cmpu="composer update"
+alias cmpi="composer install"
+alias cmpo="composer browser"
+alias cmps="composer search"
+alias cmpuu="composer upgrade"
