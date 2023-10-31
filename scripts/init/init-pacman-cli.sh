@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-10-07 17:40:44
+ # @LastEditTime: 2023-10-31 19:41:23
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -49,10 +49,10 @@ _install()
 
 	# Virtual Machine && Container
 	# podman-docker conflict with docker
-	pacman -S --noconfirm docker docker-buildx docker-compose docker-scan \
-		podman podman-compose
+	# pacman -S --noconfirm docker docker-buildx docker-compose docker-scan \
+		# podman podman-compose
 	# Virtual Machine && Container Depency
-	pacman -S --noconfirm fuse-overlayfs
+	# pacman -S --noconfirm fuse-overlayfs
 
 	# Docker Tools
 	# ctop like linux top
@@ -68,12 +68,11 @@ _install()
 	# gitg GUI client to view git repositories.
 	pacman -S --noconfirm git-delta onefetch gitg gitui
 
-
 	# Blockchain
 	# pacman -S --noconfirm go-ethereum openethereum
 
 	# Downloader
-	pacman -S --noconfirm axel wget curl
+	pacman -S --noconfirm axel wget curl aria2
 
 	# Editor
 	pacman -S --noconfirm neovim

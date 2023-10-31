@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2023-05-21 21:57:42
+ # @LastEditTime: 2023-10-27 23:48:39
  # @LastEditors: Cloudflying
  # @Description: zsh config file
 ### 
@@ -60,10 +60,10 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	# 快速跳转至文件夹
 	zinit load agkozak/zsh-z
 	# Enhanced colors for zsh
-	zinit load zpm-zsh/colors
+	# zinit load zpm-zsh/colors
 	# Colorize command output using grc and lscolors
 	# zinit load unixorn/warhol.plugin.zsh
-	zinit load MichaelAquilina/zsh-you-should-use
+	# zinit load MichaelAquilina/zsh-you-should-use
 	zinit load mafredri/zsh-async
 	# 🔖 Quickly navigate your work path!
 	zinit load wfxr/formarks

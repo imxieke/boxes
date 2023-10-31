@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-12 22:14:17
- # @LastEditTime: 2023-10-12 13:22:21
+ # @LastEditTime: 2023-10-31 19:41:38
  # @LastEditors: Cloudflying
  # @Description: 
  # @FilePath: /.boxs/scripts/init/init-pacman.sh
@@ -107,7 +107,7 @@ _install()
 		xfce4-dict
 
 	# BitTorrent && Downloader
-	pacman -S --noconfirm deluge qbittorrent ktorrent transmission-gtk aria2 uget
+	pacman -S --noconfirm deluge qbittorrent ktorrent transmission-gtk uget
 
 	# Productive Video && Audio Editor
 	# pitivi Editor for audio/video projects using the GStreamer framework, beautiful and intuitive 
@@ -115,7 +115,8 @@ _install()
 	pacman -S --noconfirm pitivi
 
 	# Security
-	pacman -S --noconfirm metasploit ghidra jadx
+	# Rustscan Port Scanner
+	pacman -S --noconfirm metasploit ghidra jadx rustscan
 
 	# Editor
 	# gtk markdown editor
