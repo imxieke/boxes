@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-02 12:18:39
- # @LastEditTime: 2023-09-24 11:13:30
+ # @LastEditTime: 2023-10-30 19:29:55
  # @LastEditors: Cloudflying
  # @Description:  
  # @FilePath: /.boxs/scripts/bin-env.sh
@@ -21,6 +21,10 @@ fi
 if [[ -d "${HOME}/.bin" ]]; then
 	# echo "[+] export PATH ${HOME}/.bin"
 	export PATH="${HOME}/.bin:${PATH}"
+fi
+
+if [[ -d "/usr/local/opt/whois/bin" ]]; then
+	export PATH="/usr/local/opt/whois/bin:${PATH}"
 fi
 
 # 第三方不能通过包管理的软件包
