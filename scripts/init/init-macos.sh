@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2023-10-07 17:41:35
+ # @LastEditTime: 2023-11-15 19:29:06
  # @LastEditors: Cloudflying
  # @Description: init package for macOS brew package manager
  # @FilePath: /.boxs/scripts/init/init-macos.sh
@@ -68,6 +68,7 @@ init_brew()
 
     	# Remove a formula and its unused dependencies
     	# brew tap beeftornado/rmtree
+    	# brew tap symfony-cli/homebrew-tap
 
 	fi
 }
@@ -81,9 +82,15 @@ init_pkgs()
 	# brew install gcc make cmake xmake autoconf automake
 
 	brew install git subversion tldr zsh git fzf htop imagemagick meofetch squashfs syncthing tree curl whois
-	# duf Disk Usage/Free Utility - a better 'df' alternative
+
 	# gitui Blazing 💥 fast terminal-ui for git written in rust 🦀
-	brew install fd td exa ghq hub gh duf gitui
+	brew install ghq gh gitui
+
+	# lsd rust The next gen ls command
+	# exa rust Modern replacement for ls
+	# fd  rust Simple, fast and user-friendly alternative to find
+	# duf Disk Usage/Free Utility - a better 'df' alternative
+	brew install lsd exa fd duf
 
 	# bitwarden Password Manager
 	# balenaetcher flash mirror file to disk or Removable disk
@@ -97,7 +104,8 @@ init_pkgs()
 	brew install ccat bat bat-extras mdcat sk
 
 	# Remote
-	brew install vnc-viewer telnet
+	# devtunnel Microsoft tunnel
+	brew install vnc-viewer telnet cloudflared devtunnel tailscale
 
 	# gron Make JSON greppable!
 	brew install jq ccat gron ctop grex sd xsv jo
@@ -120,6 +128,8 @@ init_pkgs()
 
 	# input
 	brew install sogouinput
+
+	# Dict && Translation
 	brew install eudic
 
 	# Network Tools
@@ -185,6 +195,7 @@ init_pkgs()
 	brew install mdv mdp koodo-reader
 
 	# Version Control
+	# svn git-svn removed
 	brew install gh git svn git-svn
 
 	# Virtual Box

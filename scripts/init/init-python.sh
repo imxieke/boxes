@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:25:19
- # @LastEditTime: 2023-09-10 12:51:10
+ # @LastEditTime: 2023-12-03 19:47:18
  # @LastEditors: Cloudflying
  # @Description: 
 ### 
@@ -28,4 +28,6 @@ _install()
 
 	# Audits Python environments and dependency trees for known vulnerabilities
 	pip install pip-audit
+	# HTTPie is making APIs simple and intuitive for those building the tools of our time.
+	pip install httpie
 }

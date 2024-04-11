@@ -7,5 +7,6 @@
 	"aiXcoder.showTrayIcon": false,
 	"editor.inlineSuggest.enabled": true,
 	"diffEditor.codeLens": true,
-	"editor.tabCompletion": "on"
+  "editor.tabCompletion": "on",
+  "editor.inlineSuggest.showToolbar": "onHover"
 }

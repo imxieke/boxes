@@ -1,0 +1,19 @@
+alias php56="/usr/local/opt/php@5.6/bin/php"
+alias php74="/usr/local/opt/php@7.4/bin/php"
+alias php81="/usr/local/opt/php@8.1/bin/php"
+alias php82="/usr/local/opt/php@8.2/bin/php"
+
+# add `d` debug -vvv
+alias cmpa="composer require"
+alias cmpad="composer require --dev"
+alias cmpr="composer remove"
+alias cmpu="composer update"
+alias cmpi="composer install"
+alias cmpo="composer browser"
+alias cmps="composer search"
+alias cmpuu="composer upgrade"
+
+# Create PHP Project
+alias create-laralvel-project="composer create-project laravel/laravel"
+alias create-thinkphp-project="composer create-project topthink/think"
+alias create-symfony-project="composer create-project symfony/skeleton"

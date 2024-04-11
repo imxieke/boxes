@@ -2,13 +2,6 @@
 - fzf --> telescope
 - tagbar --> symbols-outline
 
-- 未运行
-- https://github.com/nvim-telescope/telescope-packer.nvim
-- nvim-snippy
-- friendly-snippets
-- vim-snippets
-- 
-
 ## 移植到 shell
 - 命令文档 类似 TLDR
 - https://github.com/nvim-telescope/telescope-cheat.nvim

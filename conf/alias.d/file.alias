@@ -11,3 +11,6 @@ alias llg='exa --all --long --icons --group --git --color-scale --classify --gro
 
 alias bat='bat --theme="gruvbox-dark" -n'
 alias bat-diff='bat --diff'
+
+# replace df
+alias ldf="duf"

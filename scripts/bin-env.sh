@@ -12,6 +12,7 @@
 # PATH 放后头 系统是从前往后搜索
 
 # PATH
+# Boxs PATH
 if [[ -d "${BOXS_HOME}/bin" ]]; then
 	# echo "[+] export PATH ${BOXS_HOME}/bin"
 	echo "[+] Set PATH"
@@ -23,6 +24,7 @@ if [[ -d "${HOME}/.bin" ]]; then
 	export PATH="${HOME}/.bin:${PATH}"
 fi
 
+# Custom
 if [[ -d "/usr/local/opt/whois/bin" ]]; then
 	export PATH="/usr/local/opt/whois/bin:${PATH}"
 fi

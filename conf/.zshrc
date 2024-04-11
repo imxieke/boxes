@@ -71,9 +71,9 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	zinit load trystan2k/zsh-tab-title
 
 	# git clone depth
-	zinit ice depth=1
+	# zinit ice depth=1
 	zinit load romkatv/powerlevel10k
-	zinit ice depth=1
+	# zinit ice depth=1
 	# zinit light jeffreytse/zsh-vi-mode
 	# if [[ -n "$(command -v fzf)" ]]; then
 		# Replace zsh's default completion selection menu with fzf!
@@ -91,14 +91,12 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 		# zinit snippet  OMZ::plugins/brew
 	fi
 
-	plugins+=(ag git gh rust history colored-man-pages extract fzf docker docker-compose yarn z)
+	plugins+=(ag git gh rust history colored-man-pages extract fzf docker docker-compose z)
 fi
 
 HISTFILE="$HOME/.zsh_history" # The path to the history file.
 HISTSIZE=50000                                          # The maximum number of events to save in the internal history.
 SAVEHIST=50000                                          # The maximum number of events to save in the history file.
-
-source $ZSH/oh-my-zsh.sh
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
@@ -107,8 +105,10 @@ ENABLE_BOXS_THEMES=true
 # if [[ -n ${ENABLE_BOXS_THEMES} ]]; then
 # 	source ${HOME}/.boxs/conf/zsh/themes/boxs.zsh-theme
 # else
-	# ZSH_THEME="strug"
+	ZSH_THEME="strug"
 # fi
+
+source $ZSH/oh-my-zsh.sh
 
 # 用户自定义配置
 

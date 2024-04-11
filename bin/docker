@@ -10,10 +10,9 @@
 
 if [[ -n "$(command -v podman)" ]]; then
 	podman $@
-elif [[ -n "$(command -v lima)" ]]; then
-	lima nerdctl $@
 elif [[ -f "/Applications/Docker.app/Contents/Resources/bin/docker" ]]; then
 	/Applications/Docker.app/Contents/Resources/bin/docker $@
-else
+elif [[ -n "$(command -v lima)" ]]; then
+	lima nerdctl $@
 	echo "Docker is Not Found"
 fi

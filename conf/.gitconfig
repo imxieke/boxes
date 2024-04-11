@@ -26,6 +26,7 @@
 [user]
 	name = imxieke
 	email = oss@live.hk
+	useConfigOnly = true
 [author]
 	name = imxieke
 	email = oss@live.hk
@@ -47,6 +48,11 @@
 	bare = false
 	excludesfile = /Users/imxieke/.boxs/conf/gitignore
 	editor = nvim
+	longpaths = true
+	autocrlf = input
+	trustctime = false
+	attributesfile = ~/.attributes_global
+	untrackedcache = true
 [color]
 	ui = auto
 	status = auto
@@ -62,6 +68,7 @@
 	remote = yellow
 [rebase]
 	autostash = true
+	backend = merge
 [help]
 	autocorrect = 1
 [interactive]
@@ -87,5 +94,25 @@
     hunk-header-style = file line-number syntax
 [http]
 	proxy = http://127.0.0.1:7890
+	postBuffer = 655360000
 [https]
 	proxy = http://127.0.0.1:7890
+[diff "text"]
+	textconv = cat
+[mergetool]
+	keepBackup = false
+[lfs]
+	concurrenttransfers = 32
+	fetchrecentrefsdays = 0
+	pruneoffsetdays = 0
+	dialtimeout = 3
+	tlstimeout = 3
+[lfs "transfer"]
+	maxretries = 1
+	maxretrydelay = 2
+[merge "lfs-text"]
+	driver = git lfs merge-driver --ancestor %O --current %A --other %B --marker-size %L --output %A --program 'git merge-file --stdout --marker-size=%%L %%A %%O %%B >%%D'
+[protocol]
+	version = 1
+[safe]
+	directory = *

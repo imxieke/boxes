@@ -74,7 +74,6 @@ alias dl="wget -c --no-check-certificate"
 alias pdl="proxychains4 wget"
 alias genpass="openssl rand -hex "
 alias pyweb='python -m SimpleHTTPServer 8000'
-alias phpweb='php -S 0.0.0.0:1024 -t .'
 alias myip="curl -sL http://myip.ipip.net"
 # alias myrawip="curl -sL https://ip.sb"
 alias locip='ipconfig getifaddr en0'

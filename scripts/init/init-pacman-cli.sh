@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-10-31 19:41:23
+ # @LastEditTime: 2023-11-03 19:02:53
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
 ### 
@@ -26,6 +26,7 @@ _install()
 	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk
 
 	# File && Code Tools
+	# rg ag
 	pacman -S --noconfirm ripgrep the_silver_searcher
 
 	# Tools
@@ -36,7 +37,7 @@ _install()
 	# asciinema Record and share terminal sessions
 	# vokoscreen 录屏
 	# syft generating a Software Bill of Materials from container images and filesystems
-	pacman -S --noconfirm tree jq git fzf sudo file less zsh cowsay cowfortune htop lsb-release ntp mtools xsv exa \
+	pacman -S --noconfirm tree jq fzf sudo file less zsh cowsay cowfortune btop htop lsb-release ntp mtools xsv exa \
 		skim fd bat bat-extras syft
 
 	# Package management
@@ -66,7 +67,7 @@ _install()
 	# Git Tools
 	# onefetch: like neofetch but for git
 	# gitg GUI client to view git repositories.
-	pacman -S --noconfirm git-delta onefetch gitg gitui
+	pacman -S --noconfirm git github-cli git-delta onefetch gitg gitui
 
 	# Blockchain
 	# pacman -S --noconfirm go-ethereum openethereum
