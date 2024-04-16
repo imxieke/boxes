@@ -17,7 +17,10 @@ _install()
 	# Network
 	# openbsd-netcat: nc command
 	# corkscrew: tunneling SSH through HTTP proxies
-	pacman -S --noconfirm net-tools mtr traceroute dnsutils iputils lsof clash rsync \
+	pacman -S --noconfirm net-tools mtr traceroute dnsutils iputils lsof \
+		clash \
+		rsync \
+		whois \
 		openbsd-netcat corkscrew socat \
 		syncthing \
 		iperf iperf3
@@ -42,7 +45,8 @@ _install()
 
 	# Package management
 	# App Store
-	pacman -S --noconfirm yay dpkg snapd
+	# snaod yay not in Archlinux
+	pacman -S --noconfirm dpkg
 
 	# Security
 	# osv-scanner Vulnerability scanner

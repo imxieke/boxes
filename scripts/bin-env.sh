@@ -4,9 +4,9 @@
  # @Date: 2022-09-02 12:18:39
  # @LastEditTime: 2023-10-30 19:29:55
  # @LastEditors: Cloudflying
- # @Description:  
+ # @Description:
  # @FilePath: /.boxs/scripts/bin-env.sh
-### 
+###
 
 # 加载自定义目录二进制文件 垃圾的 macOS 还不能删
 # PATH 放后头 系统是从前往后搜索
@@ -122,4 +122,18 @@ if [[ -f "/usr/local/opt/ruby/bin/gem" ]]; then
   	export CPPFLAGS="-I/usr/local/opt/ruby/include ${CPPFLAGS}"
   	# export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:${PKG_CONFIG_PATH}"
   	export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+fi
+
+
+if [[ -d "/usr/local/Cellar/apktool" ]]; then
+	apktool_version=$(ls /usr/local/Cellar/apktool | head -n 1)
+	apktool_bin="/usr/local/Cellar/apktool/${apktool_version}/libexec/apktool_${apktool_version}.jar"
+	alias apktool="java -jar ${apktool_bin}"
+fi
+
+# set java env
+if [[ -d /usr/local/opt/java11 ]]; then
+	export JAVA_HOME="/usr/local/opt/java11"
+elif [[ -d /usr/local/opt/java ]]; then
+	export JAVA_HOME="/usr/local/opt/java"
 fi

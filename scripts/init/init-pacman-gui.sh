@@ -187,7 +187,7 @@ _install()
 	pacman -S --noconfirm libreoffice-fresh libreoffice-fresh-zh-cn libreoffice-extension-texmaths libreoffice-extension-writer2latex
 	
 	# NetWork
-	pacman -S --noconfirm net-tools nmap whois gnome-nettool
+	pacman -S --noconfirm gnome-nettool
 
 	# KDE Plasma Desktop
 	# pacman -S --noconfirm plasma

@@ -5,7 +5,7 @@
  # @LastEditTime: 2023-10-30 19:29:12
  # @LastEditors: Cloudflying
  # @Description: boxs 初始化文件 仅包含配置文件
-### 
+###
 
 # 使用 local 定义局部变量
 # 使用 export 定义全局变量
@@ -32,7 +32,7 @@ export LC_CTYPE="${LANGUAGE}"
 # export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
 # export NVM_NODEJS_ORG_MIRROR=https://registry.npmmirror.com/-/binary/node
 export NVM_NODEJS_ORG_MIRROR=https://cdn.npmmirror.com/binaries/node
-export NPＭ_CONFIG_REGISTRY=https://registry.npmmirror.com
+export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 export NVM_DIR="${HOME}/.local/share/nvm"
 
 BOXS_HOME=${HOME}/.boxs
@@ -45,9 +45,6 @@ if [[ "${OSTYPE}" == 'Darwin' ]]; then
 elif [[ "${OSTYPE}" == 'Linux' ]];then
     export HOST_IP=$(hostname -i)
 fi
-
-# 加载本地自定义变量
-[[ -f "${HOME}/.env" ]] && source "${HOME}/.env"
 
 # 加载未在 PATH 的目录
 [[ -f "${HOME}/.boxs/scripts/bin-env.sh" ]] && source ${HOME}/.boxs/scripts/bin-env.sh
@@ -91,22 +88,9 @@ if [[ -f '/usr/local/bin/brew' ]]; then
     # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 fi
 
-# set java env
-if [[ -d /usr/local/opt/java11 ]]; then
-	export JAVA_HOME="/usr/local/opt/java11"
-elif [[ -d /usr/local/opt/java ]]; then
-	export JAVA_HOME="/usr/local/opt/java"
-fi
-
 # export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # export VAGRANT_DEFAULT_PROVIDER=libvirt
 # export DOCKER_REGISTRY_PREFIX=registry.cn-hongkong.aliyuncs.com/imxieke
-
-if [[ -d "/usr/local/Cellar/apktool" ]]; then
-	apktool_version=$(ls /usr/local/Cellar/apktool | head -n 1)
-	apktool_bin="/usr/local/Cellar/apktool/${apktool_version}/libexec/apktool_${apktool_version}.jar"
-	alias apktool="java -jar ${apktool_bin}"
-fi
 
 # export
 export NVIM_HOME="~/.config/nvim"
@@ -128,12 +112,12 @@ elif [[ -n $(command -v vim) ]]; then
   export VISUAL='vim'
 fi
 
+export CVSEDITOR="${EDITOR}"
+export SVN_EDITOR="${EDITOR}"
+export GIT_EDITOR="${EDITOR}"
+
 export NVIM_NODE_LOG_FILE="/tmp/nvim_node.log"
 export NVIM_PYTHON_LOG_FILE="/tmp/nvim_python.log"
-
-# export CVSEDITOR="${EDITOR}"
-# export SVN_EDITOR="${EDITOR}"
-# export GIT_EDITOR="${EDITOR}"
 
 if [[ -n "$(command -v fcitx)" ]]; then
 	export GTK_IM_MODULE=fcitx
@@ -154,7 +138,7 @@ if [[ -n $(command -v go) ]]; then
     export GOBIN="${GOPATH}/bin"
     export GOSRC="${GOPATH}/src"
     export PATH="$PATH:$GOBIN"
-	
+
 	# 启用 Go Modules 功能
     export GO111MODULE=on
 	# 官网

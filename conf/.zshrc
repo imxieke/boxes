@@ -4,7 +4,7 @@
  # @LastEditTime: 2023-10-27 23:48:39
  # @LastEditors: Cloudflying
  # @Description: zsh config file
-### 
+###
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
@@ -27,6 +27,20 @@ zmodload zsh/zprof
 # 前面优先级高 覆盖系统自带的命令
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 # export MANPATH=''
+
+# 加载本地自定义变量
+[[ -f "${HOME}/.env" ]] && source "${HOME}/.env"
+
+# Proxy
+# 配置代理
+if [[ -n "${MIXED_PROXY}" ]]; then
+	export http_proxy=${MIXED_PROXY}
+	export https_proxy=${MIXED_PROXY}
+	export rsync_proxy=${MIXED_PROXY}
+	export ftp_proxy=${MIXED_PROXY}
+	export all_proxy=${MIXED_PROXY}
+	export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
