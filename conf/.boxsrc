@@ -23,6 +23,11 @@ elif [[ "$(uname -s )" == 'Linux' ]];then
     OSNAME=$(grep '^ID=' /etc/os-release | grep '^ID=' | awk -F '=' '{print $2}')
 fi
 
+# Block Notify
+if [[ -f '/etc/wsl.conf' ]] || [[ -d /mnt/d ]];then
+    export DONT_PROMPT_WSL_INSTALL=true
+fi
+
 # Set locale and language
 export LANG="en_US.UTF-8"
 export LANGUAGE="${LANGUAGE}"
