@@ -1,7 +1,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2023-10-27 23:48:39
+ # @LastEditTime: 2024-04-18 11:02:27
  # @LastEditors: Cloudflying
  # @Description: zsh config file
 ###
@@ -34,11 +34,11 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 # Proxy
 # 配置代理
 if [[ -n "${MIXED_PROXY}" ]]; then
-	export http_proxy=${MIXED_PROXY}
-	export https_proxy=${MIXED_PROXY}
-	export rsync_proxy=${MIXED_PROXY}
-	export ftp_proxy=${MIXED_PROXY}
-	export all_proxy=${MIXED_PROXY}
+	export http_proxy=http://${MIXED_PROXY}
+	export https_proxy=http://${MIXED_PROXY}
+	export rsync_proxy=http://${MIXED_PROXY}
+	export ftp_proxy=http://${MIXED_PROXY}
+	export all_proxy=http://${MIXED_PROXY}
 	export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 fi
 

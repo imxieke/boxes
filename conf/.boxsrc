@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 ###
- # @Author: Cloudflying
- # @Date: 2021-12-03 23:41:53
- # @LastEditTime: 2023-10-30 19:29:12
- # @LastEditors: Cloudflying
- # @Description: boxs 初始化文件 仅包含配置文件
+# @Author: Cloudflying
+# @Date: 2021-12-03 23:41:53
+# @LastEditTime: 2023-10-30 19:29:12
+# @LastEditors: Cloudflying
+# @Description: boxs 初始化文件 仅包含配置文件
 ###
 
 # 使用 local 定义局部变量
@@ -15,16 +15,16 @@
 
 # Config System Environment
 # Darwin or Linux
-if [[ "$(uname -s)" == 'Darwin' ]];then
+if [[ "$(uname -s)" == 'Darwin' ]]; then
     OSTYPE='Darwin'
     OSNAME='Darwin'
-elif [[ "$(uname -s )" == 'Linux' ]];then
+elif [[ "$(uname -s)" == 'Linux' ]]; then
     OSTYPE='Linux'
     OSNAME=$(grep '^ID=' /etc/os-release | grep '^ID=' | awk -F '=' '{print $2}')
 fi
 
 # Block Notify
-if [[ -f '/etc/wsl.conf' ]] || [[ -d /mnt/d ]];then
+if [[ -f '/etc/wsl.conf' ]] || [[ -d /mnt/d ]]; then
     export DONT_PROMPT_WSL_INSTALL=true
 fi
 
@@ -47,7 +47,7 @@ BOXS_LOGS=${BOXS_HOME}/logs
 
 if [[ "${OSTYPE}" == 'Darwin' ]]; then
     export HOST_IP=$(ifconfig en1 | grep -Eo 'inet\ [0-9]\S+.[0-9]' | sed 's#inet\ ##g')
-elif [[ "${OSTYPE}" == 'Linux' ]];then
+elif [[ "${OSTYPE}" == 'Linux' ]]; then
     export HOST_IP=$(hostname -i)
 fi
 
@@ -59,15 +59,15 @@ fi
 # [ -f ${BOXS_HOME}/scripts/macos-build-env-conf.sh ] && source ${BOXS_HOME}/scripts/macos-build-env-conf.sh
 
 # 加载自定义 aliases
-  echo "[+] Source alias"
-for aliasf in "${BOXS_HOME}/conf/alias.d"/*.alias ; do
-  source "$aliasf"
+echo "[+] Source alias"
+for aliasf in "${BOXS_HOME}/conf/alias.d"/*.alias; do
+    source "$aliasf"
 done
 
 # 加载自定义 shell
 echo "[+] Source shell"
 for aliasf in "${BOXS_HOME}/libraries/shell"/*.sh; do
-  source "${aliasf}"
+    source "${aliasf}"
 done
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -79,12 +79,12 @@ done
 [ -f ${BOXS_HOME}/scripts/command-not-found.sh ] && source ${BOXS_HOME}/scripts/command-not-found.sh
 
 if [[ -f '/usr/local/bin/brew' ]]; then
-	export HOMEBREW_NO_AUTO_UPDATE=true
-	export HOMEBREW_NO_ENV_HINTS=true
-	export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-	export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-	export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-	export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+    export HOMEBREW_NO_AUTO_UPDATE=true
+    export HOMEBREW_NO_ENV_HINTS=true
+    export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+    export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+    export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
     # aliyun 更新速度慢
     # export HOMEBREW_BOTTLE_DOMAIN="https://pods.xie.ke/homebrew-bottles"
     # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.cloud.tencent.com/homebrew-bottles/bottles"
@@ -110,11 +110,11 @@ export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
 
 # Set Default Editor
 if [[ -n $(command -v nvim) ]]; then
-  export EDITOR='nvim'
-  export VISUAL='nvim'
+    export EDITOR='nvim'
+    export VISUAL='nvim'
 elif [[ -n $(command -v vim) ]]; then
-  export EDITOR='vim'
-  export VISUAL='vim'
+    export EDITOR='vim'
+    export VISUAL='vim'
 fi
 
 export CVSEDITOR="${EDITOR}"
@@ -125,42 +125,42 @@ export NVIM_NODE_LOG_FILE="/tmp/nvim_node.log"
 export NVIM_PYTHON_LOG_FILE="/tmp/nvim_python.log"
 
 if [[ -n "$(command -v fcitx)" ]]; then
-	export GTK_IM_MODULE=fcitx
-	export QT_IM_MODULE=fcitx
-	export XMODIFIERS=”@im=fcitx”
+    export GTK_IM_MODULE=fcitx
+    export QT_IM_MODULE=fcitx
+    export XMODIFIERS=”@im=fcitx”
 fi
 
 # Golang env
 if [[ -n $(command -v go) ]]; then
-    mkdir -p ~/.go/bin            # 包含可执行文件，如：编译器，Go 工具
-    mkdir -p ~/.go/src            # 包含源代码构建脚本和标准库的包的完整源代码（Go 是一门开源语言）
-    mkdir -p ~/.go/doc            # 包含示例程序，代码工具，本地文档等
-    mkdir -p ~/.go/lib            # 包含文档模版
-    mkdir -p ~/.go/misc           # 包含与支持 Go 编辑器有关的配置文件以及 cgo 的示例
-    mkdir -p ~/.go/os_arch        # 包含标准库的包的对象文件（.a）
-    mkdir -p ~/.go/cmd            # 包含 Go 和 C 的编译器和命令行脚本
+    mkdir -p ~/.go/bin     # 包含可执行文件，如：编译器，Go 工具
+    mkdir -p ~/.go/src     # 包含源代码构建脚本和标准库的包的完整源代码（Go 是一门开源语言）
+    mkdir -p ~/.go/doc     # 包含示例程序，代码工具，本地文档等
+    mkdir -p ~/.go/lib     # 包含文档模版
+    mkdir -p ~/.go/misc    # 包含与支持 Go 编辑器有关的配置文件以及 cgo 的示例
+    mkdir -p ~/.go/os_arch # 包含标准库的包的对象文件（.a）
+    mkdir -p ~/.go/cmd     # 包含 Go 和 C 的编译器和命令行脚本
     export GOPATH="${HOME}/.go"
     export GOBIN="${GOPATH}/bin"
     export GOSRC="${GOPATH}/src"
     export PATH="$PATH:$GOBIN"
 
-	# 启用 Go Modules 功能
+    # 启用 Go Modules 功能
     export GO111MODULE=on
-	# 官网
-	# sum.golang.org
-	export GOSUMDB=sum.golang.google.cn
+    # 官网
+    # sum.golang.org
+    export GOSUMDB=sum.golang.google.cn
     # index.golang.org
 
     # 配置 GOPROXY 环境变量
     # https://mirrors.cloud.tencent.com/go/
-	# https://mirrors.aliyun.com/goproxy/
-	# 似乎是官方的 国内也挺快
+    # https://mirrors.aliyun.com/goproxy/
+    # 似乎是官方的 国内也挺快
     # proxy.golang.org
-	# https://goproxy.io
+    # https://goproxy.io
     # Qiniu
-	# https://goproxy.cn
-	# Baidu
-	# https://goproxy.bj.bcebos.com
+    # https://goproxy.cn
+    # Baidu
+    # https://goproxy.bj.bcebos.com
     export GOPROXY=https://goproxy.io,direct
     # 设置不走 proxy 的私有仓库或组，多个用逗号相隔
     # export GOPRIVATE=*.corp.example.com,git.mycompany.com,github.com/my/private
@@ -179,4 +179,4 @@ HIST_STAMPS="yyyy-mm-dd"
 DISABLE_AUTO_UPDATE="true"
 
 # quotes 虽然我看不懂 但是不妨碍我装逼
-[ -n "$(command -v fortune )" ] && fortune -s | cowsay
+[ -n "$(command -v fortune)" ] && fortune -s | cowsay
