@@ -1,0 +1,4 @@
+alias pnpmga="pnpm add -g"
+alias pnpmgr="pnpm rm -g"
+alias pnpmas="pnpm add --save"
+alias pnpmasd="pnpm add --save-dev"

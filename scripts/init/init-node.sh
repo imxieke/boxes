@@ -2,14 +2,16 @@
 ###
 # @Author: Cloudflying
 # @Date: 2023-03-27 20:24:49
-# @LastEditTime: 2023-12-08 00:34:41
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-04-21 20:22:09
+ # @LastEditors: Cloudflying
 # @Description:
 ###
 
 _install() {
     # Fabulously kill processes. Cross-platform
-    npm install -g bower yarn grunt gulp webpack webpack-cli rollup
+    npm install -g bower yarn
+    # Pack
+    npm install -g grunt gulp-cli webpack webpack-cli rollup esbuild parcel vite
     npm install -g fkill-cli
     npm install -g fx
     npm install -g nali-cli

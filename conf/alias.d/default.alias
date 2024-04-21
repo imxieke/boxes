@@ -1,11 +1,11 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2023-09-21 00:05:51
+ # @LastEditTime: 2024-04-20 07:45:55
  # @LastEditors: Cloudflying
- # @Description: 
+ # @Description:
  # @FilePath: /.boxs/conf/alias.d/default.alias
-### 
+###
 
 # VM
 alias ssh-arch='ssh imxieke@192.168.2.233'
@@ -78,9 +78,6 @@ alias myip="curl -sL http://myip.ipip.net"
 # alias myrawip="curl -sL https://ip.sb"
 alias locip='ipconfig getifaddr en0'
 alias locrawip="ifconfig | grep -v '127.0.0.1' | grep inet | grep -v :: | grep -v inet6| awk '{print $2}'"
-alias cpr='composer require -vvv'
-alias cps='composer search'
-alias cpr73='php73 /usr/local/bin/composer require -vvv'
 alias vidotfile='subl ~/.config/dotfile'
 alias viclash='sle ~/.config/clash'
 alias visubl='sle ~/Library/Application\ Support/Sublime\ Text'
