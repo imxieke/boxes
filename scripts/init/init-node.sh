@@ -2,60 +2,63 @@
 ###
 # @Author: Cloudflying
 # @Date: 2023-03-27 20:24:49
- # @LastEditTime: 2024-04-21 20:22:09
- # @LastEditors: Cloudflying
-# @Description:
+# @LastEditTime: 2024-04-22 17:17:20
+# @LastEditors: Cloudflying
+# @Description: Node Init
 ###
 
 _install() {
     # Fabulously kill processes. Cross-platform
-    npm install -g bower yarn
+    npm i -g pnpm
+    pnpm add -g bower yarn
     # Pack
-    npm install -g grunt gulp-cli webpack webpack-cli rollup esbuild parcel vite
-    npm install -g fkill-cli
-    npm install -g fx
-    npm install -g nali-cli
-    npm install -g tldr asar apidoc
+    pnpm add -g grunt gulp-cli webpack webpack-cli rollup esbuild parcel vite
+    pnpm add -g fkill-cli
+    pnpm add -g fx
+    pnpm add -g nali-cli
+    pnpm add -g tldr @electron/asar apidoc
 
     # bug scanner
-    # npm install -g snyk@latest
+    # pnpm add -g snyk@latest
 
-    npm i -g prettier
+    pnpm add -g prettier
 
-    npm i -g neovim
+    pnpm add -g neovim
 
     # intelephense php autocomplete PHP language server
-    npm i -g intelephense bash-language-server typescript-language-server yaml-language-server-parser
+    pnpm add -g intelephense bash-language-server typescript-language-server yaml-language-server-parser
 
     # Language
-    npm i -g @prettier/plugin-ruby prettier-plugin-sh prettier-plugin-sql prettier-plugin-java prettier-plugin-solidity \
+    pnpm add -g @prettier/plugin-ruby prettier-plugin-sh prettier-plugin-sql prettier-plugin-java prettier-plugin-solidity \
         prettier-plugin-kotlin @prettier/plugin-php
 
     # Frontend
-    npm i -g prettier-plugin-wxml prettier-plugin-tailwind prettier-plugin-tailwindcss prettier-plugin-tailwind-css @shufo/prettier-plugin-blade
+    pnpm add -g prettier-plugin-wxml @shufo/prettier-plugin-blade
 
     # Lint
-    npm install -g dockerfile_lint dockerlint dockerfilelint
+    pnpm add -g dockerfile_lint dockerlint dockerfilelint
 
     # Conf
-    npm i -g prettier-plugin-nginx
+    pnpm add -g prettier-plugin-nginx
 
     # Documents
-    npm i -g prettier-plugin-latex
+    pnpm add -g prettier-plugin-latex
 
     # Salesforce Apex
-    npm i -g prettier-plugin-apex
+    pnpm add -g prettier-plugin-apex
 
     # Other
-    npm i -g prettier-plugin-ssh-config prettier-plugin-ini prettier-plugin-pkg prettier-plugin-toml @prettier/plugin-xml
+    pnpm add -g prettier-plugin-ssh-config prettier-plugin-ini prettier-plugin-pkg prettier-plugin-toml @prettier/plugin-xml
 
     # 用不到
     # @shopify/prettier-plugin-liquid prettier-plugin-go-template eslint-plugin-prettier-vue prettier-plugin-tvmsolidity @prettier/plugin-pug
-    npm i -g eslint eslint-plugin-jsonc eslint-plugin-json
+    pnpm add -g eslint eslint-plugin-jsonc eslint-plugin-json
 
     # Lint
-    npm i -g sql-lint
-    npm i -g jsonlint
+    pnpm add -g sql-lint
+    pnpm add -g jsonlint
 
-    npm i -g npm-run-all
+    pnpm add -g npm-run-all
 }
+
+_install
