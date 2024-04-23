@@ -116,3 +116,5 @@
 	version = 1
 [safe]
 	directory = *
+[credential]
+	helper = store
