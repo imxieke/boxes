@@ -1,10 +1,10 @@
 ###
- # @Author: Cloudflying
- # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2024-04-20 07:45:55
- # @LastEditors: Cloudflying
- # @Description:
- # @FilePath: /.boxs/conf/alias.d/default.alias
+# @Author: Cloudflying
+# @Date: 2021-12-28 20:01:25
+# @LastEditTime: 2024-04-23 22:42:36
+# @LastEditors: Cloudflying
+# @Description:
+# @FilePath: /.boxs/conf/alias.d/default.alias
 ###
 
 # VM
@@ -18,8 +18,8 @@ alias npm-upgrade-all='npm update -g'
 alias visle="sle ~/Library/Application\ Support/Sublime\ Text/"
 alias vivsc="sle ~/Library/Application\ Support/Code/"
 
-if [[ -z "$(command -v bat)" ]] && [[ -n "$(command -v batcat)" ]] ; then
-	alias bat='batcat'
+if [[ -z "$(command -v bat)" ]] && [[ -n "$(command -v batcat)" ]]; then
+  alias bat='batcat'
 fi
 
 # quick jump
@@ -46,7 +46,13 @@ alias ':q'="exit"
 alias gdu='grc du -h'
 alias sdu='/usr/bin/du -h -d 1 -I ~/Library -I /Applications -I /dev'
 
-EDITOR=nvim
+if [[ -n "$(command -v nvim)" ]]; then
+  EDITOR=nvim
+  alias vim=${EDITOR}
+elif [[ -n "$(command -v vim)" ]]; then
+  EDITOR="vim"
+fi
+
 alias e=${EDITOR}
 alias vi=${EDITOR}
 # alias vim=${EDITOR}
@@ -115,18 +121,24 @@ fi
 alias hexpass='openssl rand -hex 24'
 
 # Set Proxy Alias
-if [[ ! -z $(command -v proxychains4) ]]; then
+if [[ -n $(command -v proxychains4) ]]; then
   alias ap='proxychains4'
   alias proxychains='proxychains4'
-elif [[ ! -z $(command -v proxychains) ]]; then
-   alias ap='proxychains'
-elif [[ ! -z $(command -v proxychains-ng) ]]; then
-   alias ap='proxychains-ng'
-   alias proxychains='proxychains-ng'
+elif [[ -n $(command -v proxychains) ]]; then
+  alias ap='proxychains'
+elif [[ -n $(command -v proxychains-ng) ]]; then
+  alias ap='proxychains-ng'
+  alias proxychains='proxychains-ng'
 fi
 
 # 区分操作系统
 if [[ "${OSNAME}" == 'Darwin' ]]; then
+  # VSCode
+  if [[ -f "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]]; then
+    alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+    alias code-tunnel="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code-tunnel"
+  fi
+
   # macOS 默认的 openssh 版本很老
   # alias ssh="/usr/local/bin/ssh -o ServerAliveInterval=60"
   alias wifi-info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I'
@@ -153,12 +165,12 @@ if [[ "${OSNAME}" == 'Darwin' ]]; then
   alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 
   # VirtualBox
-  if [ -f "/Applications/VirtualBox.app/Contents/MacOS/VBoxManage" ];then
+  if [ -f "/Applications/VirtualBox.app/Contents/MacOS/VBoxManage" ]; then
     alias vmbox='/Applications/VirtualBox.app/Contents/MacOS/VBoxManage'
   fi
 
   # Google Chrome linux is set by default
-  if [ -f "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ];then
+  if [ -f "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
     alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
   fi
 
@@ -174,3 +186,6 @@ else
 fi
 
 [ -f /Applications/kate.app/Contents/MacOS/kate ] && alias kate="/Applications/kate.app/Contents/MacOS/kate"
+
+# VSCode
+alias vsc="code"
