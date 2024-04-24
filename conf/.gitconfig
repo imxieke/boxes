@@ -46,7 +46,7 @@
 	pager = delta
 	ignorecase = false
 	bare = false
-	excludesfile = /Users/imxieke/.boxs/conf/gitignore
+	excludesfile = ~/.boxs/conf/gitignore
 	editor = nvim
 	longpaths = true
 	autocrlf = input
@@ -97,6 +97,10 @@
 	postBuffer = 655360000
 [https]
 	proxy = http://127.0.0.1:7890
+
+[diff]
+  tool = nvim
+
 [diff "text"]
 	textconv = cat
 [mergetool]
