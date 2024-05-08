@@ -1,7 +1,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-12-28 20:01:25
-# @LastEditTime: 2024-05-08 21:56:14
+# @LastEditTime: 2024-05-08 23:07:18
 # @LastEditors: Cloudflying
 # @Description:
 ###
@@ -129,7 +129,7 @@ elif [[ -n $(command -v proxychains-ng) ]]; then
 fi
 
 # 区分操作系统
-if [[ "${OSNAME}" == 'Darwin' ]]; then
+if [[ "${OSTYPE}" == 'Darwin' ]]; then
   # VSCode
   if [[ -f "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" ]]; then
     alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
