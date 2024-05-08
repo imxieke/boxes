@@ -1674,7 +1674,7 @@
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
   }
 
-  [ -f ~/.boxs/etc/p10k/promt.sh ] && source ~/.boxs/etc/p10k/promt.sh
+  [ -f ${BOXS_HOME}/etc/p10k/promt.sh ] && source ${BOXS_HOME}/etc/p10k/promt.sh
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
   # is to generate the prompt segment for display in instant prompt. See
   # https://github.com/romkatv/powerlevel10k/blob/master/README.md#instant-prompt.

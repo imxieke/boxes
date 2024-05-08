@@ -5,8 +5,7 @@
  # @LastEditTime: 2022-07-18 17:29:20
  # @LastEditors: Cloudflying
  # @Description: A small zsh script for styling strings
- # @FilePath: /.boxs/conf/zsh/plugins/color.zsh
-### 
+###
 
 function color() {
   local color=$1 style=$2 b=0

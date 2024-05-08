@@ -5,8 +5,7 @@
  # @LastEditTime: 2022-07-18 17:31:25
  # @LastEditors: Cloudflying
  # @Description: A simple helper script to send a notification when a long-running command completes
- # @FilePath: /.boxs/conf/zsh/plugins/done.zsh
-### 
+###
 
 ###
 # Turns seconds into human readable time

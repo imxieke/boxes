@@ -5,8 +5,7 @@
  # @LastEditTime: 2022-07-18 17:29:47
  # @LastEditors: Cloudflying
  # @Description: Gives you helpful hints when you execute a command for which you have an alias defined
- # @FilePath: /.boxs/conf/zsh/plugins/tipz.zsh
-### 
+###
 
 ###
 # Search the defined aliases for a match

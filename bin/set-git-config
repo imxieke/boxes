@@ -46,7 +46,7 @@ git config --global color.diff.new green bold
 git config --global color.diff.whitespace red bold
 
 # Specify a .gitignore file which applies to every git repo (useful for things like Thumbs.db or .DS_Store)
-git config --global core.excludesfile ~/.boxs/conf/gitignore
+git config --global core.excludesfile ~/.boxes/conf/gitignore
 
 git config --global core.editor "nvim"
 

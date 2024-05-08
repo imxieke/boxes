@@ -3,9 +3,8 @@
  # @Date: 2021-12-05 15:48:35
  # @LastEditTime: 2021-12-05 15:51:18
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/etc/p10k/p10k-instant-prompt.zsh
-### 
+ # @Description:
+###
 
 [[ -t 0 && -t 1 && -t 2 && -o interactive && -o zle && -o no_xtrace ]] &&
   ! (( ${+__p9k_instant_prompt_disabled} || ZSH_SUBSHELL || ${+ZSH_SCRIPT} || ${+ZSH_EXECUTION_STRING} )) || return 0
@@ -160,10 +159,10 @@
 
   () {
 	[[ -z $P9K_TOOLBOX_NAME && -e /run/.toolboxenv && -f /run/.containerenv && -r /run/.containerenv ]] || return 0
-	local name=(${(Q)${${(@M)${(f)"$(</run/.containerenv)"}:#name=*}#name=}}) 
+	local name=(${(Q)${${(@M)${(f)"$(</run/.containerenv)"}:#name=*}#name=}})
 	(( ${#name} == 1 )) || return 0
 	[[ -n ${name[1]} ]] || return 0
-	typeset -g P9K_TOOLBOX_NAME=${name[1]} 
+	typeset -g P9K_TOOLBOX_NAME=${name[1]}
   }
   trap "unset -m _p9k__\*; unfunction p10k" EXIT
   local -a _p9k_t=("${(@ps:$us:)${tail%%$rs*}}")

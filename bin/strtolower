@@ -5,7 +5,6 @@
  # @LastEditTime: 2021-12-05 21:00:17
  # @LastEditors: Cloudflying
  # @Description: Convert String to lowercase
- # @FilePath: /.boxs/bin/all/strtolower
-### 
+###
 
 echo $@ | tr 'A-Z' 'a-z'

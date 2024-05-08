@@ -4,13 +4,12 @@
  # @Date: 2021-12-04 13:42:05
  # @LastEditTime: 2021-12-05 17:38:46
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/bin/all/create-boxs-shell-bin
-### 
+ # @Description:
+###
 
 # format cmd language name
 
-SAVETO=~/.boxs/bin/
+SAVETO=${BOXS_HOME}/bin/
 
 cd ${SAVETO}
 

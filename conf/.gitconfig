@@ -46,7 +46,7 @@
 	pager = delta
 	ignorecase = false
 	bare = false
-	excludesfile = ~/.boxs/conf/gitignore
+	excludesfile = ~/.boxes/conf/gitignore
 	editor = nvim
 	longpaths = true
 	autocrlf = input

@@ -4,9 +4,8 @@
  # @Date: 2021-12-06 00:01:48
  # @LastEditTime: 2021-12-06 00:08:17
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/bin/all/rm-file-from-all-git-history
-### 
+ # @Description:
+###
 
 [ -z $1 ] && echo 'type file full path please, example path/to/file or path/to/' && exit 1
 

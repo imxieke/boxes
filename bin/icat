@@ -5,7 +5,6 @@
  # @LastEditTime: 2021-12-22 23:24:13
  # @LastEditors: Cloudflying
  # @Description: iconv cat
- # @FilePath: /.boxs/bin/all/icat
-### 
+###
 
 cat $1 | iconv -f GB2312 -t UTF-8

@@ -5,8 +5,7 @@
  # @LastEditTime: 2022-06-27 17:55:06
  # @LastEditors: Cloudflying
  # @Description: Filter Name to delete docker image
- # @FilePath: /.boxs/bin/all/docker-rmi-filter
-### 
+###
 
 if [[ -z "${1}" ]]; then
     echo "Type Docker image name to remove it"

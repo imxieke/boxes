@@ -4,9 +4,8 @@
  # @Date: 2021-12-03 15:28:39
  # @LastEditTime: 2021-12-05 21:04:23
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/bin/all/os.sh
-### 
+ # @Description:
+###
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
     # macOS
