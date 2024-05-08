@@ -2,10 +2,9 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:14:35
- # @LastEditTime: 2023-03-27 20:27:55
+ # @LastEditTime: 2024-05-08 20:37:30
  # @LastEditors: Cloudflying
  # @Description: init Alpine
- # @FilePath: /.boxs/scripts/init/init-alpine.sh
 ###
 
 # alpine 使用 musl 标准库 某些基于 gnu 编译的程序无法使用

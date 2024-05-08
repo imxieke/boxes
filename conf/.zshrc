@@ -1,10 +1,17 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-09-19 01:49:42
- # @LastEditTime: 2024-04-18 11:02:27
+ # @LastEditTime: 2024-05-08 21:44:23
  # @LastEditors: Cloudflying
  # @Description: zsh config file
 ###
+
+# init PATH
+# 前面优先级高 覆盖系统自带的命令
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+# export MANPATH=''
+
+# Set locale and language
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
@@ -21,12 +28,18 @@ export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 # export LC_ALL="en_US.UTF-8"
 
+# export NVM_NODEJS_ORG_MIRROR=http://mirrors.ustc.edu.cn/node
+# export NVM_NODEJS_ORG_MIRROR=https://registry.npmmirror.com/-/binary/node
+export NVM_NODEJS_ORG_MIRROR=https://cdn.npmmirror.com/binaries/node
+export NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
+export NVM_DIR="${HOME}/.local/share/nvm"
+
+export BOXS_HOME=${HOME}/.boxs
+export BOXS_CONF=${BOXS_HOME}/conf
+export BOXS_LOGS=${BOXS_HOME}/logs
+
 # Check zsh load time for debug
 zmodload zsh/zprof
-# init PATH
-# 前面优先级高 覆盖系统自带的命令
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
-# export MANPATH=''
 
 # 加载本地自定义变量
 [[ -f "${HOME}/.env" ]] && source "${HOME}/.env"
@@ -45,8 +58,8 @@ fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "~/.boxs/etc/p10k/p10k-instant-prompt.zsh" ]]; then
-  source ~/.boxs/etc/p10k/p10k-instant-prompt.zsh
+if [[ -r "${BOXS_HOME}/etc/p10k/p10k-instant-prompt.zsh" ]]; then
+  source ${BOXS_HOME}/etc/p10k/p10k-instant-prompt.zsh
 fi
 
 export ZSH=$HOME/.oh-my-zsh
@@ -126,7 +139,7 @@ source $ZSH/oh-my-zsh.sh
 
 # 用户自定义配置
 
-[ -f ~/.boxs/conf/.boxsrc ] && source ~/.boxs/conf/.boxsrc
+[ -f ${BOXS_HOME}/conf/.boxsrc ] && source ${BOXS_HOME}/conf/.boxsrc
 
 # 执行切换目录命令行自动执行下面命令
 auto-color-ls() {

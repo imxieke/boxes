@@ -2,13 +2,12 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-08-22 23:46:22
-# @LastEditTime: 2024-04-17 11:39:24
+# @LastEditTime: 2024-05-08 21:08:19
 # @LastEditors: Cloudflying
 # @Description: Phar Manager {install update remove}
-# @FilePath: /.boxs/scripts/phar.sh
 ###
 
-. ${HOME}/.boxs/scripts/function.sh
+. ${BOXS_HOME}/scripts/function.sh
 
 BIN_PATH=${HOME}/.local/boxs/bin
 
@@ -20,58 +19,58 @@ GIT_HOST="https://ghproxy.com"
 
 # username/repo
 get_github_latest_version() {
-    repo=$1
-    url="${GIT_HOST}/${repo}/releases/latest"
-    version=$(curl -sI "${url}" | grep -Ei "${GIT_HOST}/\S+releases/tag/" | awk -F 'releases/tag/' '{print $2}')
-    if [[ -n "${version}" ]]; then
-        echo "${version}"
-    fi
+  repo=$1
+  url="${GIT_HOST}/${repo}/releases/latest"
+  version=$(curl -sI "${url}" | grep -Ei "${GIT_HOST}/\S+releases/tag/" | awk -F 'releases/tag/' '{print $2}')
+  if [[ -n "${version}" ]]; then
+    echo "${version}"
+  fi
 }
 
 # 从远程获取文件
 # _fetch url save
 function _fetch() {
-    if [[ -n "${2}" ]]; then
-        _WGET_OUTPUT="-O $2"
-        _AXEL_OUTPUT="-o $2"
-    fi
+  if [[ -n "${2}" ]]; then
+    _WGET_OUTPUT="-O $2"
+    _AXEL_OUTPUT="-o $2"
+  fi
 
-    if [[ -n "$(command -v axel)" ]]; then
-        axel -k -v -a -n 4 $1 $_AXEL_OUTPUT
-    elif [[ -n "$(command -v wget)" ]]; then
-        wget -c --no-check-certificate $1 $_WGET_OUTPUT
-    fi
+  if [[ -n "$(command -v axel)" ]]; then
+    axel -k -v -a -n 4 $1 $_AXEL_OUTPUT
+  elif [[ -n "$(command -v wget)" ]]; then
+    wget -c --no-check-certificate $1 $_WGET_OUTPUT
+  fi
 }
 
 add_bin() {
-    mkdir -p ${HOME}/.bin
-    cd ${HOME}/.bin
-    if [[ ! -f "$2" ]]; then
-        _fetch $1 $2
-        chmod +x $2
-    else
-        echo $2 "has been downloaded"
-    fi
+  mkdir -p ${HOME}/.bin
+  cd ${HOME}/.bin
+  if [[ ! -f "$2" ]]; then
+    _fetch $1 $2
+    chmod +x $2
+  else
+    echo $2 "has been downloaded"
+  fi
 }
 
 fetch_latest_version_phar() {
-    repo=$1
-    filename=$2
-    save=$3
+  repo=$1
+  filename=$2
+  save=$3
 
-    if [[ -f "${HOME}/.bin/$save" ]]; then
-        echo "${save}" "has been downloaded"
-    else
-        ver=$(get_github_latest_version $1 | tr -d '\n\r')
-        ver=$(echo -e "${ver}" | sed "s# ##g")
-        [ -z "${repo}" ] && echo "repo param null" && exit 1
-        [ -z "${filename}" ] && echo "filename param null" && exit 1
-        [ -z "${save}" ] && echo "save param null" && exit 1
-        [ -z "${ver}" ] && echo "ver is null, can't fetch latest version" && exit 1
-        fullUrl="${GIT_HOST}/${repo}/releases/download/${ver}/${filename}"
-        echo "Fetch ${save} ${ver}"
-        add_bin "${fullUrl}" "${save}"
-    fi
+  if [[ -f "${HOME}/.bin/$save" ]]; then
+    echo "${save}" "has been downloaded"
+  else
+    ver=$(get_github_latest_version $1 | tr -d '\n\r')
+    ver=$(echo -e "${ver}" | sed "s# ##g")
+    [ -z "${repo}" ] && echo "repo param null" && exit 1
+    [ -z "${filename}" ] && echo "filename param null" && exit 1
+    [ -z "${save}" ] && echo "save param null" && exit 1
+    [ -z "${ver}" ] && echo "ver is null, can't fetch latest version" && exit 1
+    fullUrl="${GIT_HOST}/${repo}/releases/download/${ver}/${filename}"
+    echo "Fetch ${save} ${ver}"
+    add_bin "${fullUrl}" "${save}"
+  fi
 }
 
 add_bin https://phpmd.org/static/latest/phpmd.phar ${BIN_PATH}/phpmd
@@ -105,6 +104,6 @@ chmod +x ${BIN_PATH}/*
 
 # Install Global Composer Package
 if [[ -n "$(command -v composer)" ]]; then
-    composer global require --dev vimeo/psalm
-    composer global require --dev phan/phan
+  composer global require --dev vimeo/psalm
+  composer global require --dev phan/phan
 fi

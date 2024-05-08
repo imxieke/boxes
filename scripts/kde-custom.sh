@@ -2,11 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-23 17:11:43
- # @LastEditTime: 2022-07-24 22:08:09
+ # @LastEditTime: 2024-05-08 20:37:43
  # @LastEditors: Cloudflying
  # @Description: KDE Desktop Custom in Archlinux
- # @FilePath: /.boxs/scripts/kde-custom.sh
-### 
+###
 
 # plasma Desktop
 # /usr/share/plasma

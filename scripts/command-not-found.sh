@@ -2,13 +2,12 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-04 14:43:49
- # @LastEditTime: 2021-12-04 18:21:03
+ # @LastEditTime: 2024-05-08 20:38:42
  # @LastEditors: Cloudflying
  # @Description: run command tips when command not found
- # @FilePath: /.boxs/scripts/command-not-found.sh
 ###
 
-# TODO 
+# TODO
 # ubuntu archlinux support
 
 # alpine linux
@@ -87,7 +86,7 @@ shell_command_not_found_handle() {
                     ;;
                     arch|manjaro) echo "pacman -S ${pkgs}"
                     ;;
-                esac  
+                esac
             fi
         else
             echo "command not found: $cmd"

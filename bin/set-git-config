@@ -6,10 +6,10 @@ git_mail='oss@live.hk'
 # priority: local > global > system
 
 if [[ -d "$(pwd)/.git" ]]; then
-	# Local
-	git config core.filemode false
-	git config core.ignorecase true
-	git config core.bare false
+  # Local
+  git config core.filemode false
+  git config core.ignorecase true
+  git config core.bare false
 fi
 
 # Global
@@ -46,7 +46,7 @@ git config --global color.diff.new green bold
 git config --global color.diff.whitespace red bold
 
 # Specify a .gitignore file which applies to every git repo (useful for things like Thumbs.db or .DS_Store)
-git config --global core.excludesfile ~/.boxes/conf/gitignore
+git config --global core.excludesfile ~/.boxs/conf/gitignore
 
 git config --global core.editor "nvim"
 
@@ -57,15 +57,14 @@ git config --global core.editor "nvim"
 # git config --global http.proxy http://127.0.0.1:7890
 # git config --global https.proxy https://127.0.0.1:7890
 
-
 if [[ -n "$1" ]]; then
-	# User
-	git config --global user.name imxieke
-	git config --global user.email oss@live.hk
+  # User
+  git config --global user.name imxieke
+  git config --global user.email oss@live.hk
 
-	# Author
-	git config --global author.name imxieke
-	git config --global author.email oss@live.hk
+  # Author
+  git config --global author.name imxieke
+  git config --global author.email oss@live.hk
 fi
 
 echo "Configration ✿✿ヽ(°▽°)ノ✿ ❀ All Done !"

@@ -2,11 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-29 18:50:11
- # @LastEditTime: 2023-10-11 00:11:03
+ # @LastEditTime: 2024-05-08 20:37:38
  # @LastEditors: Cloudflying
  # @Description: install archlinux script
- # @FilePath: /.boxs/scripts/install-archlinux.sh
-### 
+###
 
 if [[ -z "$(grep 'edu\.cn' /etc/pacman.d/mirrorlist)" ]]; then
 	reflector --country China --protocol https --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
@@ -56,7 +55,7 @@ if [[ -z "$(df -h | grep '/mnt')" ]]; then
 	mount -t ext4 /dev/sda3 /mnt
 fi
 
-# 目录不存在或目录为空则不是 uefi 
+# 目录不存在或目录为空则不是 uefi
 # ls -lha /sys/firmware/efi/efivars
 
 # 检测是否已经安装 防止覆盖

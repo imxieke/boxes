@@ -1,10 +1,9 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-12-28 20:01:25
-# @LastEditTime: 2024-04-23 22:42:36
+# @LastEditTime: 2024-05-08 21:56:14
 # @LastEditors: Cloudflying
 # @Description:
-# @FilePath: /.boxs/conf/alias.d/default.alias
 ###
 
 # VM
@@ -63,9 +62,7 @@ alias emacs=${EDITOR}
 [ -n "$(command -v gsed)" ] && alias sed='gsed'
 
 alias history-top='history | awk -F ' ' '{print $2}' | sort | uniq -c | sort -n -r  | head -n 10'
-alias ezsh="e ~/.zshrc"
-
-alias update-fonts='cp -fr ~/.boxs/conf/fonts/* ~/Library/Fonts/'
+alias ezsh="nvim ~/.zshrc"
 
 # Supercharge Custom Alias
 # Network alias

@@ -2,11 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-06-30 21:38:41
- # @LastEditTime: 2022-07-01 00:45:56
+ # @LastEditTime: 2024-05-08 20:37:27
  # @LastEditors: Cloudflying
  # @Description: load zsh plugins
- # @FilePath: /.boxs/scripts/zplug.sh
-### 
+###
 
 
 
@@ -25,7 +24,7 @@ zplug()
         *) echo default
         ;;
     esac
-    
+
     # echo $@
 }
 
@@ -106,7 +105,7 @@ __zplug_load_themes()
     fi
 }
 
-# 
+#
 __zplug_pull_plugin()
 {
     __zplug_parse_repo $@

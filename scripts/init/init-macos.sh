@@ -2,11 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2023-11-15 19:29:06
+ # @LastEditTime: 2024-05-08 21:02:20
  # @LastEditors: Cloudflying
  # @Description: init package for macOS brew package manager
- # @FilePath: /.boxs/scripts/init/init-macos.sh
-### 
+###
 
 # 初始化 brew 使用 大陆镜像 提高下载速度
 init_brew()
@@ -109,7 +108,7 @@ init_pkgs()
 
 	# gron Make JSON greppable!
 	brew install jq ccat gron ctop grex sd xsv jo
-	
+
 	# Database
 	brew install mysql@5.7 redis sqlite
 
@@ -157,7 +156,7 @@ init_pkgs()
 	brew install shivammathur/php/php@7.4 shivammathur/extensions/amqp@7.4 shivammathur/extensions/event@7.4 shivammathur/extensions/grpc@7.4 shivammathur/extensions/imagick@7.4 shivammathur/extensions/imap@7.4 shivammathur/extensions/mcrypt@7.4 shivammathur/extensions/memcache@7.4 shivammathur/extensions/memcached@7.4 shivammathur/extensions/mongodb@7.4 shivammathur/extensions/msgpack@7.4 shivammathur/extensions/phalcon5@7.4 shivammathur/extensions/protobuf@7.4 shivammathur/extensions/rdkafka@7.4 shivammathur/extensions/redis@7.4 shivammathur/extensions/snmp@7.4 shivammathur/extensions/ssh2@7.4 shivammathur/extensions/swoole@7.4 shivammathur/extensions/vips@7.4 shivammathur/extensions/xlswriter@7.4 shivammathur/extensions/yaml@7.4 shivammathur/extensions/zmq@7.4 shivammathur/extensions/apcu@7.4
 
 	brew install shivammathur/php/php@8.0 shivammathur/extensions/amqp@8.0 shivammathur/extensions/event@8.0 shivammathur/extensions/imagick@8.0 shivammathur/extensions/imap@8.0 shivammathur/extensions/mcrypt@8.0 shivammathur/extensions/memcache@8.0 shivammathur/extensions/memcached@8.0 shivammathur/extensions/mongodb@8.0 shivammathur/extensions/msgpack@8.0 shivammathur/extensions/phalcon5@8.0 shivammathur/extensions/protobuf@8.0 shivammathur/extensions/rdkafka@8.0 shivammathur/extensions/redis@8.0 shivammathur/extensions/snmp@8.0 shivammathur/extensions/ssh2@8.0 shivammathur/extensions/swoole@8.0 shivammathur/extensions/vips@8.0 shivammathur/extensions/xlswriter@8.0 shivammathur/extensions/yaml@8.0 shivammathur/extensions/zmq@8.0 shivammathur/extensions/apcu@8.0
-	
+
 	brew install shivammathur/php/php@8.1 shivammathur/extensions/amqp@8.1 shivammathur/extensions/event@8.1 shivammathur/extensions/grpc@8.1 shivammathur/extensions/imagick@8.1 shivammathur/extensions/imap@8.1 shivammathur/extensions/mcrypt@8.1 shivammathur/extensions/memcache@8.1 shivammathur/extensions/memcached@8.1 shivammathur/extensions/mongodb@8.1 shivammathur/extensions/msgpack@8.1 shivammathur/extensions/phalcon5@8.1 shivammathur/extensions/protobuf@8.1 shivammathur/extensions/rdkafka@8.1 shivammathur/extensions/redis@8.1 shivammathur/extensions/ssh2@8.1 shivammathur/extensions/swoole@8.1 shivammathur/extensions/vips@8.1 shivammathur/extensions/xlswriter@8.1 shivammathur/extensions/yaml@8.1 shivammathur/extensions/zmq@8.1 shivammathur/extensions/apcu@8.1
 
 	brew install shivammathur/php/php@8.2 shivammathur/extensions/event@8.2 shivammathur/extensions/grpc@8.2 shivammathur/extensions/imagick@8.2 shivammathur/extensions/imap@8.2 shivammathur/extensions/mcrypt@8.2 shivammathur/extensions/memcached@8.2 shivammathur/extensions/mongodb@8.2 shivammathur/extensions/msgpack@8.2 shivammathur/extensions/phalcon5@8.2 shivammathur/extensions/protobuf@8.2 shivammathur/extensions/rdkafka@8.2 shivammathur/extensions/redis@8.2 shivammathur/extensions/swoole@8.2 shivammathur/extensions/xlswriter@8.2 shivammathur/extensions/yaml@8.2 shivammathur/extensions/zmq@8.2 shivammathur/extensions/apcu@8.2

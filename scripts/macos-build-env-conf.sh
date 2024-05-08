@@ -2,11 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2021-12-03 23:35:43
- # @LastEditTime: 2022-07-10 10:42:39
+ # @LastEditTime: 2024-05-08 20:37:33
  # @LastEditors: Cloudflying
- # @Description: 
- # @FilePath: /.boxs/scripts/macos-build-env-conf.sh
-### 
+ # @Description:
+###
 
 if [[ -d '/usr/local/opt/mariadb@10.2' ]]; then
   export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"

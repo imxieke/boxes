@@ -1,124 +1,147 @@
 # -*- mode: gitconfig; indent-tabs-mode: t; -*- vim: set ft=gitconfig nolist noet:
 
 [alias]
-	amend = commit --amend --no-edit
-	bl = blame
-	br = branch
-	ci = commit
-	cl = clone
-	co = checkout
-	cobm = checkout-branch-match
-	cp = cherry-pick
+amend = commit --amend --no-edit
+bl = blame
+br = branch
+ci = commit
+cl = clone
+co = checkout
+cobm = checkout-branch-match
+cp = cherry-pick
 
-	# History in one line per commit. Now in Technicolor!
-	# Abbrv hash, author name (16 chars), commit message (wrapped at 72 chars)
-	ol = "!git log $1 --format='%C(auto)%h %<(16,trunc)%an %w(72,0,25)%s'"
+# History in one line per commit. Now in Technicolor!
+# Abbrv hash, author name (16 chars), commit message (wrapped at 72 chars)
+ol = "!git log $1 --format='%C(auto)%h %<(16,trunc)%an %w(72,0,25)%s'"
 
-	pff = pull --ff-only --no-stat
-	pr = pull --rebase
-	rbc = rebase --continue
-	rbi = rebase --interactive
-	root = rev-parse --show-toplevel
-	sh = show
-	st = status
+pff = pull --ff-only --no-stat
+pr = pull --rebase
+rbc = rebase --continue
+rbi = rebase --interactive
+root = rev-parse --show-toplevel
+sh = show
+st = status
 [init]
-	defaultBranch = master
+defaultBranch = master
+
 [user]
-	name = imxieke
-	email = oss@live.hk
-	useConfigOnly = true
+name = imxieke
+email = oss@live.hk
+useConfigOnly = true
+
 [author]
-	name = imxieke
-	email = oss@live.hk
+name = imxieke
+email = oss@live.hk
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+
 [pull]
-	rebase = false
-	ff = only
+rebase = false
+ff = only
+
 [push]
-	default = upstream
+default = upstream
+
 [core]
-	fileMode = false
-	quotepath = false
-	pager = delta
-	ignorecase = false
-	bare = false
-	excludesfile = ~/.boxes/conf/gitignore
-	editor = nvim
-	longpaths = true
-	autocrlf = input
-	trustctime = false
-	attributesfile = ~/.attributes_global
-	untrackedcache = true
+fileMode = false
+quotepath = false
+pager = delta
+ignorecase = false
+bare = false
+excludesfile = ~/.boxs/conf/gitignore
+editor = nvim
+longpaths = true
+autocrlf = input
+trustctime = false
+attributesfile = ~/.boxs/conf/.git_attrbutes
+untrackedcache = true
+
 [color]
-	ui = auto
-	status = auto
-	branch = auto
-	diff = auto
+ui = auto
+status = auto
+branch = auto
+diff = auto
+
 [color "diff"]
-    meta = magenta bold
-    new = green bold
-    old = red italic
+meta = magenta bold
+new = green bold
+old = red italic
+
 [color "status"]
-	added = green
+added = green
+
 [color "branch"]
-	remote = yellow
+remote = yellow
+
 [rebase]
-	autostash = true
-	backend = merge
+autostash = true
+backend = merge
+
 [help]
-	autocorrect = 1
+autocorrect = 1
+
 [interactive]
-	diffFilter = delta --color-only --features=interactive
+diffFilter = delta --color-only --features=interactive
+
 [delta]
-	features = decorations
-    side-by-side = true
-    minus-style = red bold ul "#ffeeee"
-    line-numbers = true
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│ "
+features = decorations
+side-by-side = true
+minus-style = red bold ul "#ffeeee"
+line-numbers = true
+line-numbers-left-format = ""
+line-numbers-right-format = "│ "
 
 [delta "interactive"]
-    keep-plus-minus-markers = false
+keep-plus-minus-markers = false
 
 [delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
+commit-decoration-style = blue ol
+commit-style = raw
+file-style = omit
+hunk-header-decoration-style = blue box
+hunk-header-file-style = red
+hunk-header-line-number-style = "#067a00"
+hunk-header-style = file line-number syntax
+
 [http]
-	proxy = http://127.0.0.1:7890
-	postBuffer = 655360000
+proxy = http://127.0.0.1:7890
+postBuffer = 655360000
+
 [https]
-	proxy = http://127.0.0.1:7890
+proxy = http://127.0.0.1:7890
 
 [diff]
-  tool = nvim
+tool = nvim
 
 [diff "text"]
-	textconv = cat
+textconv = cat
+
 [mergetool]
-	keepBackup = false
+keepBackup = false
+
 [lfs]
-	concurrenttransfers = 32
-	fetchrecentrefsdays = 0
-	pruneoffsetdays = 0
-	dialtimeout = 3
-	tlstimeout = 3
+concurrenttransfers = 32
+fetchrecentrefsdays = 0
+pruneoffsetdays = 0
+dialtimeout = 3
+tlstimeout = 3
+
 [lfs "transfer"]
-	maxretries = 1
-	maxretrydelay = 2
+maxretries = 1
+maxretrydelay = 2
+
 [merge "lfs-text"]
-	driver = git lfs merge-driver --ancestor %O --current %A --other %B --marker-size %L --output %A --program 'git merge-file --stdout --marker-size=%%L %%A %%O %%B >%%D'
+driver = git lfs merge-driver --ancestor %O --current %A --other %B --marker-size %L --output %A --program 'git merge-file --stdout --marker-size=%%L %%A %%O %%B >%%D'
+
 [protocol]
-	version = 1
+version = 1
+
 [safe]
-	directory = *
+directory = *
+
 [credential]
-	helper = store
+helper = store
