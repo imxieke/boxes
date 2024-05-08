@@ -6,7 +6,7 @@
  # @LastEditors: Cloudflying
  # @Description: init Alpine
  # @FilePath: /.boxs/scripts/init/init-alpine.sh
-### 
+###
 
 # alpine 使用 musl 标准库 某些基于 gnu 编译的程序无法使用
 # alpine 解压须使用 gnu tar 自带 tar 不支持管道
@@ -15,7 +15,7 @@
 # alpine linux packages
 _install()
 {
-	apk add --no-cache bash sudo wget curl git file less zsh jq fzf locales fortune fzf
+	apk add --no-cache bash sudo wget curl git file less zsh jq fzf locales fortune
 	apk add --no-cache python3-dev py3-pip
 	# Editor
 	apk add --no-cache neovim

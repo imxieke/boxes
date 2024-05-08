@@ -4,8 +4,8 @@
  # @Date: 2023-03-27 20:13:06
  # @LastEditTime: 2023-11-03 19:02:53
  # @LastEditors: Cloudflying
- # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多 
-### 
+ # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
+###
 
 # Manjaro 部分安装包在 Archlinux 内不存在 如 steam yay
 _install()
@@ -71,7 +71,7 @@ _install()
 	# Git Tools
 	# onefetch: like neofetch but for git
 	# gitg GUI client to view git repositories.
-	pacman -S --noconfirm git github-cli git-delta onefetch gitg gitui
+	pacman -S --noconfirm git git-lfs github-cli git-delta onefetch gitg gitui
 
 	# Blockchain
 	# pacman -S --noconfirm go-ethereum openethereum
