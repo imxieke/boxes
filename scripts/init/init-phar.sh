@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-08-22 23:46:22
-# @LastEditTime: 2024-05-08 21:08:19
+# @LastEditTime: 2024-05-14 01:23:10
 # @LastEditors: Cloudflying
 # @Description: Phar Manager {install update remove}
 ###
@@ -74,15 +74,32 @@ fetch_latest_version_phar() {
 }
 
 add_bin https://phpmd.org/static/latest/phpmd.phar ${BIN_PATH}/phpmd
-add_bin https://phar.phpunit.de/phpcpd.phar ${BIN_PATH}/phpcpd
+# add_bin https://phar.phpunit.de/phpcpd.phar ${BIN_PATH}/phpcpd
 add_bin https://phar.io/releases/phive.phar ${BIN_PATH}/phive
 # add_bin https://phar.phpunit.de/phpunit.phar 						${BIN_PATH}/phpunit
 add_bin https://phar.phpbu.de/phpbu.phar ${BIN_PATH}/phpbu
+# 运行 PHPUnit 单元测试（包括测试结果和覆盖率报告）、文件转换（例如令牌替换、XSLT 转换、模板转换）、文件系统操作、交互式构建支持、SQL 执行、SCM 操作（Git、Subversion 和 Mercurial）、文档生成（PhpDocumentor、ApiGen）等等
 add_bin https://www.phing.info/get/phing-latest.phar ${BIN_PATH}/phing
 add_bin https://phpdoc.org/phpDocumentor.phar ${BIN_PATH}/phpDocumentor
 add_bin https://doctum.long-term.support/releases/dev/doctum.phar ${BIN_PATH}/doctum
+
+# A tool for quickly measuring the size of a PHP project.
 add_bin https://phar.phpunit.de/phploc.phar ${BIN_PATH}/phploc
 add_bin https://www.laravel-enlightn.com/security-checker.phar ${BIN_PATH}/security-checker
+# Detect flaws in your architecture, before they drag you down into the depths of dependency hell ...
+# last update on May 9, 2021
+add_bin https://github.com/mihaeu/dephpend/releases/download/0.8.0/dephpend-0.8.0.phar ${BIN_PATH}/dephpend
+# Documentation generator for PHP Code using standard technology (SRC, DOCBLOCK, XML and XSLT)
+# Commits on Apr 20, 2023
+add_bin https://github.com/theseer/phpdox/releases/download/0.12.0/phpdox-0.12.0.phar ${BIN_PATH}/phpdox
+# A lightweight php namespace aware autoload generator and phar archive builder
+add_bin https://github.com/theseer/Autoload/releases/download/1.29.1/phpab-1.29.1.phar ${BIN_PATH}/phpdox
+
+# A CLI tool to check whether a specific composer package uses imported symbols that aren't part of its direct composer dependencies
+add_bin https://github.com/maglnet/ComposerRequireChecker/releases/download/4.11.0/composer-require-checker.phar ${BIN_PATH}/composer-require-checker
+add_bin https://github.com/phpmetrics/PhpMetrics/raw/master/releases/phpmetrics.phar ${BIN_PATH}/phpmetrics
+# PHP Benchmarking framework
+add_bin https://github.com/phpbench/phpbench/releases/download/1.2.15/phpbench.phar ${BIN_PATH}/phpbench
 
 # fetch_github_latest_release FriendsOfPHP/PHP-CS-Fixer php-cs-fixer.phar ${BIN_PATH}/php-cs-fixer
 # fetch_github_latest_release phpstan/phpstan 			phpstan.phar 		${BIN_PATH}/phpstan
