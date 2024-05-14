@@ -6,6 +6,14 @@
 # @Description:
 ###
 
+# Memory && CPU Usage
+# alias mem-top="ps -eo pcpu,pmem,pid,user,args | sort -k 3nr | head -10"
+# alias mem-top="ps aux | head -1; ps aux | sort -rnk 4 | head -n 20"
+# alias cpu-top="ps aux | head -1; ps aux | sort -rnk 3 | head -n 20"
+
+alias mem-top="ps -eo pcpu,pmem,pid,user,args | sort -k 2nr | head -n 20"
+alias cpu-top="ps -eo pcpu,pmem,pid,user,args | sort -k 1nr | head -n 20"
+
 # VM
 alias ssh-arch='ssh imxieke@192.168.2.233'
 alias ssh-uos='ssh imxieke@192.168.2.198'

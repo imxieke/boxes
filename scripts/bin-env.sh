@@ -14,7 +14,7 @@
 # Boxs PATH
 if [[ -d "${BOXS_HOME}/bin" ]]; then
   # echo "[+] export PATH ${BOXS_HOME}/bin"
-  echo "[+] Set PATH"
+  echo "[+] Reset PATH"
   export PATH="${BOXS_HOME}/bin:${PATH}"
 fi
 
@@ -50,14 +50,12 @@ fi
 # fi
 
 # PHP Composer
-# for macOS
 if [[ -d ~/.composer/vendor/bin ]]; then
+  # for macOS
   # echo "[+] export PATH composer"
   export PATH="${HOME}/.composer/vendor/bin:${PATH}"
-fi
-
-# for Linux
-if [[ -d ~/.config/composer/vendor/bin ]]; then
+elif [[ -d ~/.config/composer/vendor/bin ]]; then
+  # for Linux
   # echo "[+] export PATH composer"
   export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 fi

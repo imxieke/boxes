@@ -18,3 +18,6 @@ alias cmpr73='php73 /usr/local/bin/composer require -vvv'
 alias create-laralvel-project="composer create-project laravel/laravel"
 alias create-thinkphp-project="composer create-project topthink/think"
 alias create-symfony-project="composer create-project symfony/skeleton"
+
+alias phpstan-analyse="php -d memory_limit=1G ~/.bin/phpstan analyze -l 7"
+alias phpcs-stand="phpcs --standard=PSR12"

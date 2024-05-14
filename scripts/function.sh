@@ -4,7 +4,7 @@
  # @Date: 2021-12-03 22:58:44
  # @LastEditTime: 2023-05-21 19:24:51
  # @LastEditors: Cloudflying
- # @Description: 
+ # @Description:
 ###
 
 GITHUB_MIRROR='https://ghproxy.com/'
@@ -29,14 +29,12 @@ _fetch()
 fetch_github_latest_release()
 {
 	# https://gh-proxy.com/
-	# https://hub.fastgit.org
-	# https://hub.fastgit.xyz
 	# https://github.com
 	# https://ghproxy.com
 	# https://gitclone.com/
 	# GIT_HOST="https://hub.fastgit.xyz"
 	# GITHUB_MIRROR='https://ghproxy.com/'
-	GITHUB_MIRROR='https://gh-proxy.com/'
+	# GITHUB_MIRROR='https://gh-proxy.com/'
 	# USERNAME/Project 格式
 	NAMESPACE=$1
 	# 需要下载的文件
@@ -369,9 +367,9 @@ show_terminal_colors() {
 server() {
   if [[ "$1" == "http" ]]; then
     python -m SimpleHTTPServer $2
-    
+
   elif [[ "$1" == "https" ]]; then
-    python -m SimpleHTTPSServer $2  
+    python -m SimpleHTTPSServer $2
   fi
 }
 
@@ -415,5 +413,5 @@ function vif()
 		*)
 			bat --style='numbers' $@
 			;;
-	esac	
+	esac
 }
