@@ -65,6 +65,7 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 # If you come from bash you might have to change your $PATH.
 
+[ ! -d ~/.oh-my-zsh ] && git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 [ ! -d ~/.local/share/zinit ] && git clone --depth=1 https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit
 
 if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then

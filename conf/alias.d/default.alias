@@ -188,9 +188,16 @@ if [[ "${OSTYPE}" == 'Darwin' ]]; then
 else
   alias ssh="ssh -o ServerAliveInterval=60"
   alias sdu='du -h -d 1 --exclude="/proc" --exclude="/dev"'
+  if [[ -f "/usr/share/code/bin/code" ]]; then
+      alias code="/usr/share/code/bin/code"
+      alias code-tunnel="/usr/share/code/bin/code-tunnel"
+      alias vsc="/usr/share/code/bin/code"
+      alias vsc-tunnel="/usr/share/code/bin/code-tunnel"
+  fi
 fi
 
 [ -f /Applications/kate.app/Contents/MacOS/kate ] && alias kate="/Applications/kate.app/Contents/MacOS/kate"
 
 # VSCode
 alias vsc="code"
+alias vsc-tunnel="code-tunnel"
