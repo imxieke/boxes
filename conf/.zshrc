@@ -42,7 +42,12 @@ export BOXS_LOGS=${BOXS_HOME}/logs
 zmodload zsh/zprof
 
 # 加载本地自定义变量
-[[ -f "${HOME}/.env" ]] && source "${HOME}/.env"
+if [[ -f "${HOME}/.env" ]];then
+  source "${HOME}/.env"
+else
+  echo "Warning: ${HOME}/.env not found"
+fi
+
 
 # Proxy
 # 配置代理
