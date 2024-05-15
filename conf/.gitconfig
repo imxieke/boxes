@@ -47,7 +47,7 @@ ff = only
 default = upstream
 
 [core]
-fileMode = false
+	fileMode = true
 quotepath = false
 pager = delta
 ignorecase = false
