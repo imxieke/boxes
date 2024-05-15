@@ -26,7 +26,7 @@ _install()
 		iperf iperf3
 
 	# Language
-	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk
+	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk php
 
 	# File && Code Tools
 	# rg ag
