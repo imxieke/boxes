@@ -10,9 +10,11 @@
 _install() {
   # Fabulously kill processes. Cross-platform
   npm i -g pnpm
+
   pnpm add -g bower yarn bun
+
   # Pack
-  pnpm add -g grunt gulp-cli webpack webpack-cli rollup esbuild parcel vite
+  pnpm add -g grunt gulp-cli webpack webpack-cli rollup esbuild vite
   pnpm add -g fkill-cli
   pnpm add -g fx
   pnpm add -g nali-cli
@@ -30,7 +32,7 @@ _install() {
 
   # Language
   pnpm add -g @prettier/plugin-ruby prettier-plugin-sh prettier-plugin-sql prettier-plugin-java prettier-plugin-solidity \
-    prettier-plugin-kotlin @prettier/plugin-php
+    prettier-plugin-kotlin @prettier/plugin-php @prettier/plugin-xml
 
   # Frontend
   pnpm add -g prettier-plugin-wxml @shufo/prettier-plugin-blade
@@ -48,7 +50,7 @@ _install() {
   pnpm add -g prettier-plugin-apex
 
   # Other
-  pnpm add -g prettier-plugin-ssh-config prettier-plugin-ini prettier-plugin-pkg prettier-plugin-toml @prettier/plugin-xml
+  pnpm add -g prettier-plugin-ssh-config prettier-plugin-ini prettier-plugin-pkg prettier-plugin-toml
 
   # 用不到
   # @shopify/prettier-plugin-liquid prettier-plugin-go-template eslint-plugin-prettier-vue prettier-plugin-tvmsolidity @prettier/plugin-pug

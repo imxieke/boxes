@@ -59,7 +59,7 @@ _install()
 
 	# Security
 	# osv-scanner Vulnerability scanner
-	pacman -S --noconfirm nmap rustscan osv-scanner
+	pacman -S --noconfirm nmap rustscan osv-scanner sqlmap
 
 	# Virtual Machine && Container
 	# podman-docker conflict with docker
