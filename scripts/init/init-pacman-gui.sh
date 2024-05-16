@@ -152,8 +152,8 @@ _install() {
   # Databases
   # kexi A visual database applications creator
   # dbeaver Free universal SQL Client for developers and database administrators (community edition) java
-  # pacman -S --noconfirm mysql-workbench kexi \
-  # dbeaver dbeaver-plugin-office
+  pacman -S --noconfirm mysql-workbench kexi \
+    dbeaver dbeaver-plugin-office
 
   # Games
   # 不玩游戏 谢谢
@@ -182,7 +182,7 @@ _install() {
 
   # Office
   # libreoffice-fresh beta version
-  pacman -S --noconfirm libreoffice-fresh libreoffice-fresh-zh-cn libreoffice-extension-texmaths libreoffice-extension-writer2latex
+  # pacman -S --noconfirm libreoffice-fresh libreoffice-fresh-zh-cn libreoffice-extension-texmaths libreoffice-extension-writer2latex
 
   # NetWork
   pacman -S --noconfirm gnome-nettool
@@ -210,7 +210,7 @@ _install() {
   # pacman -S --noconfirm xfce4 xfce4-goodies
 
   # Kernel
-  # pacman -S --noconfirm linux-firmware linux-api-headers
+  pacman -S --noconfirm linux-firmware linux-api-headers
 
   # Productive
   # pacman -S --noconfirm thunderbird thunderbird-i18n-zh-cn
@@ -242,8 +242,9 @@ _install() {
   # kbibtex An editor for bibliographies used with LaTeX
   # aur: pikasso
   # TODO: 待研究 似乎不是全部都有用
-  # pacman -S --noconfirm labplot kdenlive kdevelop ksysguard kile okteta krusader calligra index-fm \
-  # apper alligator pix kclock kalk kweather calligra-plan kbibtex
+  # not found apper
+  pacman -S --noconfirm labplot kdenlive kdevelop kile okteta krusader calligra index-fm \
+     alligator pix kclock kalk kweather calligra-plan kbibtex
 
   # 图像处理 3D 建模等
   # blender 创建 3D 模型和动画场景
@@ -274,7 +275,8 @@ _install() {
   # gmic GREYC's Magic Image Converter: image processing framework
   # pacman -S --noconfirm gmic
 
-  # pacman -S --noconfirm gpart gparted parted
+  # Disk Utils
+  pacman -S --noconfirm gpart gparted parted
 
   # remmina remote desktop client written in GTK+
   pacman -S --noconfirm remmina gnome-connections filezilla vinagre teamviewer
@@ -318,3 +320,5 @@ _install() {
   # 仅运行在vbox虚拟机内
   # systemctl enable vboxservice.service
 }
+
+_install

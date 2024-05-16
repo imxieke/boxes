@@ -45,7 +45,7 @@ _install()
 
 	# Package management
 	# App Store
-	# snaod yay not in Archlinux
+	# snapd yay not in Archlinux
 	pacman -S --noconfirm dpkg
 
 	# Security
@@ -56,6 +56,7 @@ _install()
 	# podman-docker conflict with docker
 	# pacman -S --noconfirm docker docker-buildx docker-compose docker-scan \
 		# podman podman-compose
+
 	# Virtual Machine && Container Depency
 	# pacman -S --noconfirm fuse-overlayfs
 
@@ -82,3 +83,5 @@ _install()
 	# Editor
 	pacman -S --noconfirm neovim
 }
+
+_install
