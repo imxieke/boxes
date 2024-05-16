@@ -10,9 +10,14 @@
 # Manjaro 部分安装包在 Archlinux 内不存在 如 steam yay
 _install()
 {
+
+  # Dev
+  pacman -S --noconfirm base-devel cmake cppcheck gdb
+
 	# Compress
 	# GUI Archive: file-roller
-	pacman -S --noconfirm bzip2 unzip unarchiver gzip tar p7zip unrar lzip lrzip xz zip zstd file-roller
+	pacman -S --noconfirm bzip2 unzip unarchiver gzip tar p7zip unrar lzip lrzip xz zip zstd file-roller \
+    squashfs-tools unace
 
 	# Network
 	# openbsd-netcat: nc command
@@ -27,6 +32,7 @@ _install()
 
 	# Language
 	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk php
+  pacman -S --noconfirm python-beautifulsoup4 python-cchardet python-chardet python-lxml python-html5lib
 
 	# File && Code Tools
 	# rg ag
@@ -38,10 +44,13 @@ _install()
 	# jp2a A small utility for converting JPG images to ASCII
 	# d-feet D-Bus debugger for GNOME
 	# asciinema Record and share terminal sessions
+  # skim Fuzzy Finder in Rust
 	# vokoscreen 录屏
 	# syft generating a Software Bill of Materials from container images and filesystems
+  # Disk usage analyzer with an ncurses interface
+  # xsv A CLI for indexing, slicing, analyzing, splitting and joining CSV files
 	pacman -S --noconfirm tree jq fzf sudo file less zsh cowsay cowfortune btop htop lsb-release ntp mtools xsv exa \
-		skim fd bat bat-extras syft
+		skim fd bat bat-extras syft ncdu
 
 	# Package management
 	# App Store
@@ -78,7 +87,7 @@ _install()
 	# pacman -S --noconfirm go-ethereum openethereum
 
 	# Downloader
-	pacman -S --noconfirm axel wget curl aria2
+	pacman -S --noconfirm axel wget curl aria2 youtube-dl
 
 	# Editor
 	pacman -S --noconfirm neovim

@@ -12,10 +12,11 @@ _install() {
   pacman -S --noconfirm pkgfile
 
   # App Store
+  # Not found webapp-manager-manjaro apper
   pacman -S --noconfirm gnome-software deepin-store \
-    pamac-cli pamac-gtk pamac-tray-icon-plasma webapp-manager-manjaro \
-    octopi \
-    apper
+    pamac-cli pamac-gtk pamac-tray-icon-plasma \
+    octopi
+
 
   # Tools
   # flameshot screenshot
@@ -122,7 +123,10 @@ _install() {
   pacman -S --noconfirm code kate marker ghex gnome-builder xed ghostwriter gnome-text-editor
 
   # Wine
-  pacman -S --noconfirm wine vkd3d wine-gecko winetricks
+  pacman -S --noconfirm wine vkd3d wine-gecko winetricks wine-mono
+  # Wine Depends
+  pacman -S --noconfirm lib32-sdl2 lib32-pcsclite lib32-libcups lib32-alsa-plugins lib32-gnutls lib32-gst-plugins-base \
+    lib32-libxcomposite
 
   # Pictures
   # picture view: ristretto pix
