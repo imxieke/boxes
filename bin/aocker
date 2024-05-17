@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Aliyun Docker Registry
+
+docker pull registry.cn-shanghai.aliyuncs.com/dockenv/$@

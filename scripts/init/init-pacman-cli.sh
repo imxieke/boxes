@@ -49,8 +49,10 @@ _install()
 	# syft generating a Software Bill of Materials from container images and filesystems
   # Disk usage analyzer with an ncurses interface
   # xsv A CLI for indexing, slicing, analyzing, splitting and joining CSV files
+  # sysstat a collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
 	pacman -S --noconfirm tree jq fzf sudo file less zsh cowsay cowfortune btop htop lsb-release ntp mtools xsv exa \
-		skim fd bat bat-extras syft ncdu
+		skim fd bat bat-extras syft ncdu \
+    sysstat
 
 	# Package management
 	# App Store
@@ -59,7 +61,7 @@ _install()
 
 	# Security
 	# osv-scanner Vulnerability scanner
-	pacman -S --noconfirm nmap rustscan osv-scanner sqlmap
+	pacman -S --noconfirm nmap rustscan osv-scanner sqlmap masscan
 
 	# Virtual Machine && Container
 	# podman-docker conflict with docker
