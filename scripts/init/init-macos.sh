@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2024-05-17 23:23:37
- # @LastEditors: Cloudflying
+# @LastEditTime: 2024-05-17 23:42:07
+# @LastEditors: Cloudflying
 # @Description: init package for macOS brew package manager
 ###
 
@@ -214,11 +214,11 @@ init_pkgs() {
   # Virtual Box
   # brew install virtualbox vagrant lima podman qemu multipass
 
-  # Security
+  # System Tools
   brew install tencent-lemon
 
   # Security Tools
-  brew install aircrack-ng wifi-password nmap sqlmap
+  brew install aircrack-ng wifi-password nmap sqlmap massdns
 
   # Finance
   brew install tradingview
