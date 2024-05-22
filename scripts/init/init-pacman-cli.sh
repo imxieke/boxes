@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2023-11-03 19:02:53
+ # @LastEditTime: 2024-05-22 11:26:39
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
 ###
@@ -35,8 +35,10 @@ _install()
   pacman -S --noconfirm python-beautifulsoup4 python-cchardet python-chardet python-lxml python-html5lib
 
 	# File && Code Tools
-	# rg ag
-	pacman -S --noconfirm ripgrep the_silver_searcher
+	# rg A search tool that combines the usability of ag with the raw speed of grep
+  # ag Code searching tool similar to Ack, but faster
+  # # duf Disk Usage/Free Utility
+	pacman -S --noconfirm ripgrep the_silver_searcher duf
 
 	# Tools
 	# flameshot screenshot
