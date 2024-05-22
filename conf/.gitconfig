@@ -25,7 +25,7 @@ st = status
 defaultBranch = master
 
 [user]
-	name = Cloudflying
+name = Cloudflying
 email = oss@live.hk
 useConfigOnly = true
 
@@ -47,12 +47,12 @@ ff = only
 default = upstream
 
 [core]
-	fileMode = true
+fileMode = true
 quotepath = false
 pager = delta
 ignorecase = false
 bare = false
-	excludesfile = /Users/imxieke/.gitignore_global
+excludesfile = /Users/imxieke/.gitignore_global
 editor = nvim
 longpaths = true
 autocrlf = input
@@ -146,8 +146,8 @@ directory = *
 [credential]
 helper = store
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+trustExitCode = true
