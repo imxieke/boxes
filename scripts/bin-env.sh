@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-02 12:18:39
-# @LastEditTime: 2024-05-08 21:07:29
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-05-23 11:33:51
+ # @LastEditors: Cloudflying
 # @Description:
 ###
 
@@ -50,6 +50,7 @@ fi
 # fi
 
 # PHP Composer
+# $HOME/.bin > Composer Bin Path
 if [[ -d ~/.composer/vendor/bin ]]; then
   # for macOS
   # echo "[+] export PATH composer"
@@ -57,7 +58,7 @@ if [[ -d ~/.composer/vendor/bin ]]; then
 elif [[ -d ~/.config/composer/vendor/bin ]]; then
   # for Linux
   # echo "[+] export PATH composer"
-  export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+  export PATH="${PATH}:${HOME}/.config/composer/vendor/bin"
 fi
 
 # if [[ -d "~/.cargo/bin" ]]; then
