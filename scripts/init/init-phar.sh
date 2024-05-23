@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-08-22 23:46:22
- # @LastEditTime: 2024-05-23 11:20:20
+ # @LastEditTime: 2024-05-23 11:26:31
  # @LastEditors: Cloudflying
 # @Description: Phar Manager {install update remove}
 ###
@@ -103,7 +103,7 @@ add_bin https://mirrors.xie.ke/pkgs/phar/security-checker.phar      ${BIN_PATH}/
 add_bin https://mirrors.xie.ke/pkgs/phar/phpdox.phar ${BIN_PATH}/phpdox
 
 # A lightweight php namespace aware autoload generator and phar archive builder
-add_bin https://mirrors.xie.ke/pkgs/phar/phpab-1.29.1.phar ${BIN_PATH}/phpab
+add_bin https://mirrors.xie.ke/pkgs/phar/phpab.phar ${BIN_PATH}/phpab
 
 # A CLI tool to check whether a specific composer package uses imported symbols that aren't part of its direct composer dependencies
 add_bin https://mirrors.xie.ke/pkgs/phar/composer-require-checker.phar ${BIN_PATH}/composer-require-checker
