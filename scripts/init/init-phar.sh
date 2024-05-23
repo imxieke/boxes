@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-08-22 23:46:22
-# @LastEditTime: 2024-05-14 01:23:10
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-05-23 11:20:20
+ # @LastEditors: Cloudflying
 # @Description: Phar Manager {install update remove}
 ###
 
@@ -79,66 +79,66 @@ fetch_latest_version_phar() {
 }
 
 # A tool for quickly measuring the size of a PHP project.
-add_bin https://phar.phpunit.de/phploc.phar         ${BIN_PATH}/phploc
-add_bin https://phar.phpunit.de/phpcpd.phar       ${BIN_PATH}/phpcpd
-add_bin https://phpmd.org/static/latest/phpmd.phar  ${BIN_PATH}/phpmd
-add_bin https://phar.io/releases/phive.phar         ${BIN_PATH}/phive
-add_bin https://phar.phpunit.de/phpunit.phar 			${BIN_PATH}/phpunit
-add_bin https://phar.phpbu.de/phpbu.phar            ${BIN_PATH}/phpbu
+add_bin https://mirrors.xie.ke/pkgs/phar/phploc.phar         ${BIN_PATH}/phploc
+add_bin https://mirrors.xie.ke/pkgs/phar/phpcpd.phar       ${BIN_PATH}/phpcpd
+add_bin https://mirrors.xie.ke/pkgs/phar/phpmd.phar  ${BIN_PATH}/phpmd
+add_bin https://mirrors.xie.ke/pkgs/phar/phive.phar         ${BIN_PATH}/phive
+add_bin https://mirrors.xie.ke/pkgs/phar/phpunit.phar 			${BIN_PATH}/phpunit
+add_bin https://mirrors.xie.ke/pkgs/phar/phpbu.phar            ${BIN_PATH}/phpbu
 # 运行 PHPUnit 单元测试（包括测试结果和覆盖率报告）、文件转换（例如令牌替换、XSLT 转换、模板转换）
 # 文件系统操作、交互式构建支持、SQL 执行、SCM 操作（Git、Subversion 和 Mercurial）、文档生成（PhpDocumentor、ApiGen）等等
-add_bin https://www.phing.info/get/phing-latest.phar  ${BIN_PATH}/phing
-add_bin https://phpdoc.org/phpDocumentor.phar         ${BIN_PATH}/phpDocumentor
+add_bin https://mirrors.xie.ke/pkgs/phar/phing.phar  ${BIN_PATH}/phing
+add_bin https://mirrors.xie.ke/pkgs/phar/phpDocumentor.phar         ${BIN_PATH}/phpDocumentor
 
-add_bin https://doctum.long-term.support/releases/dev/doctum.phar   ${BIN_PATH}/doctum
-add_bin https://www.laravel-enlightn.com/security-checker.phar      ${BIN_PATH}/security-checker
+add_bin https://mirrors.xie.ke/pkgs/phar/doctum.phar   ${BIN_PATH}/doctum
+add_bin https://mirrors.xie.ke/pkgs/phar/security-checker.phar      ${BIN_PATH}/security-checker
 
 
 # last update on May 9, 2021
 # Detect flaws in your architecture, before they drag you down into the depths of dependency hell ...
-# fetch_latest_version_phar mihaeu/dephpend dephpend-0.8.0.phar ${BIN_PATH}/dephpend
+# add_bin mihaeu/dephpend dephpend-0.8.0.phar ${BIN_PATH}/dephpend
 
 # Commits on Apr 20, 2023 incompatible with PHP 8.2
 # Documentation generator for PHP Code using standard technology (SRC, DOCBLOCK, XML and XSLT)
-add_bin https://github.com/theseer/phpdox/releases/download/0.12.0/phpdox-0.12.0.phar ${BIN_PATH}/phpdox
+add_bin https://mirrors.xie.ke/pkgs/phar/phpdox.phar ${BIN_PATH}/phpdox
 
 # A lightweight php namespace aware autoload generator and phar archive builder
-add_bin https://github.com/theseer/Autoload/releases/download/1.29.1/phpab-1.29.1.phar ${BIN_PATH}/phpab
+add_bin https://mirrors.xie.ke/pkgs/phar/phpab-1.29.1.phar ${BIN_PATH}/phpab
 
 # A CLI tool to check whether a specific composer package uses imported symbols that aren't part of its direct composer dependencies
-fetch_latest_version_phar maglnet/ComposerRequireChecker composer-require-checker.phar ${BIN_PATH}/composer-require-checker
+add_bin https://mirrors.xie.ke/pkgs/phar/composer-require-checker.phar ${BIN_PATH}/composer-require-checker
 
 # Commits on Sep 15, 2023
 # Beautiful and understandable static analysis tool for PHP
-fetch_latest_version_phar phpmetrics/PhpMetrics phpmetrics.phar ${BIN_PATH}/phpmetrics
+add_bin https://mirrors.xie.ke/pkgs/phar/phpmetrics.phar ${BIN_PATH}/phpmetrics
 
 # PHP_Depend is an adaptation of the established Java development tool JDepend. This tool shows you the quality of your design in terms of extensibility, reusability and maintainability.
-fetch_latest_version_phar pdepend/pdepend pdepend.phar ${BIN_PATH}/pdepend
+add_bin https://mirrors.xie.ke/pkgs/phar/pdepend.phar ${BIN_PATH}/pdepend
 
 # 🐛 A tool that can speed up linting of php files by running several lint processes at once.
-fetch_latest_version_phar overtrue/phplint phplint.phar ${BIN_PATH}/phplint
+add_bin https://mirrors.xie.ke/pkgs/phar/phplint.phar ${BIN_PATH}/phplint
 
 # This tool check syntax of PHP files faster than serial check with fancier output.
-fetch_latest_version_phar php-parallel-lint/PHP-Parallel-Lint parallel-lint.phar ${BIN_PATH}/parallel-lint
+add_bin https://mirrors.xie.ke/pkgs/phar/parallel-lint.phar ${BIN_PATH}/parallel-lint
 
-fetch_latest_version_phar PHP-CS-Fixer/PHP-CS-Fixer php-cs-fixer.phar ${BIN_PATH}/php-cs-fixer
+add_bin https://mirrors.xie.ke/pkgs/phar/php-cs-fixer.phar ${BIN_PATH}/php-cs-fixer
 
 # PHP Benchmarking framework
-fetch_latest_version_phar phpbench/phpbench       phpbench.phar   ${BIN_PATH}/phpbench
+add_bin https://mirrors.xie.ke/pkgs/phar/phpbench.phar   ${BIN_PATH}/phpbench
 # # PHP Static Analysis Tool - discover bugs in your code without running it!
-fetch_latest_version_phar phpstan/phpstan 			  phpstan.phar 		${BIN_PATH}/phpstan
-fetch_latest_version_phar deployphp/deployer      deployer.phar   ${BIN_PATH}/deployer
-fetch_latest_version_phar phpro/grumphp           grumphp.phar    ${BIN_PATH}/grumphp
-fetch_latest_version_phar vimeo/psalm 				    psalm.phar 			${BIN_PATH}/psalm
-fetch_latest_version_phar phan/phan 					    phan.phar 			${BIN_PATH}/phan
+add_bin https://mirrors.xie.ke/pkgs/phar/phpstan.phar 		${BIN_PATH}/phpstan
+add_bin https://mirrors.xie.ke/pkgs/phar/deployer.phar   ${BIN_PATH}/deployer
+add_bin https://mirrors.xie.ke/pkgs/phar/grumphp.phar    ${BIN_PATH}/grumphp
+add_bin https://mirrors.xie.ke/pkgs/phar/psalm.phar 			${BIN_PATH}/psalm
+add_bin https://mirrors.xie.ke/pkgs/phar/phan.phar 			${BIN_PATH}/phan
 
 # https://github.com/PHPCSStandards/PHP_CodeSniffer
 # PHP_CodeSniffer tokenizes PHP files and detects violations of a defined set of coding standards.
-add_bin https://phars.phpcodesniffer.com/phpcbf.phar 		${BIN_PATH}/phpcbf
-add_bin https://phars.phpcodesniffer.com/phpcs.phar 			${BIN_PATH}/phpcs
+add_bin https://mirrors.xie.ke/pkgs/phar/phpcbf.phar 		${BIN_PATH}/phpcbf
+add_bin https://mirrors.xie.ke/pkgs/phar/phpcs.phar 			${BIN_PATH}/phpcs
 
 # PHP Mutation Testing library
-fetch_latest_version_phar infection/infection infection.phar ${BIN_PATH}/infection
-fetch_latest_version_phar qossmic/deptrac deptrac.phar ${BIN_PATH}/deptrac
+add_bin https://mirrors.xie.ke/pkgs/phar/infection.phar ${BIN_PATH}/infection
+add_bin https://mirrors.xie.ke/pkgs/phar/deptrac.phar ${BIN_PATH}/deptrac
 
 chmod +x ${BIN_PATH}/*

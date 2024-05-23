@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2024-05-22 11:26:39
+ # @LastEditTime: 2024-05-23 10:09:05
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
 ###
@@ -33,6 +33,9 @@ _install()
 	# Language
 	pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk php
   pacman -S --noconfirm python-beautifulsoup4 python-cchardet python-chardet python-lxml python-html5lib
+
+  # Program Package Manager
+  pacman -S --noconfirm composer
 
 	# File && Code Tools
 	# rg A search tool that combines the usability of ag with the raw speed of grep
@@ -95,6 +98,10 @@ _install()
 
 	# Editor
 	pacman -S --noconfirm neovim
+
+  # Format
+  # shellcheck depends on haskell
+	pacman -S --noconfirm shfmt
 }
 
 _install
