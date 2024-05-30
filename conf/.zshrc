@@ -158,3 +158,4 @@ chpwd_functions=(auto-color-ls $chpwd_functions)
 
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH=/home/imxieke/.local/share/pnpm:/home/imxieke/.local/share/nvm/versions/node/v20.13.1/bin:/home/imxieke/.local/share/boxs/bin:/home/imxieke/.bin:/home/imxieke/.boxs/bin:/home/imxieke/.local/share/zinit/polaris/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/imxieke/.config/composer/vendor/bin:/usr/games:/usr/local/games:/home/imxieke/bin

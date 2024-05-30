@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:01:41
-# @LastEditTime: 2023-09-24 11:14:27
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-05-30 09:31:01
+ # @LastEditors: Cloudflying
 # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ###
 
@@ -13,8 +13,8 @@ mkdir -p "${ROOT_PATH}/bin"
 mkdir -p "${ROOT_PATH}/java"
 mkdir -p "${ROOT_PATH}/shell"
 
+BIN_PATH="${HOME}/bin"
 JAVA_PATH="${ROOT_PATH}/java"
-BIN_PATH="${ROOT_PATH}/bin"
 SHELL_PATH="${ROOT_PATH}/shell"
 # GITHUB_MIRROR='https://ghproxy.com/'
 GITHUB_MIRROR='https://gh-proxy.com/'
@@ -60,6 +60,9 @@ _install_linux() {
 
   echo "==> Fetch ookla speedtest.net Cli Speed Test for Linux"
   curl -sL https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz | tar -C ${BIN_PATH}/ -xvf - speedtest
+
+  echo "==> Fetch Microsoft Dev Tunnel"
+  CURL -sL https://tunnelsassetsprod.blob.core.windows.net/cli/linux-x64-devtunnel --output ${BIN_PATH}/devtunnel
 
   echo "==> Fetch Hadolint Dockerfile Lint"
   curl -fsSL "${GITHUB_MIRROR}https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64" --output ${BIN_PATH}/hadolint
