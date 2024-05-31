@@ -2,15 +2,14 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2024-05-23 10:09:05
+ # @LastEditTime: 2024-05-31 13:57:42
  # @LastEditors: Cloudflying
  # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
 ###
 
-# Manjaro 部分安装包在 Archlinux 内不存在 如 steam yay
+# manjaro contains all archlinux packages, but archlinux has many packages that do not exist
 _install()
 {
-
   # Dev
   pacman -S --noconfirm base-devel cmake cppcheck gdb
 

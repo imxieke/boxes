@@ -41,25 +41,16 @@
 - json 增强
 - https://github.com/b0o/schemastore.nvim
 
-## Complete 
+## Complete
 - https://github.com/hrsh7th/nvim-cmp lua
 - https://github.com/neoclide/coc.nvim nodejs
 - https://github.com/Shougo/ddc.vim deno
 - https://github.com/ms-jpq/coq_nvim
-- https://github.com/ycm-core/YouCompleteMe
 
-- https://github.com/prabirshrestha/asyncomplete.vim vim 停止更新
-- https://github.com/Shougo/deoplete.nvim viml+python 停止更新
-- https://github.com/jayli/vim-easycomplete Vim
-- https://github.com/tabnine/YouCompleteMe
-- https://github.com/tbodt/deoplete-tabnine
 - https://github.com/neoclide/coc-tabnine
 - https://github.com/kitagry/asyncomplete-tabnine.vim
 - https://github.com/folke/lua-dev.nvim lua 停止更新
 
-## 文件搜索 模糊搜索
-- https://github.com/nvim-telescope/telescope.nvim lua
-- https://github.com/ctrlpvim/ctrlp.vim vim
 
 - 待配置 调整配置
   - ale
@@ -69,7 +60,7 @@
   - stevearc/aerial.nvim
   - 顶部菜单栏
   - https://github.com/skywind3000/vim-quickui
-  - https://github.com/numToStr/FTerm.nvim 
+  - https://github.com/numToStr/FTerm.nvim
 
 
 let g:UltiSnipsExpandTrigger="<tab>"
