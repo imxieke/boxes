@@ -1,3 +1,6 @@
+## Config
+- aria2
+
 ## TODO
 - fzf --> telescope
 - tagbar --> symbols-outline

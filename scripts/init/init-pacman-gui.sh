@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-12 22:14:17
-# @LastEditTime: 2024-05-08 21:07:56
+# @LastEditTime: 2024-06-02 21:16:51
 # @LastEditors: Cloudflying
 # @Description:
 ###
@@ -16,7 +16,6 @@ _install() {
   pacman -S --noconfirm gnome-software deepin-store \
     pamac-cli pamac-gtk pamac-tray-icon-plasma \
     octopi
-
 
   # Tools
   # flameshot screenshot
@@ -248,12 +247,11 @@ _install() {
   # TODO: 待研究 似乎不是全部都有用
   # not found apper
   pacman -S --noconfirm labplot kdenlive kdevelop kile okteta krusader calligra index-fm \
-     alligator pix kclock kalk kweather calligra-plan kbibtex
+    alligator pix kclock kalk kweather calligra-plan kbibtex
 
   # 图像处理 3D 建模等
   # blender 创建 3D 模型和动画场景
   # inkscape 矢量图形编辑器
-  # gimp
   # darktable Utility to organize and develop raw images
   # openshot 简单的视频编辑器。添加视频、照片和音乐以创建 DVD、YouTube 剪辑和一系列其他格式。
   # shotcut Video Editor
@@ -267,7 +265,6 @@ _install() {
     openshot \
     shotcut \
     blender \
-    ffmpeg \
     gimp gimp-help-zh_cn gimp-plugin-gmic \
     krita \
     darktable \

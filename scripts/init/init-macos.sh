@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:02:52
-# @LastEditTime: 2024-05-17 23:42:07
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-06-02 22:26:05
+ # @LastEditors: Cloudflying
 # @Description: init package for macOS brew package manager
 ###
 
@@ -75,18 +75,30 @@ init_pkgs() {
   brew install coreutils
 
   # Dev
-  # brew install gcc make cmake xmake autoconf automake
+  brew install gcc make cmake xmake autoconf automake
 
-  brew install git subversion tldr zsh git htop imagemagick meofetch squashfs syncthing tree curl whois
+  # System Resource Monitor
+  brew install htop
 
-  # gitui Blazing 💥 fast terminal-ui for git written in rust 🦀
-  brew install ghq gh gitui
+  # Version Control
+  # Graphical client for Git version control
+  # sourcetree replace with git cli
+  brew install sourcetree
+
+  # Version Control
+  # gitleaks: detetct secret data leaks
+  # gitui: Blazing 💥 fast terminal-ui for git written in rust 🦀
+  # git-delta: A syntax-highlighting pager for git, diff, and grep output
+  # ghq: Remote repository management made easy
+  brew install git git-lfs git-svn gitleaks subversion gh gitui git-delta lazygit ghq
 
   # lsd rust The next gen ls command
   # exa rust Modern replacement for ls
   # fd  rust Simple, fast and user-friendly alternative to find
+  # fzf Command-line fuzzy finder written in Go
   # duf Disk Usage/Free Utility - a better 'df' alternative
-  brew install lsd exa fd duf
+  # ripgrep recursively searches directories for a regex pattern while respecting your gitignore
+  brew install tree lsd exa fd duf fzf ripgrep ripgrep-all the_silver_searcher
 
   # bitwarden Password Manager
   # balenaetcher flash mirror file to disk or Removable disk
@@ -97,7 +109,9 @@ init_pkgs() {
 
   # File Content View
   # sk skim fuzzy file search
-  brew install ccat bat bat-extras mdcat sk
+  # glow markdown preview
+  brew install rga \
+    ccat bat bat-extras mdcat sk glow
 
   # Remote
   # devtunnel Microsoft tunnel
@@ -112,12 +126,13 @@ init_pkgs() {
   # Database Client
   brew dbeaver-community
 
+  # Lint
+  brew dotenv-linter
+
   # Tools
   # grc Colorize logfiles and command output
   # fortune show quotes
-  # fzf Command-line fuzzy finder written in Go
-  # git-delta A syntax-highlighting pager for git, diff, and grep output
-  brew install cowsay grc fortune procs fzf supervisor git-delta syft
+  brew install zsh meofetch squashfs whois cowsay grc fortune procs supervisor syft
 
   # Server
   brew install openssh
@@ -126,7 +141,9 @@ init_pkgs() {
   # brew install mounty
 
   # MultiMedia
-  brew install iina qqplayer qqmusic neteasemusic kugoumusic ffmpeg
+  brew install iina \
+    qqplayer qqmusic neteasemusic kugoumusic \
+    ffmpeg imagemagick
 
   # input
   brew install sogouinput
@@ -142,7 +159,8 @@ init_pkgs() {
 
   # Network Tools
   # cli dns query
-  brew install clash whois dog rsync iperf iperf3 netcat socat doggo
+  brew install curl clash whois dog iperf iperf3 netcat socat doggo \
+    syncthing rsync
 
   # Chat
   brew install telegram wechat qq discord
@@ -190,6 +208,7 @@ init_pkgs() {
   # Web Browser
   brew install google-chrome firefox-developer-edition chromium microsoft-edge tor-browser
 
+  # Dev
   # Android Tools
   brew install android-platform-tools android-sdk
 
@@ -200,16 +219,9 @@ init_pkgs() {
   brew install innoextract
 
   # Documents && Markdown
-  brew install mdv mdp koodo-reader
-
-  # Graphical client for Git version control
-  # sourcetree replace with git cli
-  # brew install sourcetree
-
-  # Version Control
-  # svn git-svn removed
-  # gitleaks detetct secret data leaks
-  brew install gh git git-lfs git-svn gitleaks svn git-svn gitui lazygit
+  brew install mdv mdp koodo-reader \
+    pandoc pandoc-plot \
+    tldr
 
   # Virtual Box
   # brew install virtualbox vagrant lima podman qemu multipass
@@ -224,7 +236,7 @@ init_pkgs() {
   brew install tradingview
 
   # Utils
-  brew install ctags
+  brew install universal-ctags
 
   # Download form App Store
   # 944848654 Netease Music

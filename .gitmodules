@@ -1,0 +1,3 @@
+[submodule "fonts"]
+	path = conf/.local/share/fonts/fonts
+	url = https://github.com/imxieke/fonts.git

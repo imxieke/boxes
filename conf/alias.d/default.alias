@@ -1,10 +1,13 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-12-28 20:01:25
-# @LastEditTime: 2024-05-08 23:07:18
+# @LastEditTime: 2024-06-02 10:44:22
 # @LastEditors: Cloudflying
 # @Description:
 ###
+
+alias h='htop'
+alias lpath='echo $PATH | tr ":" "\n"'
 
 # Memory && CPU Usage
 # alias mem-top="ps -eo pcpu,pmem,pid,user,args | sort -k 3nr | head -10"
@@ -25,33 +28,9 @@ alias npm-upgrade-all='npm update -g'
 alias visle="sle ~/Library/Application\ Support/Sublime\ Text/"
 alias vivsc="sle ~/Library/Application\ Support/Code/"
 
-if [[ -z "$(command -v bat)" ]] && [[ -n "$(command -v batcat)" ]]; then
+if [[ -n "$(command -v batcat)" ]]; then
   alias bat='batcat'
 fi
-
-# quick jump
-alias ~='cd ~'
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-
-# alias ld='ls -ld'          # Show info about the directory
-# alias lla='ls -lAF'        # Show hidden all files
-# alias ll='ls -lF'          # Show long file information
-# # alias l='ls -1F'         # Show long file information
-# alias la='ls -AF'          # Show hidden files
-# alias lx='ls -lXB'         # Sort by extension
-# alias lk='ls -lSr'         # Sort by size, biggest last
-# alias lc='ls -ltcr'        # Sort by and show change time, most recent last
-# alias lu='ls -ltur'        # Sort by and show access time, most recent last
-# alias lt='ls -ltr'         # Sort by date, most recent last
-# alias lr='ls -lR'          # Recursive ls
-
-alias l='exa -la --icons --classify --group-directories-first --time-style=long-iso --group --color-scale'
-alias ':q'="exit"
-alias gdu='grc du -h'
-alias sdu='/usr/bin/du -h -d 1 -I ~/Library -I /Applications -I /dev'
 
 if [[ -n "$(command -v nvim)" ]]; then
   EDITOR=nvim
@@ -60,7 +39,7 @@ elif [[ -n "$(command -v vim)" ]]; then
   EDITOR="vim"
 fi
 
-alias e=${EDITOR}
+alias e="${EDITOR}"
 alias vi=${EDITOR}
 # alias vim=${EDITOR}
 alias nano=${EDITOR}
@@ -69,7 +48,7 @@ alias emacs=${EDITOR}
 # GNU Command
 [ -n "$(command -v gsed)" ] && alias sed='gsed'
 
-alias history-top='history | awk -F ' ' '{print $2}' | sort | uniq -c | sort -n -r  | head -n 10'
+alias history-top="history | awk -F ' ' '{print $2}' | sort | uniq -c | sort -n -r  | head -n 10"
 alias ezsh="nvim ~/.zshrc"
 
 # Supercharge Custom Alias
@@ -145,7 +124,7 @@ if [[ "${OSTYPE}" == 'Darwin' ]]; then
   fi
 
   # macOS 默认的 openssh 版本很老
-  # alias ssh="/usr/local/bin/ssh -o ServerAliveInterval=60"
+  alias ssh="/usr/local/bin/ssh -o ServerAliveInterval=60"
   alias wifi-info='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I'
 
   # Atom short command cli
@@ -189,10 +168,10 @@ else
   alias ssh="ssh -o ServerAliveInterval=60"
   alias sdu='du -h -d 1 --exclude="/proc" --exclude="/dev"'
   if [[ -f "/usr/share/code/bin/code" ]]; then
-      alias code="/usr/share/code/bin/code"
-      alias code-tunnel="/usr/share/code/bin/code-tunnel"
-      alias vsc="/usr/share/code/bin/code"
-      alias vsc-tunnel="/usr/share/code/bin/code-tunnel"
+    alias code="/usr/share/code/bin/code"
+    alias code-tunnel="/usr/share/code/bin/code-tunnel"
+    alias vsc="/usr/share/code/bin/code"
+    alias vsc-tunnel="/usr/share/code/bin/code-tunnel"
   fi
 fi
 

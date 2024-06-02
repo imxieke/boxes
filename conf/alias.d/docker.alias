@@ -1,8 +1,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-07-01 01:00:37
- # @LastEditTime: 2024-05-08 20:38:00
- # @LastEditors: Cloudflying
+# @LastEditTime: 2024-06-03 00:31:40
+# @LastEditors: Cloudflying
 # @Description:
 ###
 # Docker alias and function
@@ -39,6 +39,7 @@ alias dbu="docker build . --build-arg \"HTTP_PROXY=http://${MIXED_PROXY}\" --bui
 
 # Get container IP
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dit='docker images --format "{{.Repository}}:{{.Tag}}"'
 
 # Run deamonized container, e.g., $dkd base /bin/echo hello
 alias dkd="docker run -d -P"

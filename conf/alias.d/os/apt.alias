@@ -1,7 +1,7 @@
 alias pkg-add="sudo apt install"
 alias pkg-remove="sudo apt purge"
-alias pkg-info="apt show"
 alias pkg-update="sudo apt update"
+alias pkg-info="apt show"
 alias pkg-down="sudo apt download"
 alias pkg-upgrade="sudo apt upgrade"
 alias pkg-outdated="apt list --upgradable"

@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2024-05-31 21:53:30
-# @LastEditTime: 2024-06-01 00:51:14
+# @LastEditTime: 2024-06-02 00:31:33
 # @LastEditors: Cloudflying
 # @Description: $PATH Init
 ###
@@ -62,12 +62,11 @@ if [[ -d "/usr/local/opt/php@${PHP_VERSION}/bin" ]]; then
 fi
 
 # macOS 预置了老版本 需要覆盖
-if [[ -f "/usr/local/opt/ruby/bin/gem" ]]; then
+if [[ -f "/usr/local/opt/ruby/bin/ruby" ]]; then
   export PATH="/usr/local/opt/ruby/bin:${PATH}"
   export LDFLAGS="-L/usr/local/opt/ruby/lib ${LDFLAGS}"
   export CPPFLAGS="-I/usr/local/opt/ruby/include ${CPPFLAGS}"
-  # export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:${PKG_CONFIG_PATH}"
-  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig:${PKG_CONFIG_PATH}"
 fi
 
 if [[ -d '/usr/local/opt/mariadb@10.2' ]]; then

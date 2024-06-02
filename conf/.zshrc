@@ -1,7 +1,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-09-19 01:49:42
-# @LastEditTime: 2024-06-01 00:20:55
+# @LastEditTime: 2024-06-02 22:37:50
 # @LastEditors: Cloudflying
 # @Description: zsh config file
 ###
@@ -46,13 +46,14 @@ DISABLE_AUTO_UPDATE="true"
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="strug"
 
-source $ZSH/oh-my-zsh.sh
-
 # 用户自定义配置
 if [[ $(uname -s) == 'Darwin' ]]; then
   plugins=(macos brew)
 fi
+
 plugins+=(ag git gh rust history colored-man-pages extract fzf docker docker-compose z)
+
+source $ZSH/oh-my-zsh.sh
 
 [ -f ${BOXS_HOME}/conf/.boxsrc ] && source ${BOXS_HOME}/conf/.boxsrc
 

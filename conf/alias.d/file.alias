@@ -1,16 +1,34 @@
-alias l='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso'
+exa_params="exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso"
+alias l=${exa_params}
 
-# 按文件大小排序
-alias lls='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --sort size'
+# case-insensitively
+alias llf="${exa_params}  --sort filename"
+# case-sensitively
+alias llfc="${exa_params}  --sort Filename"
+# sort by size
+alias lls="${exa_params}  --sort size"
+alias llm="${exa_params}  --sort modified"
+alias llc="${exa_params}  --sort created"
 
 # 文件树🌲
-alias llt='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --tree'
+alias llt="${exa_params} --tree"
 
 # 忽略 .gitignore 文件
-alias llg='exa --all --long --icons --group --git --color-scale --classify --group-directories-first --time-style=long-iso --git-ignore'
+alias llg="${exa_params} --git-ignore"
 
-alias bat='bat --theme="gruvbox-dark" -n'
-alias bat-diff='bat --diff'
+# bat Diff
+alias bdiff='bat --diff'
 
 # replace df
 alias ldf="duf"
+
+# quick jump
+alias ~='cd ~'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+
+alias ':q'="exit"
+alias gdu='grc du -h'
+alias sdu='/usr/bin/du -h -d 1 -I ~/Library -I /Applications -I /dev'
