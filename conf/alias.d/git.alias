@@ -5,3 +5,12 @@ alias gdp="git clone --depth=1"
 alias git-ignore-files='git check-ignore -v'
 # alias git-pull-all-dirs="for i in $(ls); do { if [ -d ${i}/.git ]; then git -C $i pull; } fi ;done"
 alias delta-config="delta --diff-so-fancy --show-config"
+alias glogls="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+
+# Git log all
+alias glogla='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --all'
+# Git log stat
+alias glogst='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --stat'
+
+# Git Log Sort By Date
+alias glogds='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=short'

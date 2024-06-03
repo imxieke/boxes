@@ -2,15 +2,25 @@
 ###
 # @Author: Cloudflying
 # @Date: 2023-03-27 20:13:06
-# @LastEditTime: 2024-06-02 21:28:06
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-06-03 15:10:00
+ # @LastEditors: Cloudflying
 # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
 ###
 
 # manjaro contains all archlinux packages, but archlinux has many packages that do not exist
 _install() {
   # Dev
-  pacman -S --noconfirm base-devel cmake cppcheck gdb
+  pacman -S --noconfirm base-devel cmake cppcheck gdb \
+    tree-sitter \
+    tree-sitter-bash \
+    tree-sitter-c \
+    tree-sitter-cli \
+    tree-sitter-javascript \
+    tree-sitter-lua \
+    tree-sitter-markdown \
+    tree-sitter-python \
+    tree-sitter-query \
+    tree-sitter-rust
 
   # Compress
   # GUI Archive: file-roller
@@ -76,9 +86,10 @@ _install() {
   pacman -S --noconfirm nmap rustscan osv-scanner sqlmap masscan
 
   # Virtual Machine && Container
+  # Docker
+  pacman -S --noconfirm docker docker-buildx docker-compose docker-scan docker-machine
   # podman-docker conflict with docker
-  # pacman -S --noconfirm docker docker-buildx docker-compose docker-scan \
-  # podman podman-compose
+  # pacman -S --noconfirm podman podman-compose podman-docker
 
   # Virtual Machine && Container Depency
   # pacman -S --noconfirm fuse-overlayfs
@@ -108,7 +119,7 @@ _install() {
 
   # Format
   # shellcheck depends on haskell
-  pacman -S --noconfirm shfmt
+  pacman -S --noconfirm shfmt yamlfmt
 }
 
 _install

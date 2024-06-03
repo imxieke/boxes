@@ -2,9 +2,9 @@
 ###
  # @Author: Cloudflying
  # @Date: 2023-03-27 20:23:30
- # @LastEditTime: 2023-09-10 14:09:06
+ # @LastEditTime: 2024-06-03 15:11:50
  # @LastEditors: Cloudflying
- # @Description: 
+ # @Description:
 ###
 
 _install()
@@ -46,8 +46,6 @@ _install()
 	go install github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	go install github.com/rhysd/actionlint/cmd/actionlint@latest
-	go install mvdan.cc/sh/v3/cmd/shfmt@latest
-	go install mvdan.cc/sh/v3/cmd/gosh@latest
 	# Go Linter
 	go install golang.org/x/tools/cmd/goimports@latest
 	go install honnef.co/go/tools/cmd/staticcheck@latest

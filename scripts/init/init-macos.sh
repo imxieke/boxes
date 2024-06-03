@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2024-06-02 22:26:05
+ # @LastEditTime: 2024-06-03 11:59:54
  # @LastEditors: Cloudflying
 # @Description: init package for macOS brew package manager
 ###
@@ -79,11 +79,6 @@ init_pkgs() {
 
   # System Resource Monitor
   brew install htop
-
-  # Version Control
-  # Graphical client for Git version control
-  # sourcetree replace with git cli
-  brew install sourcetree
 
   # Version Control
   # gitleaks: detetct secret data leaks
