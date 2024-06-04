@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:01:41
- # @LastEditTime: 2024-05-30 09:31:01
+ # @LastEditTime: 2024-06-04 15:19:18
  # @LastEditors: Cloudflying
 # @Description: 可执行文件初始化 如 二进制文件 Shell Python 脚本
 ###
@@ -70,6 +70,7 @@ _install_linux() {
 
 # macOS 二进制文件
 _install_macos() {
+  # static php cli (spc)
   echo "==> Fetch Next Trace"
   curl -fsSL "${GITHUB_MIRROR}https://github.com/sjlleo/nexttrace/releases/latest/download/nexttrace_darwin_amd64" --output ${BIN_PATH}/nexttrace
 
@@ -111,6 +112,28 @@ _install_lib() {
   curl -fsSL "${GITHUB_MIRROR}https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh" 			--output ${SHELL_PATH}/nvm.sh
 }
 
+install_spc()
+{
+  VERSIONS=(
+    "8.3.7"
+    "8.2.19"
+    "8.1.28"
+    "8.0.30"
+  )
+  for version in "${VERSIONS[@]}"; do
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+      wget -c "https://dl.static-php.dev/static-php-cli/bulk/php-${version}-cli-macos-x86_64.tar.gz" -O "/tmp/php-${version}.tar.gz"
+    elif [[ "$(uname -s)" == "Linux" ]]; then
+      wget -c "https://dl.static-php.dev/static-php-cli/bulk/php-${version}-cli-linux-x86_64.tar.gz" -O "/tmp/php-${version}.tar.gz"
+    fi
+  done
+
+  for version in "${VERSIONS[@]}"; do
+    tar -xvf "/tmp/php-${version}.tar.gz" -C ~/.bin > /dev/null
+    mv ~/.bin/php ~/.bin/php"${version:0:3}"
+  done
+}
+
 case "$1" in
 scripts | -s)
   _install_scripts
@@ -119,6 +142,7 @@ jar | -j)
   _install_jar
   ;;
 os | -j)
+  install_spc
   if [[ "$(uname -s)" == 'Darwin' ]]; then
     _install_macos
   elif [[ "$(uname -s)" == 'Linux' ]]; then

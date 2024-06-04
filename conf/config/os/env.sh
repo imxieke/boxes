@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2024-05-31 21:44:12
-# @LastEditTime: 2024-06-01 01:23:25
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-06-04 14:31:43
+ # @LastEditors: Cloudflying
 # @Description: Boxs Env
 ###
 
@@ -44,7 +44,9 @@ fi
 if [[ "${OSTYPE}" == 'Darwin' ]]; then
   export HOST_IP=$(ifconfig en1 | grep -Eo 'inet\ [0-9]\S+.[0-9]' | sed 's#inet\ ##g')
 elif [[ "${OSTYPE}" == 'Linux' ]]; then
-  export HOST_IP=$(hostname -i)
+  export HOST_IP=$(ifconfig eth0 | grep -Eo 'inet\ [0-9]\S+.[0-9]' | sed 's#inet\ ##g')
+else
+  export HOST_IP="127.0.0.1"
 fi
 
 # 加载本地自定义变量

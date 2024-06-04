@@ -34,6 +34,10 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
+    whoami
+    # "context"
+    # "nvm"
+    # "cpu_arch"
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -103,7 +107,7 @@
     # todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     # timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     # taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
-    public_ip             # public IP address
+    # public_ip             # public IP address
     time                    # current time
     # =========================[ Line #2 ]=========================
     # newline
@@ -747,7 +751,7 @@
   typeset -g POWERLEVEL9K_RANGER_FOREGROUND=3
   typeset -g POWERLEVEL9K_RANGER_BACKGROUND=0
   # Custom icon.
-  # typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   ######################[ nnn: nnn shell (https://github.com/jarun/nnn) ]#######################
   # Nnn shell color.
@@ -949,6 +953,25 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
   # typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true;
+  typeset -g POWERLEVEL9K_ALWAYS_SHOW_USER=true
+
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_SUDO_FOREGROUND=3
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_TEMPLATE=%n@%m
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_SUDO_BACKGROUND=0
+# typeset _POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=1
+# typeset _POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=0
+# typeset _POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_SUDO_TEMPLATE=%n@%m
+# typeset _POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=''
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND=0
+# typeset _POWERLEVEL9K_CONTEXT_TEMPLATE=%n@%m
+# typeset _POWERLEVEL9K_CONTEXT_FOREGROUND=3
+# typeset _POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B0'
+# typeset _POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE=%n@%m
+# typeset _POWERLEVEL9K_CONTEXT_BACKGROUND=0
+# typeset _POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND=3
+# typeset _POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B1'
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
@@ -1674,6 +1697,27 @@
     p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
   }
 
+  function prompt_whoami()
+  {
+    if [[ -n "${USER}" ]]; then
+      RUNUSER=${USER}
+    elif [[ -n "$(command -v whoami)" ]]; then
+      RUNUSER=$(whoami)
+    fi
+
+    ARCH=$(uname -m)
+    HOSTNAME=$(hostname)
+
+    if [[ -f "/etc/os-release" ]]; then
+      source /etc/os-release
+      OSNAME=${PRETTY_NAME}
+    elif [[ "$(uname -s)" == 'Darwin' ]]; then
+      OSNAME="macOS"
+    fi
+    TEXT="${RUNUSER}@${HOSTNAME} On ${OSNAME} ${ARCH}"
+    p10k segment -b 8 -f 3 -t "${TEXT}"
+  }
+
   [ -f ${BOXS_HOME}/etc/p10k/promt.sh ] && source ${BOXS_HOME}/etc/p10k/promt.sh
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
   # is to generate the prompt segment for display in instant prompt. See
@@ -1692,6 +1736,7 @@
     # instant_prompt_example. This will give us the same `example` prompt segment in the instant
     # and regular prompts.
     prompt_example
+    prompt_whoami
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
