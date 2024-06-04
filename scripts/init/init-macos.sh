@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2024-06-03 11:59:54
+ # @LastEditTime: 2024-06-04 22:55:07
  # @LastEditors: Cloudflying
 # @Description: init package for macOS brew package manager
 ###
@@ -206,6 +206,9 @@ init_pkgs() {
   # Dev
   # Android Tools
   brew install android-platform-tools android-sdk
+
+  # Formatter
+  brew install shfmt yamlfmt
 
   # Terminal
   brew install iterm2
