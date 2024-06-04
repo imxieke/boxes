@@ -1,13 +1,18 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-12-28 20:01:25
-# @LastEditTime: 2024-06-02 10:44:22
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-06-04 17:13:03
+ # @LastEditors: Cloudflying
 # @Description:
 ###
 
 alias h='htop'
 alias lpath='echo $PATH | tr ":" "\n"'
+
+# Project Directory
+alias goc="cd ${HOME}/Code"
+alias gop="cd ${HOME}/Code/Project"
+alias god="cd ${HOME}/Code/Project/dockenv"
 
 # Memory && CPU Usage
 # alias mem-top="ps -eo pcpu,pmem,pid,user,args | sort -k 3nr | head -10"
