@@ -208,7 +208,7 @@ init_pkgs() {
   brew install android-platform-tools android-sdk
 
   # Formatter
-  brew install shfmt yamlfmt
+  brew install shfmt yamlfmt stylua
 
   # Terminal
   brew install iterm2
