@@ -1,7 +1,4 @@
-#!/bin/bash
-#
-# @(#) extract v0.1.0 2015-08-04
-#
+#!/usr/bin/env bash
 # usage:
 #   extract path
 #
@@ -30,6 +27,7 @@ if [[ "$(file --brief --mime-type "$target" || :)" == "text"* ]]; then
   exit 1
 fi
 
+# ~/.oh-my-zsh/plugins/extract
 # TODO lzh safariextz crx lzma jar war ear rpm
 # TODO extract to special directory
 # safariextz xar ${verbose} ${test:--x} -f "$1"

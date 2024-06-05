@@ -2,7 +2,7 @@
 ###
  # @Author: Cloudflying
  # @Date: 2024-05-31 21:27:10
- # @LastEditTime: 2024-05-31 23:25:49
+ # @LastEditTime: 2024-06-05 21:25:29
  # @LastEditors: Cloudflying
  # @Description: Zinit Init
 ###
@@ -13,7 +13,7 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	# setopt promptsubst
 	# ZSH_THEME='strug'
 	zinit load zdharma-continuum/fast-syntax-highlighting
-	# zinit load zsh-users/zsh-syntax-highlighting
+	zinit load zsh-users/zsh-syntax-highlighting
 	# 灰色显示历史运行的命令
 	zinit load zsh-users/zsh-autosuggestions
 	zinit load zsh-users/zsh-history-substring-search
@@ -26,10 +26,10 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	# 快速跳转至文件夹
 	zinit load agkozak/zsh-z
 	# Enhanced colors for zsh
-	# zinit load zpm-zsh/colors
+	zinit load zpm-zsh/colors
 	# Colorize command output using grc and lscolors
-	# zinit load unixorn/warhol.plugin.zsh
-	# zinit load MichaelAquilina/zsh-you-should-use
+	zinit load unixorn/warhol.plugin.zsh
+	zinit load MichaelAquilina/zsh-you-should-use
 	zinit load mafredri/zsh-async
 	# 🔖 Quickly navigate your work path!
 	zinit load wfxr/formarks
@@ -37,16 +37,15 @@ if [[ -f ~/.local/share/zinit/zinit.zsh ]]; then
 	zinit load trystan2k/zsh-tab-title
 
 	# git clone depth
-	# zinit ice depth=1
+	zinit ice depth=1
 	zinit load romkatv/powerlevel10k
-	# zinit ice depth=1
 	# zinit light jeffreytse/zsh-vi-mode
-	# if [[ -n "$(command -v fzf)" ]]; then
+	if [[ -n "$(command -v fzf)" ]]; then
 		# Replace zsh's default completion selection menu with fzf!
 		# 似乎和其他插件有功能重复
-		# zinit load chitoku-k/fzf-zsh-completions
-		# zinit load Aloxaf/fzf-tab
-		# zinit load unixorn/fzf-zsh-plugin
-		# zinit load yuki-yano/fzf-preview.zsh
-	# fi
+		zinit load chitoku-k/fzf-zsh-completions
+		zinit load Aloxaf/fzf-tab
+		zinit load unixorn/fzf-zsh-plugin
+		zinit load yuki-yano/fzf-preview.zsh
+	fi
 fi

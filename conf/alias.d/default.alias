@@ -1,8 +1,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-12-28 20:01:25
- # @LastEditTime: 2024-06-05 11:39:05
- # @LastEditors: Cloudflying
+# @LastEditTime: 2024-06-05 20:45:12
+# @LastEditors: Cloudflying
 # @Description:
 ###
 
@@ -108,6 +108,10 @@ if [[ -f ~/.acme.sh/acme.sh ]]; then
   alias acme="~/.acme.sh/acme.sh"
   export LE_WORKING_DIR="~/.acme.sh"
 fi
+
+# Grep
+alias egrep="grep -E --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+alias fgrep="grep -F --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
 
 # Secure Alias
 alias hexpass='openssl rand -hex 24'

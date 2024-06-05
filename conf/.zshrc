@@ -1,8 +1,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2021-09-19 01:49:42
-# @LastEditTime: 2024-06-02 22:37:50
-# @LastEditors: Cloudflying
+ # @LastEditTime: 2024-06-05 21:47:39
+ # @LastEditors: Cloudflying
 # @Description: zsh config file
 ###
 
@@ -51,11 +51,14 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   plugins=(macos brew)
 fi
 
-plugins+=(ag git gh rust history colored-man-pages extract fzf docker docker-compose z)
+# Archlinux-Like
+if [[ -d "/etc/pacman.d" ]]; then
+  plugins=(pacman)
+fi
+
+plugins+=(ag composer colored-man-pages docker docker-compose extract fd fzf gh git history ripgrep rust z)
 
 source $ZSH/oh-my-zsh.sh
-
-[ -f ${BOXS_HOME}/conf/.boxsrc ] && source ${BOXS_HOME}/conf/.boxsrc
 
 # 执行切换目录命令行自动执行下面命令
 auto-color-ls() {

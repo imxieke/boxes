@@ -14,3 +14,9 @@ alias glogst='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cg
 
 # Git Log Sort By Date
 alias glogds='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=short'
+
+# LFS
+alias glfsi='git lfs install'
+alias glfst='git lfs track'
+alias glfsls='git lfs ls-files'
+alias glfsmi='git lfs migrate import --include='
