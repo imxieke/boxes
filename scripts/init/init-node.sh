@@ -2,7 +2,7 @@
 ###
 # @Author: Cloudflying
 # @Date: 2023-03-27 20:24:49
-# @LastEditTime: 2024-05-01 09:14:45
+# @LastEditTime: 2024-06-05 23:18:28
 # @LastEditors: Cloudflying
 # @Description: Node Init
 ###
@@ -10,6 +10,8 @@
 _install() {
   # Fabulously kill processes. Cross-platform
   npm i -g pnpm
+
+  pnpm add -g typescript
 
   pnpm add -g bower yarn bun
 
@@ -28,7 +30,17 @@ _install() {
   pnpm add -g neovim
 
   # intelephense php autocomplete PHP language server
-  pnpm add -g intelephense bash-language-server typescript-language-server yaml-language-server-parser
+  # tsserver typescript-language-server
+  # https://github.com/hrsh7th/vscode-langservers-extracted
+  # https://github.com/joe-re/sql-language-server
+  pnpm add -g intelephense \
+    bash-language-server \
+    typescript-language-server \
+    yaml-language-server-parser \
+    dockerfile-language-server-nodejs \
+    @microsoft/compose-language-service \
+    vscode-langservers-extracted \
+    sql-language-server
 
   # Language
   pnpm add -g @prettier/plugin-ruby prettier-plugin-sh prettier-plugin-sql prettier-plugin-java prettier-plugin-solidity \

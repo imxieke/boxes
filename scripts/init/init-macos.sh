@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2022-09-17 20:02:52
- # @LastEditTime: 2024-06-04 22:55:07
- # @LastEditors: Cloudflying
+# @LastEditTime: 2024-06-05 23:15:38
+# @LastEditors: Cloudflying
 # @Description: init package for macOS brew package manager
 ###
 
@@ -174,7 +174,14 @@ init_pkgs() {
 
   # Programming language
   # go node python python2 python3 pip pip2 pip3 php composer ruby perl java
-  brew install shivammathur/php/php shivammathur/php/php@5.6 go python dotnet kotlin node@14 openjdk
+  brew install shivammathur/php/php \
+    go \
+    python \
+    dotnet \
+    kotlin \
+    openjdk \
+    node@20 \
+    deno
 
   brew install shivammathur/php/php@7.4 shivammathur/extensions/amqp@7.4 shivammathur/extensions/event@7.4 shivammathur/extensions/grpc@7.4 shivammathur/extensions/imagick@7.4 shivammathur/extensions/imap@7.4 shivammathur/extensions/mcrypt@7.4 shivammathur/extensions/memcache@7.4 shivammathur/extensions/memcached@7.4 shivammathur/extensions/mongodb@7.4 shivammathur/extensions/msgpack@7.4 shivammathur/extensions/phalcon5@7.4 shivammathur/extensions/protobuf@7.4 shivammathur/extensions/rdkafka@7.4 shivammathur/extensions/redis@7.4 shivammathur/extensions/snmp@7.4 shivammathur/extensions/ssh2@7.4 shivammathur/extensions/swoole@7.4 shivammathur/extensions/vips@7.4 shivammathur/extensions/xlswriter@7.4 shivammathur/extensions/yaml@7.4 shivammathur/extensions/zmq@7.4 shivammathur/extensions/apcu@7.4
 
@@ -185,7 +192,10 @@ init_pkgs() {
   brew install shivammathur/php/php@8.2 shivammathur/extensions/event@8.2 shivammathur/extensions/grpc@8.2 shivammathur/extensions/imagick@8.2 shivammathur/extensions/imap@8.2 shivammathur/extensions/mcrypt@8.2 shivammathur/extensions/memcached@8.2 shivammathur/extensions/mongodb@8.2 shivammathur/extensions/msgpack@8.2 shivammathur/extensions/phalcon5@8.2 shivammathur/extensions/protobuf@8.2 shivammathur/extensions/rdkafka@8.2 shivammathur/extensions/redis@8.2 shivammathur/extensions/swoole@8.2 shivammathur/extensions/xlswriter@8.2 shivammathur/extensions/yaml@8.2 shivammathur/extensions/zmq@8.2 shivammathur/extensions/apcu@8.2
 
   # Language Server Protocol
-  # brew install lua-language-server kotlin-language-server
+  brew install lua-language-server \
+    kotlin-language-server \
+    gopls \
+    elixir-ls
 
   # Options
   # brew install swift ruby@2.7 rust kotlin node@16
@@ -228,7 +238,8 @@ init_pkgs() {
   brew install tencent-lemon
 
   # Security Tools
-  brew install aircrack-ng wifi-password nmap sqlmap massdns
+  # snyk-cli Scans and monitors projects for security vulnerabilities
+  brew install aircrack-ng wifi-password nmap sqlmap massdns snyk-cli
 
   # Finance
   brew install tradingview

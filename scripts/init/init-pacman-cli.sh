@@ -2,8 +2,8 @@
 ###
 # @Author: Cloudflying
 # @Date: 2023-03-27 20:13:06
- # @LastEditTime: 2024-06-03 15:10:00
- # @LastEditors: Cloudflying
+# @LastEditTime: 2024-06-05 23:09:57
+# @LastEditors: Cloudflying
 # @Description: Manjaro 和 Archlinux 软件源不同 Manjaro 软件比较多
 ###
 
@@ -39,8 +39,17 @@ _install() {
     iperf iperf3
 
   # Language
-  pacman -S --noconfirm python python-pip go nodejs npm jdk-openjdk php
+  pacman -S --noconfirm python python-pip \
+    go \
+    nodejs npm \
+    jdk-openjdk \
+    php \
+    deno
+
   pacman -S --noconfirm python-beautifulsoup4 python-cchardet python-chardet python-lxml python-html5lib
+
+  # Language Server Protocol
+  pacman -S --noconfirm gopls
 
   # Program Package Manager
   pacman -S --noconfirm composer
