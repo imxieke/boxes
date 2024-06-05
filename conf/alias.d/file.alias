@@ -31,4 +31,3 @@ alias .....='cd ../../../../'
 
 alias ':q'="exit"
 alias gdu='grc du -h'
-alias sdu='/usr/bin/du -h -d 1 -I ~/Library -I /Applications -I /dev'
